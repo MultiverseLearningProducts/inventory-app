@@ -1,23 +1,29 @@
-import React,{useState} from 'react';
+import React, { useState } from "react";
 
+export function Items(props) {
+  const [nameClicked, setNameClicked] = useState(false);
 
-export function Items (props) {
-
-  const [nameClicked,setNameClicked] = useState(false)
-  
   const itemData = (
     <div>
-      <p>Hello {props.items.description}</p>
-      <p>{props.items.category}</p>
-      <img src={props.items.image} alt={props.items.name} />
-      <p>{props.items.price}</p>
+      <p> {props.item.description}</p>
+      <p>{props.item.category}</p>
+      <img src={props.item.image} alt={props.item.title} />
+      <p>{props.item.price}</p>
     </div>
-  )
+  );
 
-  return <>
-    <h3><button onClick={()=>{setNameClicked(!nameClicked)}}>Button {props.items.name}</button></h3>
-    { itemData && nameClicked}
-  </>
+  return (
+    <>
+      <h3>
+        <button
+          onClick={() => {
+            setNameClicked(!nameClicked);
+          }}
+        >
+          {props.item.title}
+        </button>
+      </h3>
+      {nameClicked && itemData}
+    </>
+  );
 }
-
-	
