@@ -1,7 +1,7 @@
 import React from 'react';
 import { Sauce } from './Sauce';
 
-export const SaucesList = ({sauces}) => {
+export function SaucesList ({sauces}) {
 	return <>
 		{
 			sauces.map((sauce, idx) => {

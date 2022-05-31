@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Sauce = (props) => {
+export function Sauce (props) {
 
   return <>
     <h3>{props.sauce.name}</h3>
