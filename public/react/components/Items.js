@@ -1,11 +1,18 @@
 import React from 'react';
+import apiURL from '../api';
 
-export const Items = (props) => {
-console.log()
+export const Items = ({ item, setSingleItem }) => {
+  console.log()
+  const handleClick = async () => {
+    const response = await fetch(`${apiURL}/items/${item.id}`);
+    const itemData = await response.json();
+    setSingleItem(itemData);
+  }
   return <>
-    <h3>{props.item.title}</h3>
-    <img src={props.item.image} alt={props.item.title} />
-    <h4>{props.item.price}</h4>
+    <div onClick={handleClick}>
+      <h3>{item.title}</h3>
+      <img src={item.image} alt={item.title} />
+      <h4>{item.price}</h4>
+    </div>
   </>
-} 
-	
+}
