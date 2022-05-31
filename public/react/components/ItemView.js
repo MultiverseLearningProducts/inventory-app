@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-export const ItemView = ({singleItem}) => {
+export const ItemView = ({singleItem, setSingleItem}) => {
 
     return <>
         <h1>{singleItem.title}</h1>
@@ -8,5 +8,6 @@ export const ItemView = ({singleItem}) => {
         <img src={singleItem.image} alt={singleItem.title}/>
         <h3>{singleItem.description}</h3>
         <h4>{singleItem.category}</h4>
+        <button onClick={() => {setSingleItem(0)}}>Back</button>
     </>
 }

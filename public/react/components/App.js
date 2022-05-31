@@ -27,7 +27,7 @@ export const App = () => {
 	return (
 		<main>	
       <h1>Store Warehouse</h1>
-			{singleItem ? <ItemView singleItem={singleItem}/>:<ItemsList items={items} setSingleItem={setSingleItem}/>}
+			{singleItem ? <ItemView singleItem={singleItem} setSingleItem={setSingleItem}/>:<ItemsList items={items} setSingleItem={setSingleItem}/>}
 		</main>
 	)
 }
