@@ -18,4 +18,25 @@ router.get('/:id', async (req, res, next) => {
     res.json({item});
 })
 
+router.post('/', async (req, res) => {
+    let newItem = await Item.create(req.body)
+    res.json(newItem);
+})
+
+router.delete('/:id', async (req, res) => {
+    await Item.destroy({
+		where : {id : req.params.id}
+	});
+	res.send('Item deleted!')
+})
+
+router.put('/:id', async (req, res) => {
+    await Item.update(req.body, {
+        where : {id : req.params.id}
+    });
+    res.send("item updated")
+})
+
+
+
 module.exports = router;
