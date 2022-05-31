@@ -7,7 +7,16 @@ const { Items } = require("../models");
 router.get("/", async (req, res, next) => {
   try {
     const items = await Items.findAll();
-    res.send(items);
+    res.json(items);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get("/:id", async (req, res, next) => {
+  try {
+    const items = await Items.findByPk(req.params.id);
+    res.json(items);
   } catch (error) {
     next(error);
   }
