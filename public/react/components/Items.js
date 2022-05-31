@@ -2,7 +2,6 @@ import React from 'react';
 import apiURL from '../api';
 
 export const Items = ({ item, setSingleItem }) => {
-  console.log()
   const handleClick = async () => {
     const response = await fetch(`${apiURL}/items/${item.id}`);
     const itemData = await response.json();
