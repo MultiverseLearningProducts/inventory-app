@@ -32,6 +32,18 @@ router.post("/", async (req, res, next) => {
   }
 })
 
+router.put("/:id", async (req, res, next) => {
+  try {
+    const [updatedRowCount, updatedItems] = await Items.update(req.body, {
+      where : {id : req.params.id},
+      return: true
+    });
+    res.json(updatedItems[0]);
+  } catch (error) {
+    next(error);
+  } 
+})
+
 router.delete("/:id", async (req, res, next) => {
   try {
     await Items.destroy({
