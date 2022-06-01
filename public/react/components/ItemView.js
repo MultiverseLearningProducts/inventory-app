@@ -28,13 +28,18 @@ export const ItemView = ({ singleItem, setSingleItem }) => {
     }
 
     return <>
+<div id="item"> 
+    <div className="singleItem">
         <h1>{singleItem.title}</h1>
         <h2>{singleItem.price}</h2>
         <img src={singleItem.image} alt={singleItem.title} />
         <h3>{singleItem.description}</h3>
-        <h4>{singleItem.category}</h4>
+        <h4>{singleItem.category}</h4>  
+    </div> 
+    <div className="itemButton">
         <button onClick={() => { setSingleItem(0) }}>Back</button>
         <button onClick={handleClick}>Delete</button>
+    </div>
         <h2>Update</h2>
         <form onSubmit={handleSubmission}>
             <input type="text" placeholder='title' value={title} onChange={(ev) => { setTitle(ev.target.value) }} />
@@ -44,7 +49,10 @@ export const ItemView = ({ singleItem, setSingleItem }) => {
             <input type="text" placeholder='category' value={category} onChange={(ev) => { setCategory(ev.target.value) }} />
             <button type="submit">Submit</button>
         </form>
+      
+    </div>
     </>
+
 }
 
 
