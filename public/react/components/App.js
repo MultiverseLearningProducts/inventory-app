@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import { ItemsList } from "./ItemsList";
 import { AddItem } from "./AddItem";
@@ -27,15 +27,11 @@ export function App() {
 
   return (
     <main>
-      <Switch>
-        <h1>Item Store</h1>
-        <Route exact={true} path='/'>
-          <ItemsList items={items} />
-        </Route>
-        <Route exact={true} path='/add'>
-          <AddItem />
-        </Route>
-      </Switch>
+      <h1>Item Store</h1>
+      <Routes>
+        <Route path="/" element={<ItemsList items={items} />} />
+        <Route path="/add" element={<AddItem />} />
+      </Routes>
     </main>
   );
 }
