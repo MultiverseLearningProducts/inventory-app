@@ -8,10 +8,10 @@ export const Items = ({ item, setSingleItem }) => {
     setSingleItem(itemData);
   }
   return <>
-    <div onClick={handleClick}>
-      <h3>{item.title}</h3>
+    <div onClick={handleClick} className="all">
+      <h3 className="title">{item.title}</h3>
       <img src={item.image} alt={item.title} />
-      <h4>{item.price}</h4>
+      <h4 className="price">{item.price}</h4>
     </div>
   </>
 }

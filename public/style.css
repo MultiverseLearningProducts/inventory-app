@@ -1,5 +1,36 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  background-color: rgb(223, 223, 223);
+  padding: 15px;
+  background-color: rgba(127, 255, 223, 0);
 }
+
+h2 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+}
+
+h4 {
+  font-family: 'Times New Roman', Times, serif;
+  
+  color:black
+}
+
+img {
+  height: 250px;
+  width: 250px;
+}
+
+.all {
+  display: grid;
+  grid-template-columns:1fr 1fr;
+  border: 3px solid rgba(207, 185, 151, 0.212);
+  /* row-gap: 10px;  */
+  align-items: center;
+  width: 500px;
+}
+
+.title {
+  font-family: 'Times New Roman', Times, serif;
+}
+
