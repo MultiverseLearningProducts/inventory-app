@@ -18,13 +18,16 @@ export const Form = ({setIsAddingItem}) => {
     }
 
     return <>
+
     	<form onSubmit={handleSubmission} className="addItem">
 			<input type="text" placeholder='title' value={title} onChange={(ev)=>{setTitle(ev.target.value)}}/>
 			<input type="text" placeholder='description' value={description} onChange={(ev)=>{setDescription(ev.target.value)}}/>
 			<input type="text" placeholder='price' value={price} onChange={(ev)=>{setPrice(ev.target.value)}}/>
 			<input type="text" placeholder='imageUrl' value={image} onChange={(ev)=>{setImage(ev.target.value)}}/>
 			<input type="text" placeholder='category' value={category} onChange={(ev)=>{setCategory(ev.target.value)}}/>
+			<div className="formButton">
 			<button type="submit">Submit</button>
+			<button onClick={()=>{setIsAddingItem(false);}}>Cancel</button></div>
 		</form>
     </>
 }  

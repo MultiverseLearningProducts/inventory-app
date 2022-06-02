@@ -148,15 +148,26 @@ form input {
   margin: 50px;
 }
 
-button{
-  margin: 1px;
-  height: fit-content;
+
+form button{
+width: fit-content;
+margin: 1px;
+}
+.formButton{
+  display: flex;
+  flex-direction: row;
+  margin-top: 4px;
+}
+.itemButton {
+  margin-left: 1px;
 }
 #item {
-  width:370px
-
+  width:370px;
+margin:55px;
 }
-
+.submitButton{
+  margin-top: 4px;
+}
 }
 
 

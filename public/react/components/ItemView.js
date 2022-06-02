@@ -49,13 +49,13 @@ export const ItemView = ({ singleItem, setSingleItem }) => {
     <br></br>
 
         <h2>Update</h2>
-        <form onSubmit={handleSubmission}>
+        <form onSubmit={handleSubmission }>
             <input type="text" placeholder='title' value={title} onChange={(ev) => { setTitle(ev.target.value) }} />
             <input type="text" placeholder='description' value={description} onChange={(ev) => { setDescription(ev.target.value) }} />
             <input type="text" placeholder='price' value={price} onChange={(ev) => { setPrice(ev.target.value) }} />
             <input type="text" placeholder='imageUrl' value={image} onChange={(ev) => { setImage(ev.target.value) }} />
             <input type="text" placeholder='category' value={category} onChange={(ev) => { setCategory(ev.target.value) }} />
-            <button type="submit">Submit</button>
+            <button className='submitButton' type="submit">Submit</button>
         </form>
       
     </div>
