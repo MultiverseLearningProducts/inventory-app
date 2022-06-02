@@ -2,11 +2,7 @@
   margin: 0;
   box-sizing: border-box;
  /* padding: 15px;*/
- display: flex;
- justify-content: center;
- /*flex-wrap: wrap;
- flex-direction: column;*/
-  background-color: rgba(127, 255, 223, 0);
+  flex-wrap: wrap;
 }
 
 body{
@@ -25,36 +21,41 @@ h4 {
   
   color:black
 }
+#title {
+  border: 3px solid red;
+  box-shadow: 3px 2px 3px rgb(81, 26, 26);
+  text-shadow: 3px 2px 3px white
+  
 
-img {
-  height: 250px;
-  width: 250px;
+
 }
 
+img {
+  height: 200px;
+  width: 200px;
+}
+.header{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 50px;
+  margin-right: 10px;
+  width: 300px;
+}
 .all {
   border: 3px solid rgba(207, 185, 151, 0.212);
-  align-items: center;
-  width: 300px;
   background-color: white;
- /* display:grid;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  display: grid;*/
-  /*display: flex;
-  flex-wrap: wrap;
+  margin: 5px;
+  display: inline-flex;
   flex-direction: column;
-  justify-content: center;*/
-  display: grid;
- /*grid-template-columns: repeat(auto-fit, minmax(300px,1fr));*/
- /*padding-left: 500px;*/
-
-
-grid-template-columns: 1fr, 1fr, 1fr;
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: 400px;
+  padding: 5px;
 }
 
 .title {
   font-family: 'Times New Roman', Times, serif;
-  width: 300px;;
+  width: 200px;
 }
 
 
@@ -69,12 +70,28 @@ button:hover{
 }
 button{
   background-color: rgba(207, 185, 151, 0.212);
+  border-radius: 5px;
+  box-shadow: 3px 2px 3px grey;
+  height: 70%;
+  margin: 5px;
 }
-
+#allItems{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid red;
+  text-shadow: 5px 3px 5px white;
+  
+}
 
 #item {
   background-color: white;
-}
+  padding: 10px;
+  border-radius: 50px;
+  box-shadow: 3px 2px 3px rgb(74, 23, 23);
+  margin-top: 30px;
+  margin: 10em
+  }
 
 .singleItem{
   background-color: white;
@@ -83,7 +100,7 @@ button{
 
 }
 
-.singleItem h4, h2, h3, h1 {
+.singleItem h4, h2, p, h1 {
   text-align: center;
 }
 
@@ -97,8 +114,6 @@ button{
   display: flex;
   justify-content: center;
 
-
- 
 }
 
 form {
@@ -114,6 +129,45 @@ form button {
 form input {
   margin-top: 5px;
 }
+/* Form add item*/
+.addItem{
+  background-color: white;
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-top: 10px;
+  border-radius: 30px;
+  padding: 10px;
+  box-shadow: 3px 2px 3px red;
 
+}
+
+/* Media queries */
+@media (max-width:700px){
+
+.addItem{
+  margin: 50px;
+}
+
+
+form button{
+width: fit-content;
+margin: 1px;
+}
+.formButton{
+  display: flex;
+  flex-direction: row;
+  margin-top: 4px;
+}
+.itemButton {
+  margin-left: 1px;
+}
+#item {
+  width:370px;
+margin:55px;
+}
+.submitButton{
+  margin-top: 4px;
+}
+}
 
 

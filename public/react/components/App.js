@@ -27,7 +27,7 @@ export const App = () => {
 
 	return (
 		<main>	
-      <h1 className="webTitle">Store Warehouse</h1>
+      <h1 id="title">Store Warehouse</h1>
 			{isAddingItem? <Form setIsAddingItem={setIsAddingItem}/> :singleItem ? <ItemView singleItem={singleItem} setSingleItem={setSingleItem}/>:<ItemsList setIsAddingItem={setIsAddingItem} items={items} setSingleItem={setSingleItem}/>}
 		</main>
 	)
