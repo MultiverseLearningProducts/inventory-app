@@ -1,6 +1,7 @@
 const {Sequelize} = require('sequelize')
 const {sequelize} = require('../db')
 
+//create new properties
 const Items = sequelize.define("items", {
   title: Sequelize.STRING,
   description: Sequelize.STRING,

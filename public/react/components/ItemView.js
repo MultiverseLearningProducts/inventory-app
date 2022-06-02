@@ -28,18 +28,26 @@ export const ItemView = ({ singleItem, setSingleItem }) => {
     }
 
     return <>
+        <h3  id="allItems" onClick={()=>{setSingleItem(0)}}>All Items</h3>
+
 <div id="item"> 
+
     <div className="singleItem">
         <h1>{singleItem.title}</h1>
-        <h2>{singleItem.price}</h2>
+        <h2>${singleItem.price}</h2>
         <img src={singleItem.image} alt={singleItem.title} />
-        <h3>{singleItem.description}</h3>
+        <p>{singleItem.description}</p>
+        <br></br>
         <h4>{singleItem.category}</h4>  
+        <br></br>
+
     </div> 
     <div className="itemButton">
         <button onClick={() => { setSingleItem(0) }}>Back</button>
         <button onClick={handleClick}>Delete</button>
     </div>
+    <br></br>
+
         <h2>Update</h2>
         <form onSubmit={handleSubmission}>
             <input type="text" placeholder='title' value={title} onChange={(ev) => { setTitle(ev.target.value) }} />

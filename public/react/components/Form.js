@@ -18,7 +18,7 @@ export const Form = ({setIsAddingItem}) => {
     }
 
     return <>
-    	<form onSubmit={handleSubmission}>
+    	<form onSubmit={handleSubmission} className="addItem">
 			<input type="text" placeholder='title' value={title} onChange={(ev)=>{setTitle(ev.target.value)}}/>
 			<input type="text" placeholder='description' value={description} onChange={(ev)=>{setDescription(ev.target.value)}}/>
 			<input type="text" placeholder='price' value={price} onChange={(ev)=>{setPrice(ev.target.value)}}/>
