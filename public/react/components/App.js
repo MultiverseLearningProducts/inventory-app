@@ -4,7 +4,7 @@ import { SaucesList } from './SaucesList';
 // import and prepend the api url to any fetch calls
 import apiURL from '../api';
 
-export const App = () => {
+function App () {
 
 	const [sauces, setSauces] = useState([]);
 
@@ -24,10 +24,16 @@ export const App = () => {
 	}, []);
 
 	return (
-		<main>	
+		<div>	
       <h1>Sauce Store</h1>
 			<h2>All things 🔥</h2>
-			<SaucesList sauces={sauces} />
-		</main>
-	)
+			{sauces.map((sauces) => (
+				<p key={sauces.id}>{sauces.title}</p>
+			))}
+			
+		</div>
+	);
+
 }
+
+export default App;
