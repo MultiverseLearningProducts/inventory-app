@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { itemsList } from './itemsList';
+import { ItemsList } from './ItemsList';
 
 // import and prepend the api url to any fetch calls
 import apiURL from '../api';
 
-function App () {
+export const App = () => {
 
 	const [items, setitems] = useState([]);
 
@@ -24,16 +24,14 @@ function App () {
 	}, []);
 
 	return (
-		<div>	
-      <h1>Inventory List</h1>
+		<main>	
+      		<h1>Inventory List</h1>
 			<h2>View All 🔥</h2>
-			{items.map((items) => (
-				<p key={items.id}>{items.title}</p>
-			))}
+			<ItemsList items={items}/>
 			
-		</div>
+			
+		</main>
 	);
 
 }
 
-export default App;
