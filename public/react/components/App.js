@@ -24,12 +24,19 @@ export const App = () => {
 	}, []);
 
 	return (
-		<main>	
-      		<h1>Inventory List</h1>
-			<h2>View All 🔥</h2>
-			<ItemsList items={items}/>
+		<main>
+			<div className='inventory-header'>
+
+      			<h1>Inventory List</h1>
+				
+			</div>
+
+				{/* <h2>View All Inventory</h2> */}
 			
-			
+				
+
+				<ItemsList items={items}/>
+
 		</main>
 	);
 
