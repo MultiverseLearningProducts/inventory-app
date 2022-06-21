@@ -24,6 +24,9 @@
   align-items: center;
   justify-content: center;
   margin: 10px;
+  border-color: rgb(184, 179, 42);
+  background-color: azure;
+  border: 2em;
 
 }
 
@@ -44,5 +47,17 @@ img {
   text-overflow: ellipsis;
 }
 
-
-
+ #item-add {
+  flex-direction: row;
+  color: rgb(25, 25, 43);
+}
+#root {
+  background-color: darkslategray;
+}
+h1 {
+  text-decoration: solid;
+ 
+}
+button {
+  border-radius: 4em;
+}
