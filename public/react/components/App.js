@@ -7,7 +7,26 @@ import apiURL from '../api';
 export const App = () => {
 
 	const [items, setitems] = useState([]);
-
+	const [item, setitem] = useState({
+		title: '',
+		price: 0,
+		category: '',
+		description: '',
+		image: ''
+	  })
+	  async function addItem(item){
+		try {
+			await fetch(`${apiURL}/items`,  {
+			  	method: 'POST',
+			 	headers: {
+			   'Content-Type': 'application/json',
+			   },
+				body: JSON.stringify(item),
+		   	});
+		} catch (err) {
+			console.log("Oh no an error! ", err)
+		}
+	}
 	async function fetchitems(){
 		try {
 			const response = await fetch(`${apiURL}/items`);
@@ -27,7 +46,7 @@ export const App = () => {
 		<main>
 			<div className='inventory-header'>
 
-      			<h1>Inventory List</h1>
+      			<h1>Luxor</h1>
 				
 			</div>
 
@@ -35,7 +54,7 @@ export const App = () => {
 			
 				
 
-				<ItemsList items={items}/>
+				<ItemsList items={items} setitem={setitem} item={item} addItem={addItem}/>
 
 		</main>
 	);
