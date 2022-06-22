@@ -1,5 +1,6 @@
 import React from 'react';
 import apiURL from '../api';
+import { UpdateForm } from './UpdateForm';
 
 export const Item = (props) => {
 
@@ -15,6 +16,7 @@ export const Item = (props) => {
 			console.log("Oh no an error! ", err)
 		}
 	}
+
   return <>
   
 
@@ -26,6 +28,8 @@ export const Item = (props) => {
 
       <p className='item-description'>{props.item.description}</p>
       <button onClick={()=>deleteitem(props.item.id)}>delete item</button>
+      <button>LINK TO UPDATE ITEM FORM</button>
+      <UpdateForm setitem={props.setitem} setUpdatedItem={props.setUpdatedItem} item={props.item}  />
     </div>
  
   </>

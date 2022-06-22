@@ -1,6 +1,7 @@
 import React from 'react';
 import { Item } from './Item';
 import { ItemForm } from './ItemForm';
+import { UpdateForm } from './UpdateForm';
 
 export const ItemsList = ({items, setitem, item, addItem}) => {
 	return <div className='allItems'>
@@ -9,8 +10,8 @@ export const ItemsList = ({items, setitem, item, addItem}) => {
 		<ItemForm items={items} setitem={setitem} item={item} addItem={addItem}/>
 		
 		{
-			items.map((item, idx) => {
-				return <Item item={item} key={idx} />
+			items.map((item_, idx) => {
+				return <Item item={item_} key={idx} setitem={setitem} setUpdatedItem={item}/>
 			})
 		}
 
