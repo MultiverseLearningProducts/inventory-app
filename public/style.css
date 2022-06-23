@@ -1,5 +1,89 @@
-* {
+/* * {
   margin: 0;
   box-sizing: border-box;
   background-color: rgb(223, 223, 223);
+} */
+
+.inventory-header {
+  text-align: center;
+}
+
+.allItems{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.itemCard {
+  /* display: flex; */
+  /* flex-direction: row; */
+  min-height: 200px;
+  overflow: hidden;
+  max-height: 30%;
+  max-width: 30%;
+  border-style: groove;
+  border-width: 0.5;
+  text-align: center;
+  justify-content: center;
+  padding: 10px 10px;
+  margin: 10px;
+  border-color: rgb(184, 179, 42);
+  background-color: azure;
+  border: 2em;
+  }
+
+
+img {
+  height: 50%;
+  width: 50%;
+  align-self: center;
+  justify-content: center;
+}
+
+.item-image{
+  box-shadow: 5px 5px #000000;
+}
+
+.item-title {
+  color:black;
+  font-family: Georgia, serif;
+  padding-bottom: 5%;
+
+}
+
+.item-description {
+  justify-content: center;
+  text-overflow: ellipsis;
+
+}
+
+ #item-add {
+  flex-direction: row;
+  color: rgb(25, 25, 43);
+}
+
+#root {
+  background-color: darkslategray;
+}
+
+h1 {
+  text-decoration: solid;
+  margin: 0;
+}
+
+button {
+  border-radius: 4em;
+}
+
+body {
+  margin: 0;
+}
+
+form {
+  text-align: center;
+  font-size: 25px;
+}
+
+.form-header {
+  margin-bottom: 20px;
 }
