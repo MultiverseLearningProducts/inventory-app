@@ -36,6 +36,7 @@ export const App = () => {
 			const response = await fetch(`${apiURL}/items`);
 			const itemsData = await response.json();
 			
+			console.log(itemsData);
 			setitems(itemsData);
 		} catch (err) {
 			console.log("Oh no an error! ", err)
@@ -50,15 +51,14 @@ export const App = () => {
 		<main>
 			<div className='inventory-header'>
 
-      			<h1>Luxor</h1>
+      			<h1>Luxorzon</h1>
 				
 			</div>			
 
 				<ItemsList items={items} setitem={setitem} item={item} addItem={addItem}/>
 
 				<ItemForm items={items} setitem={setitem} item={item} addItem={addItem}/>
-				<button onClick={() => addItem(item)}>Add item </button>
-				
+
 		</main>
 	);
 
