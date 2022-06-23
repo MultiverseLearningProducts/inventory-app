@@ -5,8 +5,10 @@
 } */
 
 .inventory-header {
-  background-color: oldlace;
+  text-align: center;
+
 }
+
 
 .allItems{
   display: flex;
@@ -17,24 +19,35 @@
 .itemCard {
   /* display: flex; */
   /* flex-direction: row; */
+  min-height: 200px;
+  overflow: hidden;
   max-height: 30%;
   max-width: 30%;
   border-style: groove;
   border-width: 0.5;
-  align-items: center;
+  text-align: center;
   justify-content: center;
+  padding: 10px 10px;
   margin: 10px;
   border-color: rgb(184, 179, 42);
   background-color: azure;
   border: 2em;
+  }
 
-}
 
 img {
   height: 50%;
   width: 50%;
- 
+  align-self: center;
+  justify-content: center;
+  
+  
+  
 }
+.item-image{
+  box-shadow: 5px 5px #000000;
+}
+
 
 .item-title {
   color:black;
@@ -43,8 +56,12 @@ img {
 
 }
 
+
+
 .item-description {
+  justify-content: center;
   text-overflow: ellipsis;
+
 }
 
  #item-add {

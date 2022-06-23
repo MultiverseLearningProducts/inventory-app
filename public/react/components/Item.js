@@ -24,7 +24,9 @@ export const Item = (props) => {
 
       <h3 className='item-title'>{props.item.title}</h3>
 
-      <img src={props.item.image} alt={props.item.title} />
+      <div className='item-image'>
+        <img src={props.item.image} alt={props.item.title} />
+      </div>
 
       <p className='item-description'>{props.item.description}</p>
       <button onClick={()=>deleteitem(props.item.id)}>delete item</button>
