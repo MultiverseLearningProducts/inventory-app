@@ -6,9 +6,7 @@
 
 .inventory-header {
   text-align: center;
-
 }
-
 
 .allItems{
   display: flex;
@@ -40,14 +38,11 @@ img {
   width: 50%;
   align-self: center;
   justify-content: center;
-  
-  
-  
 }
+
 .item-image{
   box-shadow: 5px 5px #000000;
 }
-
 
 .item-title {
   color:black;
@@ -55,8 +50,6 @@ img {
   padding-bottom: 5%;
 
 }
-
-
 
 .item-description {
   justify-content: center;
@@ -68,13 +61,29 @@ img {
   flex-direction: row;
   color: rgb(25, 25, 43);
 }
+
 #root {
   background-color: darkslategray;
 }
+
 h1 {
   text-decoration: solid;
- 
+  margin: 0;
 }
+
 button {
   border-radius: 4em;
+}
+
+body {
+  margin: 0;
+}
+
+form {
+  text-align: center;
+  font-size: 25px;
+}
+
+.form-header {
+  margin-bottom: 20px;
 }
