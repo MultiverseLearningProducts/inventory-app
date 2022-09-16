@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 const {sequelize} = require("../db");
 
 const Item = sequelize.define("items", {
-    title: Sequelize.STRING,
+    name: Sequelize.STRING,
     description: Sequelize.STRING,
     price: Sequelize.NUMBER,
     category: Sequelize.STRING,
