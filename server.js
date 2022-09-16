@@ -1,10 +1,8 @@
 const { db } = require("./server/models");
 const app = require("./server/app");
-const itemsRouter = require("../routes/items");
+//const seed = require("./seed")
 
 const PORT = process.env.PORT || 3000;
-
-app.use("/items", itemsRouter);
 
 const init = async () => {
   try {
@@ -19,3 +17,4 @@ const init = async () => {
 };
 
 init();
+//seed();
