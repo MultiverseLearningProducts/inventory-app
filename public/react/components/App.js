@@ -6,6 +6,7 @@ import apiURL from "../api";
 
 export const App = () => {
   const [items, setItems] = useState([]);
+  const [itemInformation, setItemInformation] = useState('')
 
   async function fetchItems() {
     try {
@@ -18,15 +19,31 @@ export const App = () => {
     }
   }
 
+  async function fetchItem(id) {
+    try {
+      const response = await fetch(`${apiURL}/items/${id}`);
+      const itemData = await response.json();
+      
+      
+      setItemInformation(itemData);
+    } catch (err) {
+      console.log("Houston we have a problem! ", err);
+    }
+  }
+
   useEffect(() => {
     fetchItems();
   }, []);
 
+
   return (
     <main>
-      <h1>Item Inventory</h1>
+      {!itemInformation?
+      <>
+        <h1>Item Inventory</h1>
       <h2>All things 🔥</h2>
-      <ItemsList items={items} />
+      <ItemsList fetchItem={fetchItem} items={items} /></>:
+      <ItemInfo item={itemInformation}/>}
     </main>
   );
 };

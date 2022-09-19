@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-export const Item = (props) => {
+export const Item = ({item, fetchItem}) => {
   return (
     <>
-      <h3>{props.item.title}</h3>
+      <h3>{item.title}</h3>
+      <button onClick={() => fetchItem(id)}>More info</button>
       {/* <img src={props.item.image} alt={props.item.title} /> */}
     </>
   );
