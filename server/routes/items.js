@@ -12,4 +12,15 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+// POST / items
+
+router.post("/", async (req, res, next) => {
+  try {
+    const additem = await Item.create(req.body);
+    res.json(items);
+  } catch (error) {
+    next(error);
+  }
+})
+
 module.exports = router;
