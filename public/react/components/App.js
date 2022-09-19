@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { SaucesList} from './SaucesList';
 import { ItemsList} from './ItemsList';
+import { SingleViewItem } from './SingleViewItem';
 
 // import and prepend the api url to any fetch calls
+//
 import apiURL from '../api';
 
 export const App = () => {
 
 	const [sauces, setSauces] = useState([]);
 	const [items, setItems] = useState([]);
+	const [singleViewItem, setSingleViewItem] = useState(null);
 
 	async function fetchSauces(){
 		try {
@@ -32,21 +35,32 @@ export const App = () => {
 		}
 	}
 
-	useEffect(() => {
-		fetchSauces();
-	}, []);
+	async function fetchSingleItem(id){
+		try {
+		  const response = await fetch(`${apiURL}/items/${id}`);
+		  const item = await response.json();
+		  setSingleViewItem(item);
+		} catch (err) {
+		  console.log("Oh no an error! ", err);
+		}
+	  }
+
+	// useEffect(() => {
+	// 	fetchSauces();
+	// }, []);
 
 	useEffect(() => {
 		fetchItems();
-	})
+	}, []);
 
 	return (
 		<main>	
-      {/* <h1>Sauce Store</h1>
-			<h2>All things 🔥</h2> */}
-			{/* <SaucesList sauces={sauces} /> */}
-	  <h1>Inventory</h1>
-			<div><ItemsList items={items} /></div>
+	  <h1>Inventory App</h1>
+	  {singleViewItem ? (
+		<SingleViewItem props={singleViewItem} setSingleViewItem={setSingleViewItem} />
+	  ) : (
+			<div><ItemsList items={items} handleClick={fetchSingleItem}/></div>
+	  )}
 		</main>
 	)
 }
