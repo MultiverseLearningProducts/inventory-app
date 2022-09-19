@@ -1,9 +1,17 @@
 module.exports = {
-  sauces: [
-    {"name" : "Sriracha", "image" : "https://64.media.tumblr.com/12cd128183713bf928bda87a24f22487/tumblr_ne6jee85PM1tha1vgo1_250.gif"},
-    {"name" : "Franks", "image": "https://cdn.streamelements.com/uploads/1887a0da-3642-4795-b5f5-774d5b377e52.gif"},
-    {"name" : "Tobasco", "image": "https://64.media.tumblr.com/1564fcf74adc3fe6542c34b6a1f05de1/tumblr_na9lew0bNS1tha1vgo1_r1_250.gif"}
-  ],
+//   sauces: [
+//     {"name" : "Sriracha", "image" : "https://64.media.tumblr.com/12cd128183713bf928bda87a24f22487/tumblr_ne6jee85PM1tha1vgo1_250.gif"},
+//     {"name" : "Franks", "image": "https://cdn.streamelements.com/uploads/1887a0da-3642-4795-b5f5-774d5b377e52.gif"},
+//     {"name" : "Tobasco", "image": "https://64.media.tumblr.com/1564fcf74adc3fe6542c34b6a1f05de1/tumblr_na9lew0bNS1tha1vgo1_r1_250.gif"}
+//   ],
+
+//   shoes : [
+//       {"name" : "Air Force 1's","description" : "The basics", "Price" :10, "category" : " Sneakers ", "image" : "https://www.nike.com/air-force-1"},
+//       {"name" : "Yeezy Boost","description" : " Sheek and New ", "Price" :258.99, "category" : "Gym Shoes", "image" : "https://www.pacsun.com/adidas/yeezy-boost-350-v2-dazzling-blue-shoes-3391844.html?store=&country=US&currency=USD&OriginId=GOG&XCIDP=P:G_Shopping_PMAX_M_Shoes&gclid=Cj0KCQjwvZCZBhCiARIsAPXbajv7k0cweZuHWVGppvIDHyW9utM16MHS9M6GgylIPfv2o_UAoO6FJ5EaAlvZEALw_wcB&gclsrc=aw.ds"},
+//       {"name" : "Crocs","description" : "Kinda funny looking", "Price" :51.99, "category" : "Sandals", "image" : "https://www.google.com/aclk?sa=l&ai=DChcSEwjD_YOikZr6AhWUIK0GHeHoCqIYABALGgJwdg&sig=AOD64_2GeSj9sed6vnqc7M3Bq2HhSrG7MQ&adurl&ctype=5&ved=2ahUKEwiMkvWhkZr6AhWBmVMKHXSvCkwQvhd6BQgBEJUB"}
+
+//   ],
+
   items: [
     {
        "title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
