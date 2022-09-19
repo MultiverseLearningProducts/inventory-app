@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const { Item } = require("../models/");
 
+router.use(express.json());
+router.use(express.urlencoded({ extended:true}));
+
 // GET /items
 router.get("/", async (req, res, next) => {
   try {
@@ -12,21 +15,15 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.get("/:id", async (req, res, next) => {
-  try {
-    const item = await Item.findOne({
-      where: {
-        id: req.params.id
-      }
-    });
-    if (item === null) {
+// POST / items
 
-    } else {
-      res.send(item);
-    }
+router.post("/", async (req, res, next) => {
+  try {
+    const addItem = await Item.create(req.body); 
+    res.json(await Item.findAll());
   } catch (error) {
     next(error);
   }
-});
+})
 
 module.exports = router;
