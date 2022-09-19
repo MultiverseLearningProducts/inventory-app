@@ -21,5 +21,21 @@ router.get("/:id", async (req, res, next) => {
     next(error);
   }
 });
-
+router.post('/', async (req, res) => {
+	try{
+     await Item.create(req.body)
+      let allItems= await Item.findAll()
+	  res.json(allItems)
+  }catch (error) {
+    next(error);
+  }
+})
+router.delete('/:id', async (req, res) => {
+	try{
+  await Item.destroy({where: {id : req.params.id}})
+	res.send("deleted!!")
+  }catch (error) {
+    next(error);
+  }
+})
 module.exports = router;
