@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const { Item } = require("../models/");
 
+router.use(express.json());
+router.use(express.urlencoded({ extended:true}));
+
 // GET /items
 router.get("/", async (req, res, next) => {
   try {
@@ -16,8 +19,8 @@ router.get("/", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
-    const additem = await Item.create(req.body);
-    res.json(items);
+    const addItem = await Item.create(req.body); 
+    res.json(await Item.findAll());
   } catch (error) {
     next(error);
   }
