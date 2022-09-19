@@ -1,0 +1,10 @@
+import React from 'react';
+
+export const Item = (props) => {
+
+    return <>
+      <h3>{props.item.title} ${props.item.price}</h3>
+      <p>Click on image for more details</p>
+      <img src={props.item.image} alt={props.item.name} onClick= {() => props.handleClick()}/>
+    </>
+  } 
