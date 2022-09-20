@@ -68,8 +68,6 @@ export const App = () => {
 		<AddItem setIsAddingItem={setIsAddingItem}/>
 	  ) : (
 			<div><ItemsList items={items} handleClick={fetchSingleItem} setIsAddingItem={setIsAddingItem}/></div>
-	  ) : (
-			<div><ItemsList items={items} handleClick={fetchSingleItem}/></div>
 	  )}
 		</main>
 	)
