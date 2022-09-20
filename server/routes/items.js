@@ -21,32 +21,33 @@ router.get("/:id", async (req, res, next) => {
     next(error);
   }
 });
-router.post('/', async (req, res) => {
-	try{
-     await Item.create(req.body)
-      let allItems= await Item.findAll()
-	  res.json(allItems)
-  }catch (error) {
+router.post("/", async (req, res) => {
+  try {
+    await Item.create(req.body);
+    let allItems = await Item.findAll();
+    res.json(allItems);
+  } catch (error) {
     next(error);
   }
-})
-router.delete('/:id', async (req, res) => {
-	try{
-  await Item.destroy({where: {id : req.params.id}})
-	res.send("deleted!!")
-  }catch (error) {
+});
+router.delete("/:id", async (req, res) => {
+  try {
+    await Item.destroy({ where: { id: req.params.id } });
+    const allItems = await Item.findAll();
+    res.json(allItems);
+  } catch (error) {
     next(error);
   }
-})
-router.put('/:id', async (req, res) => {
-  try{
-   await Item.update(req.body, {
-   where: { id : req.params.id}
- })
- let allItems= await Item.findAll()
- res.json(allItems)
-}catch (error) {
- next(error);
-}
-})
+});
+router.put("/:id", async (req, res) => {
+  try {
+    await Item.update(req.body, {
+      where: { id: req.params.id },
+    });
+    let allItems = await Item.findAll();
+    res.json(allItems);
+  } catch (error) {
+    next(error);
+  }
+});
 module.exports = router;
