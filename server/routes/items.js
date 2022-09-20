@@ -49,16 +49,16 @@ router.delete('/:id', async (req, res) => {
   }catch (error) {
     next(error);
   }
-})
-router.put('/:id', async (req, res) => {
-  try{
-   await Item.update(req.body, {
-   where: { id : req.params.id}
- })
- let allItems= await Item.findAll()
- res.json(allItems)
-}catch (error) {
- next(error);
-}
-})
+});
+router.put("/:id", async (req, res) => {
+  try {
+    await Item.update(req.body, {
+      where: { id: req.params.id },
+    });
+    let allItems = await Item.findAll();
+    res.json(allItems);
+  } catch (error) {
+    next(error);
+  }
+});
 module.exports = router;
