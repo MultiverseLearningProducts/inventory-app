@@ -11,6 +11,8 @@ export const SingleViewItem = ({props,setSingleViewItem}) => {
       <p>Description {props.description}</p>
       <p>{props.category}</p>
       <button onClick={() => setSingleViewItem(null)}>Back to Main Page</button>
+      <button onClick={handleDelete}>Delete Item</button>
+
     </>
     );
 };
