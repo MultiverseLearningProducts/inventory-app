@@ -4,6 +4,7 @@ import { ItemInfo } from "./ItemInfo";
 
 // import and prepend the api url to any fetch calls
 import apiURL from "../api";
+import Form from "./Form";
 
 export const App = () => {
   const [items, setItems] = useState([]);
