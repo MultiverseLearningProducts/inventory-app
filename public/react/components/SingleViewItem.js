@@ -1,7 +1,7 @@
 import React from "react";
 import apiURL from "../api";
 
-export const SingleViewItem = ({props, setSingleViewItem}) => {
+export const SingleViewItem = ({props,setSingleViewItem}) => {
     
     return (
     <>
