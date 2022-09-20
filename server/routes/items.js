@@ -17,9 +17,13 @@ router.use(express.json());
 router.use(express.urlencoded({ extended:true}));
 
 // GET /items
-router.get("/", async (req, res, next) => {
+router.get("/:id", async (req, res, next) => {
   try {
-    const items = await Item.findAll();
+    const items = await Item.findOne({
+      where: {
+        id: req.params.id
+      }
+    });
     res.json(items);
   } catch (error) {
     next(error);
