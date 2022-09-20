@@ -18,6 +18,7 @@ export const ItemInfo = ({ item, setItemInformation, fetchItems }) => {
       <p>{item.description}</p>
       <p>{item.category}</p>
       <img src={item.image}></img>
+      <button onClick={() => setItemInformation("")}>Back</button>
       <button onClick={deleteSingleItem}>Remove Item</button>
     </main>
   );
