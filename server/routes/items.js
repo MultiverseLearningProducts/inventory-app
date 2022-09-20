@@ -56,7 +56,17 @@ router.delete("/:id", async (req, res) => {
     next(error);
   }
 });
-router.put("/:id", async (req, res) => {
+router.put("/:id",[
+  check("title").trim().notEmpty(),
+  check("price").trim().notEmpty(),
+  check("description").trim().notEmpty(),
+  check("category").trim().notEmpty(),
+  check("image").trim().notEmpty(),
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    res.json({ error: errors.array() });
+  } else{
   try {
     await Item.update(req.body, {
       where: { id: req.params.id },
@@ -66,5 +76,7 @@ router.put("/:id", async (req, res) => {
   } catch (error) {
     next(error);
   }
+}
 });
+
 module.exports = router;
