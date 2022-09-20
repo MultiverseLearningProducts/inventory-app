@@ -1,0 +1,10 @@
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    height: 300px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    padding: 20px;
+}
