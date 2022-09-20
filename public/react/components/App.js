@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { ItemsList } from "./ItemsList";
 import { ItemInfo } from "./ItemInfo";
+import Form from "./Form";
 
 // import and prepend the api url to any fetch calls
 import apiURL from "../api";
-import Form from "./Form";
 
 export const App = () => {
   const [items, setItems] = useState([]);
   const [itemInformation, setItemInformation] = useState("");
+  const [showForm, setShowForm] = useState(false);
 
   async function fetchItems() {
     try {
@@ -38,22 +39,38 @@ export const App = () => {
 
   return (
     <main>
-      {
-        !itemInformation ? (
-          <>
-            <h1>Item Inventory</h1>
-            <h2>All things 🔥</h2>
-            <ItemsList fetchItem={fetchItem} items={items} />
-          </>
-        ) : (
-          <ItemInfo
-            fetchItems={fetchItems}
-            setItemInformation={setItemInformation}
-            item={itemInformation}
-          />
-        )
-        // <h1>Hello World </h1>
-      }
+      {!showForm ? (
+        <>
+          {
+            !itemInformation ? (
+              <>
+                <h1>Item Inventory</h1>
+                <h2>All things 🔥</h2>
+                <ItemsList fetchItem={fetchItem} items={items} />
+                <div>
+                  <button onClick={() => setShowForm(true)}>
+                    Add a new item
+                  </button>
+                </div>
+              </>
+            ) : (
+              <ItemInfo
+                fetchItems={fetchItems}
+                setItemInformation={setItemInformation}
+                item={itemInformation}
+              />
+            )
+
+            // <h1>Hello World </h1>
+          }
+        </>
+      ) : (
+        <Form
+          fetchItems={fetchItems}
+          setShowForm={setShowForm}
+          apiURL={apiURL}
+        />
+      )}
     </main>
   );
 };
