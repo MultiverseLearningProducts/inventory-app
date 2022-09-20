@@ -65,35 +65,7 @@ export const Form1 = () => {
       </Button>
     </Form>
 		
-        
-        {/* <form>
-            <label>
-                Title:
-                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Item Title'/>
-            </label>
-
-            <label>
-                Description:
-                <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} placeholder='Description'/>
-            </label>
-
-            <label>
-                Price:
-                <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} placeholder=' Price'/>
-            </label>
-
-            <label>
-                Category:
-                <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} placeholder='Category'/>
-            </label>
-            <label>
-                Image: <input type="text" value={image} onChange={(e) => setImage(e.target.value)} placeholder='Image'/>
-             </label>
-
-          
-
-                         <button type='submit' onClick={handleSubmit}>Submit</button>
-        </form>    */}
+       
 		
 	</>)
 } 

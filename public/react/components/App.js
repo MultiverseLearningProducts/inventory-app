@@ -4,9 +4,9 @@ import { ItemDetails} from './ItemDetails';
 import { Form1 } from './Form';
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from 'react-bootstrap/Card';
+
 import Button from 'react-bootstrap/Button';
-import ListGroup from 'react-bootstrap/ListGroup';
+
 
 
 // import and prepend the api url to any fetch calls
