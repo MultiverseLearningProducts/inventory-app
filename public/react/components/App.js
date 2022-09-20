@@ -15,9 +15,8 @@ export const App = () => {
 	const [sauces, setSauces] = useState([]);
 	const [items, setItems] = useState([]);
 	const [singleViewItem, setSingleViewItem] = useState(null);
-
 	const [isAddingItem, setIsAddingItem] = useState(false);
-
+	const [isDeleted, setIsDeleted] = useState(false);
 
 	async function fetchSauces(){
 		try {
@@ -63,7 +62,7 @@ export const App = () => {
 		<main>	
 	  <h1>Inventory App</h1>
 	  {singleViewItem ? (
-		<SingleViewItem props={singleViewItem} setSingleViewItem={setSingleViewItem} />
+		<SingleViewItem props={singleViewItem} setSingleViewItem={setSingleViewItem} isDeleted={isDeleted} setIsDeleted={setIsDeleted}/>
 	  ) : isAddingItem ? (
 		<AddItem setIsAddingItem={setIsAddingItem}/>
 	  ) : (

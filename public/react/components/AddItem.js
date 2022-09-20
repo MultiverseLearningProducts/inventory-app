@@ -9,25 +9,6 @@ const [description, setDescription] = useState('');
 const [category, setCategory] = useState('');
 const [image, setImage] = useState('');   
 
-
-// const handleSubmit = (ev) => {
-//     const url = `${apiURL}/items`
-//     const options = {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(
-//             {title,price,description,category,itemImage}
-//         )
-//     }
-//     fetch(url,options)
-//     .then(response => response.json())
-//     .then(data => console.log(data))
-//     setIsAddingItem(false);
-//     props.item({});
-// }
-
 async function handleSubmit(ev) {
     //event.preventDefault();
     const response = await fetch(`${apiURL}/items/`, {
