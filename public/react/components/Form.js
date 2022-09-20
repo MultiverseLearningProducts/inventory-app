@@ -3,18 +3,27 @@ import React from "react";
 import { useState } from "react";
 import "./style.css";
 
-const Form = () => {
+const Form = ({ setShowForm, apiURL, fetchItems }) => {
   const [title, setTitle] = useState(""); // useState hook
   const [category, setCategory] = useState("");
-  const [price, setPrice] = useState();
+  const [price, setPrice] = useState("");
+  const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
 
-  function submitHandler(e) {
+  async function submitHandler(e) {
     e.preventDefault();
-    console.log("Title: " + title);
-    console.log("Category: " + category);
-    console.log("Price: " + price);
-    console.log("Description: " + description);
+    const itemObj = { title, category, price, description, image };
+
+    const res = await fetch(`${apiURL}/items`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(itemObj),
+    });
+    const data = await res.json();
+    fetchItems();
+    setShowForm(false);
   }
 
   return (
@@ -49,19 +58,26 @@ const Form = () => {
         />
       </section>
       <section>
-        <label>Description:</label>
-        <textarea
-          row="5"
-          cols="4"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          placeholder="Enter the price"
+        <label>Image:</label>
+        <input
+          type="text"
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
+          placeholder="Enter the Image"
         />
       </section>
       <section>
+        <label>Description:</label>
+        <input
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          placeholder="Enter a description"
+        />
+      </section>
+      {/* <section>
         <label>Select any image:</label>
         <input type="file" />
-      </section>
+      </section> */}
       <input type="submit" value="Submit" onClick={submitHandler} />
     </form>
   );

@@ -56,27 +56,31 @@ router.delete("/:id", async (req, res) => {
     next(error);
   }
 });
-router.put("/:id",[
-  check("title").trim().notEmpty(),
-  check("price").trim().notEmpty(),
-  check("description").trim().notEmpty(),
-  check("category").trim().notEmpty(),
-  check("image").trim().notEmpty(),
-], async (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    res.json({ error: errors.array() });
-  } else{
-  try {
-    await Item.update(req.body, {
-      where: { id: req.params.id },
-    });
-    let allItems = await Item.findAll();
-    res.json(allItems);
-  } catch (error) {
-    next(error);
+router.put(
+  "/:id",
+  [
+    check("title").trim().notEmpty(),
+    check("price").trim().notEmpty(),
+    check("description").trim().notEmpty(),
+    check("category").trim().notEmpty(),
+    check("image").trim().notEmpty(),
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      res.json({ error: errors.array() });
+    } else {
+      try {
+        await Item.update(req.body, {
+          where: { id: req.params.id },
+        });
+        let allItems = await Item.findAll();
+        res.json(allItems);
+      } catch (error) {
+        next(error);
+      }
+    }
   }
-}
-});
+);
 
 module.exports = router;
