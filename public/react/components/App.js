@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { ItemsList } from "./ItemsList";
-import { ItemInfo } from "./ItemInfo"
+import { ItemInfo } from "./ItemInfo";
 
 // import and prepend the api url to any fetch calls
 import apiURL from "../api";
 
 export const App = () => {
   const [items, setItems] = useState([]);
-  const [itemInformation, setItemInformation] = useState('')
+  const [itemInformation, setItemInformation] = useState("");
 
   async function fetchItems() {
     try {
@@ -24,8 +24,7 @@ export const App = () => {
     try {
       const response = await fetch(`${apiURL}/items/${id}`);
       const itemData = await response.json();
-      
-      
+
       setItemInformation(itemData);
     } catch (err) {
       console.log("Houston we have a problem! ", err);
@@ -36,17 +35,23 @@ export const App = () => {
     fetchItems();
   }, []);
 
-
   return (
     <main>
-      {!itemInformation ?
-      <>
-        <h1>Item Inventory</h1>
-        <h2>All things 🔥</h2>
-        <ItemsList fetchItem={fetchItem} items={items} />
-      </>:
-      <ItemInfo item={itemInformation}/>
-      // <h1>Hello World </h1>
+      {
+        !itemInformation ? (
+          <>
+            <h1>Item Inventory</h1>
+            <h2>All things 🔥</h2>
+            <ItemsList fetchItem={fetchItem} items={items} />
+          </>
+        ) : (
+          <ItemInfo
+            fetchItems={fetchItems}
+            setItemInformation={setItemInformation}
+            item={itemInformation}
+          />
+        )
+        // <h1>Hello World </h1>
       }
     </main>
   );
