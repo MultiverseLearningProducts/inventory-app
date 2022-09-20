@@ -12,10 +12,6 @@ router.get("/", async (req, res, next) => {
       next(error);
     }
   });
-  
-  module.exports = router;
-
-const { Item } = require("../models/");
 
 router.use(express.json());
 router.use(express.urlencoded({ extended:true}));
