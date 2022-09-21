@@ -2,8 +2,19 @@
 import React from "react";
 import { useState } from "react";
 import "./style.css";
-const Form = ({ submitHandler, title, setTitle, category, setCategory, image, setImage, price, setPrice, description, setDescription }) => {
-
+const Form = ({
+  submitHandler,
+  title,
+  setTitle,
+  category,
+  setCategory,
+  image,
+  setImage,
+  price,
+  setPrice,
+  description,
+  setDescription,
+}) => {
   return (
     <section className="color">
     <form>
