@@ -28,3 +28,23 @@ section > * {
   section h1,h2{
     text-align: center;
   }
+  .items-card button {
+    
+    left: 50%;}
+
+    @media only screen and (max-width:786px) {
+      header{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        
+    
+      }
+      h1{
+        margin-bottom: 20px;
+      }
+      .items-card{
+        width: 100%;
+      }
+      
+    }

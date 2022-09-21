@@ -74,7 +74,7 @@ export const App = () => {
                 <ItemsList fetchItem={fetchItem} items={items} />
                 </article>
                 <div>
-                  <button onClick={() => setShowForm(true)}>
+                  <button type="button" class="btn btn-danger" onClick={() => setShowForm(true)}>
                     Add a new item
                   </button>
                 </div>
