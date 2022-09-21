@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ItemsList } from "./ItemsList";
 import { ItemInfo } from "./ItemInfo";
 import Form from "./Form";
+import "./all-items.css";
 
 // import and prepend the api url to any fetch calls
 import apiURL from "../api";
@@ -66,14 +67,18 @@ export const App = () => {
           {
             !itemInformation ? (
               <>
+              <section>
                 <h1>Item Inventory</h1>
                 <h2>All things 🔥</h2>
+                <article className="list-container">
                 <ItemsList fetchItem={fetchItem} items={items} />
+                </article>
                 <div>
-                  <button onClick={() => setShowForm(true)}>
+                  <button type="button" class="btn btn-danger" onClick={() => setShowForm(true)}>
                     Add a new item
                   </button>
                 </div>
+                </section>
               </>
             ) : (
               <ItemInfo
