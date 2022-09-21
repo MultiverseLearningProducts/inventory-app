@@ -5,7 +5,7 @@ export const ItemsList = ({ fetchItem, items }) => {
   return (
     <>
       {items.map((item, idx) => {
-        return <Item fetchItem={fetchItem} item={item} key={idx} />;
+        return <Item  fetchItem={fetchItem} item={item} key={idx} />;
       })}
     </>
   );
