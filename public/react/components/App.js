@@ -16,7 +16,6 @@ export const App = () => {
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
 
-
   async function submitHandler(e) {
     e.preventDefault();
     const itemObj = { title, category, price, description, image };
