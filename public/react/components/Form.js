@@ -2,29 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import "./style.css";
-
-const Form = ({ setShowForm, apiURL, fetchItems }) => {
-  const [title, setTitle] = useState(""); // useState hook
-  const [category, setCategory] = useState("");
-  const [price, setPrice] = useState("");
-  const [image, setImage] = useState("");
-  const [description, setDescription] = useState("");
-
-  async function submitHandler(e) {
-    e.preventDefault();
-    const itemObj = { title, category, price, description, image };
-
-    const res = await fetch(`${apiURL}/items`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(itemObj),
-    });
-    const data = await res.json();
-    fetchItems();
-    setShowForm(false);
-  }
+const Form = ({ submitHandler, title, setTitle, category, setCategory, image, setImage, price, setPrice, description, setDescription }) => {
 
   return (
     <form>
