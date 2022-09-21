@@ -10,6 +10,28 @@ export const App = () => {
   const [items, setItems] = useState([]);
   const [itemInformation, setItemInformation] = useState("");
   const [showForm, setShowForm] = useState(false);
+  const [title, setTitle] = useState(""); // useState hook
+  const [category, setCategory] = useState("");
+  const [price, setPrice] = useState("");
+  const [image, setImage] = useState("");
+  const [description, setDescription] = useState("");
+
+
+  async function submitHandler(e) {
+    e.preventDefault();
+    const itemObj = { title, category, price, description, image };
+
+    const res = await fetch(`${apiURL}/items`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(itemObj),
+    });
+    const data = await res.json();
+    fetchItems();
+    setShowForm(false);
+  }
 
   async function fetchItems() {
     try {
@@ -55,6 +77,7 @@ export const App = () => {
               </>
             ) : (
               <ItemInfo
+                fetchItem={fetchItem}
                 fetchItems={fetchItems}
                 setItemInformation={setItemInformation}
                 item={itemInformation}
@@ -66,9 +89,20 @@ export const App = () => {
         </>
       ) : (
         <Form
+          submitHandler={submitHandler}
           fetchItems={fetchItems}
           setShowForm={setShowForm}
           apiURL={apiURL}
+          title={title}
+          setTitle={setTitle}
+          category={category}
+          setCategory={setCategory}
+          price={price}
+          setPrice={setPrice}
+          image={image}
+          setImage={setImage}
+          description={description}
+          setDescription={setDescription}
         />
       )}
     </main>
