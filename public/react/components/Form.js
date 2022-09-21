@@ -5,11 +5,14 @@ import "./style.css";
 const Form = ({ submitHandler, title, setTitle, category, setCategory, image, setImage, price, setPrice, description, setDescription }) => {
 
   return (
+    <section className="color">
     <form>
-      <section>
-        <label>Title:</label>
+      <section class="form-group">
+        <label for="exampleFormControlInput1"><strong>Title:</strong></label>
         <input
           type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
           value={title}
           onChange={(e) => {
             setTitle(e.target.value);
@@ -17,36 +20,44 @@ const Form = ({ submitHandler, title, setTitle, category, setCategory, image, se
           placeholder="Enter the text"
         />
       </section>
-      <section>
-        <label>Category:</label>
+      <section class="form-group">
+        <label for="exampleFormControlInput1"><strong>Category:</strong></label>
         <input
           type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
           placeholder="Enter the category"
         />
       </section>
-      <section>
-        <label>Price:</label>
+      <section class="form-group">
+        <label for="exampleFormControlInput1"><strong>Price:</strong></label>
         <input
           type="number"
+          class="form-control"
+          id="exampleFormControlInput1"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
           placeholder="Enter the price"
         />
       </section>
-      <section>
-        <label>Image:</label>
+      <section class="form-group">
+        <label for="exampleFormControlInput1"><strong>Image:</strong> </label>
         <input
           type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
           value={image}
           onChange={(e) => setImage(e.target.value)}
           placeholder="Enter the Image"
         />
       </section>
-      <section>
-        <label>Description:</label>
+      <section class="form-group">
+        <label for="exampleFormControlInput1"><strong>Description:</strong> </label>
         <input
+          class="form-control"
+          id="exampleFormControlInput1"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Enter a description"
@@ -56,8 +67,9 @@ const Form = ({ submitHandler, title, setTitle, category, setCategory, image, se
         <label>Select any image:</label>
         <input type="file" />
       </section> */}
-      <input type="submit" value="Submit" onClick={submitHandler} />
+      <input type="submit" value="Submit" class="btn btn-primary" onClick={submitHandler} />
     </form>
+    </section>
   );
 };
 
