@@ -12,7 +12,7 @@ export const PageComp = ({items,setItem}) => {
     const data = await response.json();
      setItem({});
     }
-
+;
 
 	
 	(items ? console.log(items) : null);
