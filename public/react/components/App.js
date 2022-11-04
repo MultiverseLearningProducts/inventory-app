@@ -4,20 +4,17 @@ import { ItemsList } from "./ItemsList";
 
 // import and prepend the api url to any fetch calls
 import apiURL from "../api";
-import e from "express";
 
 export const App = () => {
   const [sauces, setSauces] = useState([]);
   const [items, setItems] = useState([]);
-  const [individualItem, setIndividualItem] = useState(false)
-  const [addItems, setAddingItems] =useState(false)
-  const [title,setTitle] = useState('');
-  const [description,setDescription] = useState('');
-  const [price,setPrice] = useState(0);
-  const [category,setCategory] = useState('');
-  const [image,setImage] = useState('');
-
-
+  const [individualItem, setIndividualItem] = useState(false);
+  const [addItems, setAddingItems] = useState(false);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState(0);
+  const [category, setCategory] = useState("");
+  const [image, setImage] = useState("");
 
   async function fetchSauces() {
     try {
@@ -40,41 +37,39 @@ export const App = () => {
     }
   }
 
-  
-  // const handleClick = async (id) => {
-  //   const res = await fetch(`${apiURL}/items/${id}`)
-  //   const data = await res.json()
-  //   setIndividualItem(data)
-  // }
+  const handleClick = async (id) => {
+    const res = await fetch(`${apiURL}/items/${id}`);
+    const data = await res.json();
+    setIndividualItem(data);
+  };
 
-  // const formClick = () => {
-  //   setAddingItems(true)
-  // }
+  const formClick = () => {
+    setAddingItems(true);
+  };
 
-  // const newItem = {
-  //   title: title,
-  //   description: description,
-  //   price: price,
-  //   category: category,
-  //   image: image
-  // }
+  const newItem = {
+    title: title,
+    description: description,
+    price: price,
+    category: category,
+    image: image,
+  };
 
-  // const handleSubmit = () => {
-  //   postRequest()
-  //   setAddingItems(false)
-  // }
+  const handleSubmit = () => {
+    postRequest();
+    setAddingItems(false);
+  };
 
-  // const postRequest = async () => {
-  //   const res = await fetch(`${apiURL}/items`, {
-  //     method: "POST",
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(newItem)
-  //   })
-  //   const data = await res.json()
-  // }
-
+  const postRequest = async () => {
+    const res = await fetch(`${apiURL}/items`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newItem),
+    });
+    const data = await res.json();
+  };
 
   useEffect(() => {
     fetchSauces();
@@ -85,55 +80,73 @@ export const App = () => {
     <main>
       <h1>Sauce Store</h1>
       <h2>All things 🔥</h2>
-      {individualItem ? 
-      <> <h3>{individualItem.title}</h3>
-      <img src={individualItem.image}></img>
-      <p>{individualItem.description}</p>
-      <p>{individualItem.price}</p>
-      <p>{individualItem.category}</p>
-      </> : addItems ? <> <form>
-        <input className='inputs'
-				type = 'text'
-				placeholder= 'Title'
-				aria-label='title'
-				onChange={(e) =>setTitle(e.target.value)}
-				value = {title}
-				/>
-        <input className='inputs'
-				type = 'text'
-				placeholder= 'Description'
-				aria-label='description'
-				onChange={(e) =>setDescription(e.target.value)}
-				value = {description}
-				/>
-        <input className='inputs'
-				type = 'text'
-				placeholder= 'Price'
-				aria-label='price'
-				onChange={(e) =>setPrice(e.target.value)}
-				value = {price}
-				/>
-        <input className='inputs'
-				type = 'text'
-				placeholder= 'Category'
-				aria-label='category'
-				onChange={(e) =>setCategory(e.target.value)}
-				value = {category}
-				/>
-        <input className='inputs'
-				type = 'text'
-				placeholder= 'Image'
-				aria-label='image'
-				onChange={(e) =>setImage(e.target.value)}
-				value = {image}
-				/>
-        <button className = 'buttonSubmit'  type= 'submit'>Submit</button>
-        
-        </form> </> : <>
-        <button onClick={() => formClick()}>Add Item</button>
-        <ItemsList handleClick ={handleClick} items={items} individualItem={individualItem} setIndividualItem={setIndividualItem}/>
-        </>}
-      
+      {individualItem ? (
+        <>
+          <h3>{individualItem.title}</h3>
+          <img src={individualItem.image}></img>
+          <p>{individualItem.description}</p>
+          <p>{individualItem.price}</p>
+          <p>{individualItem.category}</p>
+        </>
+      ) : addItems ? (
+        <>
+          <form onSubmit={handleSubmit}>
+            <input
+              className="inputs"
+              type="text"
+              placeholder="Title"
+              aria-label="title"
+              onChange={(e) => setTitle(e.target.value)}
+              value={title}
+            />
+            <input
+              className="inputs"
+              type="text"
+              placeholder="Description"
+              aria-label="description"
+              onChange={(e) => setDescription(e.target.value)}
+              value={description}
+            />
+            <input
+              className="inputs"
+              type="text"
+              placeholder="Price"
+              aria-label="price"
+              onChange={(e) => setPrice(e.target.value)}
+              value={price}
+            />
+            <input
+              className="inputs"
+              type="text"
+              placeholder="Category"
+              aria-label="category"
+              onChange={(e) => setCategory(e.target.value)}
+              value={category}
+            />
+            <input
+              className="inputs"
+              type="text"
+              placeholder="Image"
+              aria-label="image"
+              onChange={(e) => setImage(e.target.value)}
+              value={image}
+            />
+            <button className="buttonSubmit" type="submit">
+              Submit
+            </button>
+          </form>
+        </>
+      ) : (
+        <>
+          <button onClick={() => formClick()}>Add Item</button>
+          <ItemsList
+            handleClick={handleClick}
+            items={items}
+            individualItem={individualItem}
+            setIndividualItem={setIndividualItem}
+          />
+        </>
+      )}
     </main>
   );
 };
