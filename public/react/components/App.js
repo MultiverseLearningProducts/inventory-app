@@ -27,7 +27,10 @@ export const App = () => {
 		<main>	
       <h1>Item Store</h1>
 			<h2>All things 🔥</h2>
-			<ItemsList items={items} />
+			<ItemsList items={items}
+			setItems = {setItems} />
 		</main>
+
+		
 	)
 }

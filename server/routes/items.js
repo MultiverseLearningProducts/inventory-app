@@ -8,4 +8,16 @@ router.get('/', async (req,res) => {
     res.json(items)
 })
 
+
+//find individual item
+router.get('/:id', async (req, res) => {
+    const item = await Item.findByPk(req.params.id)
+    res.json(item)
+})
+
+
+
+
+
+//EXPORTS
 module.exports = router;
