@@ -12,5 +12,13 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.get("/:itemId", async (req, res, next) => {
+  try {
+    const items = await Item.findByPk(req.params.itemId);
+    res.send(items);
+  } catch (error) {
+    next(error);
+  }
+});
 module.exports = router;
 
