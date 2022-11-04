@@ -1,6 +1,7 @@
 const {Item} = require('./index');
-const {sequelize} = require('../db'); //may be called something else
+const {sequelize} = require('../db');
 const {items} = require('../seedData');
+import 'regenerator-runtime/runtime';
 
 
 describe('Item', () => {
@@ -9,11 +10,11 @@ describe('Item', () => {
         await sequelize.sync({force: true});
     })
 
-    test("Create new item", async () => {
-        const backpack = await Item.create(items[0])
+    test("Successfully create new Item", async () => {
+        const backpack = await Item.create(items[0]);
 
         expect(backpack.price).toEqual(109.95);
-        // expect(backpack.description).toBe("board description");
-        // expect(backpack.rating).toBe(5);
+        expect(backpack.category).toBe("men's clothing");
+        expect(backpack.image).toBe("https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg");
     })
 })
