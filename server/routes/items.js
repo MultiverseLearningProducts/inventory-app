@@ -36,4 +36,18 @@ router.post('/' ,[check("title").notEmpty(), check("price").notEmpty(), check("d
         res.send(itemToAdd);
     }
 })
+//DELETE SINGLE ITEM
+router.delete('/:id', async (req, res, next) =>{
+  try {
+    const num = req.params.id;
+    const itemToDelete = await Item.destroy({
+      where : {id : num}
+    });
+    const items = await Item.findAll();
+    res.send(items);
+  } catch (error) {
+    next(error);
+  }
+})
+
 module.exports = router;
