@@ -4,7 +4,7 @@ const {sequelize} = require('../db')
 
 //Creating a Item child class from the Model parent class
 const Item = sequelize.define("items", {
-    name : Sequelize.STRING,
+    title : Sequelize.STRING,
     description: Sequelize.STRING,
     price: Sequelize.NUMBER,
     category: Sequelize.STRING,
