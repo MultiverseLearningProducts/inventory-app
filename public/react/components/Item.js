@@ -4,7 +4,6 @@ import { ItemDetails } from "./ItemDetails";
 
 export const Item = (props) => {
 
-  console.log("what is clicked outside", titleClicked);
 
   const handleClick = async (id) => {
     const res = await fetch(`${apiURL}/items/${id}`);
@@ -18,7 +17,7 @@ export const Item = (props) => {
     </>
   ) : (
     <>
-      <div className={titleClicked ? "hidden" : "showMe"}>
+      <div>
         <h3
           onClick={() => {
             {handleClick(props.item.id)};
