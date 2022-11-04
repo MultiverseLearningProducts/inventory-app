@@ -27,6 +27,8 @@ export const App = () => {
 		<main>	
       <h1>Sauce Store</h1>
 	  <h1>Mario Test</h1>
+	  <h1>Francis</h1>
+
 			<h2>All things 🔥</h2>
 			<SaucesList sauces={sauces} />
 		</main>
