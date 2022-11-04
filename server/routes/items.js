@@ -1,5 +1,8 @@
 const express = require("express");
+const {check, validationResult} = require('express-validator'); 
 const router = express.Router();
+
+
 const { Item } = require("../models");
 
 // GET ALL ITEMS
@@ -22,4 +25,15 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
+//ADD SINGLE ITEM
+router.post('/' ,[check("title").notEmpty()], async (req, res, next) =>{
+  const errors = validationResult(request);
+    if(!errors.isEmpty()){
+        response.json({error: errors.array()});
+    }
+    else{
+        const itemToAdd = await Item.create(req.body);
+        res.send(itemToAdd);
+    }
+})
 module.exports = router;
