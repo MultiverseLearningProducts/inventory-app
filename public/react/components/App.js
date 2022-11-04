@@ -4,6 +4,7 @@ import { ItemsList } from "./ItemsList";
 
 // import and prepend the api url to any fetch calls
 import apiURL from "../api";
+import e from "express";
 
 export const App = () => {
   const [sauces, setSauces] = useState([]);
@@ -40,11 +41,39 @@ export const App = () => {
   }
 
   
-  const handleClick = async (id) => {
-    const res = await fetch(`${apiURL}/items/${id}`)
-    const data = await res.json()
-    setIndividualItem(data)
-  }
+  // const handleClick = async (id) => {
+  //   const res = await fetch(`${apiURL}/items/${id}`)
+  //   const data = await res.json()
+  //   setIndividualItem(data)
+  // }
+
+  // const formClick = () => {
+  //   setAddingItems(true)
+  // }
+
+  // const newItem = {
+  //   title: title,
+  //   description: description,
+  //   price: price,
+  //   category: category,
+  //   image: image
+  // }
+
+  // const handleSubmit = () => {
+  //   postRequest()
+  //   setAddingItems(false)
+  // }
+
+  // const postRequest = async () => {
+  //   const res = await fetch(`${apiURL}/items`, {
+  //     method: "POST",
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify(newItem)
+  //   })
+  //   const data = await res.json()
+  // }
 
 
   useEffect(() => {
@@ -56,20 +85,13 @@ export const App = () => {
     <main>
       <h1>Sauce Store</h1>
       <h2>All things 🔥</h2>
-      {!individualItem ? <>
-      {/* <SaucesList sauces={sauces} /> */}
-      <ItemsList handleClick ={handleClick} items={items} individualItem={individualItem} setIndividualItem={setIndividualItem}/>
-      </> : 
+      {individualItem ? 
       <> <h3>{individualItem.title}</h3>
       <img src={individualItem.image}></img>
       <p>{individualItem.description}</p>
       <p>{individualItem.price}</p>
       <p>{individualItem.category}</p>
-      </>}
-      {/* <SaucesList sauces={sauces} />
-      <ItemsList handleClick = {handleClick}items={items} /> */}
-      { addItems ? <>
-        <form onSubmit={handleSubmit}>
+      </> : addItems ? <> <form>
         <input className='inputs'
 				type = 'text'
 				placeholder= 'Title'
@@ -107,14 +129,10 @@ export const App = () => {
 				/>
         <button className = 'buttonSubmit'  type= 'submit'>Submit</button>
         
-        </form>
-      
-      </>: <div>
-         
-
-        </div>}
-      
-
+        </form> </> : <>
+        <button onClick={() => formClick()}>Add Item</button>
+        <ItemsList handleClick ={handleClick} items={items} individualItem={individualItem} setIndividualItem={setIndividualItem}/>
+        </>}
       
     </main>
   );
