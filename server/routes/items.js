@@ -26,7 +26,7 @@ router.get("/:id", async (req, res, next) => {
 });
 
 //ADD SINGLE ITEM
-router.post('/' ,[check("title").notEmpty()], async (req, res, next) =>{
+router.post('/' ,[check("title").notEmpty(), check("price").notEmpty(), check("description").notEmpty(), check("category").notEmpty(), check("image").notEmpty()], async (req, res, next) =>{
   const errors = validationResult(request);
     if(!errors.isEmpty()){
         response.json({error: errors.array()});
