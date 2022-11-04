@@ -1,5 +1,4 @@
 const { Item } = require('../models/index')
-const { post } = require('../routes')
 
 const GetItems = async (req, res) => {
     res.send(await Item.findAll())
