@@ -8,6 +8,7 @@ import apiURL from "../api";
 export const App = () => {
   const [sauces, setSauces] = useState([]);
   const [items, setItems] = useState([]);
+  const [individualItem, setIndividualItem] = useState(false)
 
 
   async function fetchSauces() {
@@ -31,6 +32,14 @@ export const App = () => {
     }
   }
 
+  
+  const handleClick = async (id) => {
+    const res = await fetch(`${apiURL}/items/${id}`)
+    const data = await res.json()
+    setIndividualItem(data)
+  }
+
+
   useEffect(() => {
     fetchSauces();
     fetchItems();
@@ -40,8 +49,18 @@ export const App = () => {
     <main>
       <h1>Sauce Store</h1>
       <h2>All things 🔥</h2>
-      <SaucesList sauces={sauces} />
-      <ItemsList items={items} />
+      {!individualItem ? <>
+      {/* <SaucesList sauces={sauces} /> */}
+      <ItemsList handleClick ={handleClick} items={items} individualItem={individualItem} setIndividualItem={setIndividualItem}/>
+      </> : 
+      <> <h3>{individualItem.title}</h3>
+      <img src={individualItem.image}></img>
+      <p>{individualItem.description}</p>
+      <p>{individualItem.price}</p>
+      <p>{individualItem.category}</p>
+      </>}
+      {/* <SaucesList sauces={sauces} />
+      <ItemsList handleClick = {handleClick}items={items} /> */}
     </main>
   );
 };
