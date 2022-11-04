@@ -9,6 +9,13 @@ export const App = () => {
   const [sauces, setSauces] = useState([]);
   const [items, setItems] = useState([]);
   const [individualItem, setIndividualItem] = useState(false)
+  const [addItems, setAddingItems] =useState(false)
+  const [title,setTitle] = useState('');
+  const [description,setDescription] = useState('');
+  const [price,setPrice] = useState(0);
+  const [category,setCategory] = useState('');
+  const [image,setImage] = useState('');
+
 
 
   async function fetchSauces() {
@@ -61,6 +68,54 @@ export const App = () => {
       </>}
       {/* <SaucesList sauces={sauces} />
       <ItemsList handleClick = {handleClick}items={items} /> */}
+      { addItems ? <>
+        <form onSubmit={handleSubmit}>
+        <input className='inputs'
+				type = 'text'
+				placeholder= 'Title'
+				aria-label='title'
+				onChange={(e) =>setTitle(e.target.value)}
+				value = {title}
+				/>
+        <input className='inputs'
+				type = 'text'
+				placeholder= 'Description'
+				aria-label='description'
+				onChange={(e) =>setDescription(e.target.value)}
+				value = {description}
+				/>
+        <input className='inputs'
+				type = 'text'
+				placeholder= 'Price'
+				aria-label='price'
+				onChange={(e) =>setPrice(e.target.value)}
+				value = {price}
+				/>
+        <input className='inputs'
+				type = 'text'
+				placeholder= 'Category'
+				aria-label='category'
+				onChange={(e) =>setCategory(e.target.value)}
+				value = {category}
+				/>
+        <input className='inputs'
+				type = 'text'
+				placeholder= 'Image'
+				aria-label='image'
+				onChange={(e) =>setImage(e.target.value)}
+				value = {image}
+				/>
+        <button className = 'buttonSubmit'  type= 'submit'>Submit</button>
+        
+        </form>
+      
+      </>: <div>
+         
+
+        </div>}
+      
+
+      
     </main>
   );
 };
