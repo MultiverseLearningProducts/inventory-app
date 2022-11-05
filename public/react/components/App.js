@@ -28,6 +28,9 @@ export const App = () => {
 		<main>	
       <h1>Items Store</h1>
 			<h2>All things 🔥</h2>
+			<p> Welcome to our infamous E-Commerce site, there's a ton of options to select from.
+				We strive to meet the needs of all of our customers and plan to expand our inventory selection in the near future.
+			</p>
 			<ItemsList items={items} setItems={setItems} singleItem={singleItem} setSingleItem={setSingleItem} />
 		</main>
 	)
