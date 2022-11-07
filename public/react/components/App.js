@@ -51,6 +51,12 @@ export const App = () => {
 
   const editFormClick = () => {
     setFormData(individualItem)
+    setTitle(individualItem.title)
+    setDescription(individualItem.description)
+    setPrice(individualItem.price)
+    setCategory(individualItem.category)
+    setImage(individualItem.image)
+    console.log(formData)
     setIndividualItem(false)
     setEditedForm(true)
   }
@@ -87,6 +93,29 @@ export const App = () => {
     const data = await response.json();
     goBack();
   };
+
+  const updateItem = async (id) => {
+    const response = await fetch(`${apiURL}/items/${id}`, {
+      method: "PUT",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        title: title,
+        description: description,
+        price: price,
+        category: category,
+        image: image
+      })
+    })
+    const data = await response.json()
+  }
+
+  const updatedFormSubmit = (id) => {
+    updateItem(id)
+    fetchItems()
+    setEditedForm(false)
+  }
 
   const goBack = async () => {
     fetchItems();
@@ -168,11 +197,11 @@ export const App = () => {
           </form>
         </>
       ) : editedForm ? <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={() => updatedFormSubmit(formData.id)}>
       <input
         className="inputs"
         type="text"
-        placeholder={formData.title}
+        placeholder={title}
         aria-label="title"
         onChange={(e) => setTitle(e.target.value)}
         value={title}
@@ -180,7 +209,7 @@ export const App = () => {
       <input
         className="inputs"
         type="text"
-        placeholder={formData.description}
+        placeholder={description}
         aria-label="description"
         onChange={(e) => setDescription(e.target.value)}
         value={description}
@@ -188,7 +217,7 @@ export const App = () => {
       <input
         className="inputs"
         type="text"
-        placeholder={formData.price}
+        placeholder={price}
         aria-label="price"
         onChange={(e) => setPrice(e.target.value)}
         value={price}
@@ -196,7 +225,7 @@ export const App = () => {
       <input
         className="inputs"
         type="text"
-        placeholder={formData.category}
+        placeholder={category}
         aria-label="category"
         onChange={(e) => setCategory(e.target.value)}
         value={category}
@@ -204,7 +233,7 @@ export const App = () => {
       <input
         className="inputs"
         type="text"
-        placeholder={formData.image}
+        placeholder={image}
         aria-label="image"
         onChange={(e) => setImage(e.target.value)}
         value={image}
