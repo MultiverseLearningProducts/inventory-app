@@ -1,4 +1,6 @@
 # Team VioletBJMV Inventory App
+
+## Collaborators: Vikalp Malhotra, Brynner Ventura, Maridalia Martinez, Jasmine Irvin
 A Full-Stack RESTful CRUD inventory application using: 
  - SQL, Sequelize
  - Node, Express
