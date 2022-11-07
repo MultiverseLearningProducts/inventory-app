@@ -11,9 +11,13 @@ export const openForm = ({ props }) => {
         <form onSubmit = {fetchopenForm}> 
         <input/> 
         "title":
+        <input/>
         "price": 
+        <input/>
         "description":
+        <input/>
         "category":
+        <input/>
         "image":
         <button type = "submit">Submit</button>
         </form> 
