@@ -1,15 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Aleo&family=Oxygen&family=Questrial&family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aleo&family=Arimo&family=Koulen&family=Oxygen&family=Questrial&family=Quicksand:wght@300&family=Staatliches&display=swap');
+
+
+
 
 * {
   margin: 0;
   box-sizing: border-box;
-  background-color: rgb(223, 223, 223);
+  background-color: #fdfdfd;
 }
 
 body {
   text-align: center;
-  font-family: 'Oxygen', sans-serif;
-  background-color: #7d655e;
+  font-family: 'Arimo', sans-serif;
+
 }
 
 
@@ -22,15 +25,23 @@ body {
   width: 10em;
   height: auto;
   border: 2px solid black;
+  margin-bottom: 25px;
+}
+
+.Header1 {
+  font-family: 'Koulen', cursive;
+  letter-spacing: 3px;
 }
 
 .addButton {
   transition-duration: 0.4s;
   font-size: 16px;
+  font-weight: bold;
   border-radius: 4px;
   width: 150px;
-  background-color:#F2F7FA;
+  background-color:#fdfdfd;
   height: 35px;
+  font-family: 'Arimo', sans-serif;
 
   font-family: 'Oxygen', sans-serif;
 }
@@ -114,8 +125,9 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   font-size: 16px;
   border-radius: 4px;
   width: 150px;
-  background-color:#F2F7FA;
+  background-color:#fdfdfd;
   height: 35px;
+  font-weight: bold;
 
   font-family: 'Oxygen', sans-serif;
 
@@ -134,8 +146,11 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   font-size: 16px;
   border-radius: 4px;
   width: 150px;
-  background-color:#F2F7FA;
+  background-color:#fdfdfd;
   height: 35px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
   font-family: 'Oxygen', sans-serif;
 
@@ -152,8 +167,11 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   font-size: 16px;
   border-radius: 4px;
   width: 150px;
-  background-color:#F2F7FA;
+  background-color:#fdfdfd;
   height: 35px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
   font-family: 'Oxygen', sans-serif;
 
@@ -170,8 +188,11 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   font-size: 16px;
   border-radius: 4px;
   width: 150px;
-  background-color:#F2F7FA;
+  background-color: #fdfdfd;
   height: 35px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
   font-family: 'Oxygen', sans-serif;
 
@@ -181,4 +202,8 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   background-color: #515455; 
 color: white;
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.itemTitle {
+  font-size: 14px;
 }

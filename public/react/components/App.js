@@ -140,16 +140,21 @@ export const App = () => {
 
   return (
     <main className="main">
-      <h1>Goods</h1>
-      <h2>Our Products</h2>
+      <h1 className="Header1">Fectory Goods.</h1>
+      <h2 className="Header2" >Our Products</h2>
       <br/>
       {individualItem ? (
         <>
           <h3>{individualItem.title}</h3>
+          <br/>
           <img className="singleImg" src={individualItem.image}></img>
-          <p>{individualItem.description}</p>
-          <p>{individualItem.price}</p>
+          <br/>
           <p>{individualItem.category}</p>
+          <br/>
+          <p>{individualItem.description}</p>
+          <br/>
+          <p>{individualItem.price} $ </p>
+          <br/>
           <button
             className="buttonDelete"
             onClick={() => {
@@ -157,7 +162,9 @@ export const App = () => {
             }}>
             Delete
           </button>
+          <br/>
           <button className='gobackButton' onClick={() => goBack()}>Go Back</button>
+          <br/>
           <button className="editButton" onClick={() => editFormClick()}>Edit Form</button>
         </>
       ) : addItems ? (
@@ -269,6 +276,7 @@ export const App = () => {
           <button id="carouselButtonRight" onClick={() => scroll(500)}></button>
         </section>
         </>
+        <button className="addButton" onClick={() => formClick()}>Add Item</button>
       )}
     </main>
   );
