@@ -3,3 +3,65 @@
   box-sizing: border-box;
   background-color: rgb(223, 223, 223);
 }
+
+#each-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+}
+
+.each-item-title:hover {
+  cursor: pointer;
+  font-size: 20px;
+  color: gray;
+}
+
+#itemDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  text-align: center;
+  margin: 20px 100px 20px 100px;
+  font-size: 20px;
+}
+
+#each-item-image, #item-detail-image {
+  height: 200px;
+  width: 200px;
+  -moz-box-shadow: -5px -5px #777777;
+  -webkit-box-shadow: -5px -5px  #777777;
+  box-shadow: -5px -5px  #777777;
+}
+
+#itemList {
+  display: flex;
+  margin: 50px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 50px 100px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 100px;
+ }
+
+ h2 {
+  text-align: center;
+  font-size: 80px;
+ }
+
+ h2:hover {
+  cursor: pointer;
+ }
+
+ h3 {
+  text-align: center;
+  padding-bottom: 20px;
+ }
