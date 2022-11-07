@@ -17,15 +17,15 @@ export const Item = (props) => {
     </>
   ) : (
     <>
-      <div>
-        <h3
+      <div id="each-item">
+        <h3 className="each-item-title"
           onClick={() => {
             {handleClick(props.item.id)};
           }}
         >
           {props.item.title}
         </h3>
-        <img src={props.item.image} alt={props.item.title} />
+        <img id="each-item-image" src={props.item.image} alt={props.item.title} />
       </div>
     </>
   );
