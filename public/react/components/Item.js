@@ -18,7 +18,7 @@ export const Item = (props) => {
   ) : (
     <>
       <div id="each-item">
-        <h3
+        <h3 className="each-item-title"
           onClick={() => {
             {handleClick(props.item.id)};
           }}
