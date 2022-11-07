@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Item } from './Item';
 import { SingleItem } from './SingleItem';
+import { AddForm } from './AddForm';
 import apiURL from '../api';
 
 export const ItemsList = ({items, setItems}) => {
 	const[isClicked, setIsClicked] = useState(false)
+
 	console.log(isClicked)
 	const handleClick = async (id) => {
 		const response = await fetch(`${apiURL}/items/${id}`)
@@ -23,5 +25,7 @@ export const ItemsList = ({items, setItems}) => {
 				return <Item onClick={handleClick} item={item} key={idx} />
 			})
 		}
+		
+
 	</>
 } 
