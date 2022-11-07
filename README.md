@@ -11,8 +11,8 @@ A Full Stack Inventory Application built using Sequelize, Express, NodeJS and Re
 ## Wireframe
 
 ![wireframe1](./wireframe/wireframe1.png)
-![wireframe2](https://imgur.com/a/sr0plyc)
-![wireframe3](https://imgur.com/a/Y2dk6Gn)
+![wireframe2](./wireframe/wireframe2.png)
+![wireframe3](./wireframe/wireframe3.png)
 
 ## Project Tier Requirements
 
