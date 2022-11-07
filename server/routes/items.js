@@ -31,4 +31,19 @@ router.post("/", async (req, res, next) => {
   }
 });
 
+
+router.delete("/:id", async (req, res, next) => {
+  try {
+    await Item.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
+    const Items =  await Item.findAll();
+    res.send(Items);
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;
