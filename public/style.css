@@ -59,6 +59,7 @@ h1 {
 
  h2:hover {
   cursor: pointer;
+  color: gray;
  }
 
  h3 {
