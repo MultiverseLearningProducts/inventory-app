@@ -1,5 +1,13 @@
-# inventory-app
-A full-stack application to track your inventory
+# Team VioletBJMV Inventory App
+A Full-Stack RESTful CRUD inventory application using: 
+ - SQL, Sequelize
+ - Node, Express
+ - React
+
+As a User: 
+- I should be able to view all items in the inventory
+- View all information about the items
+- Delete/add items to my cart. 
 
 ## Getting Started
 
