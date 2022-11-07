@@ -12,6 +12,11 @@ export const App = () => {
 	const [sauces, setSauces] = useState([]);
 	const [items, setItems] = useState([]);
 	const [isAddingItem, setIsAddingItem] = useState(false);
+	const  [title,setTitle] = useState("");
+	const  [price,setPrice] = useState(0);
+	const  [description,setDescription] = useState("");
+	const  [category,setCategory] = useState("");
+	const  [image,setImage] = useState("");
 
 	async function fetchSauces(){
 		try {
@@ -34,6 +39,24 @@ export const App = () => {
 			console.log("Oh no an error! ", err)
 		}
 	}
+
+	const handleSubmit = async (e) => {
+		console.log(e);
+		const response = await fetch(`${apiURL}/items`, {
+		  method: "POST",
+		  headers: {
+			"Content-Type": "application/json",
+		  },
+		  body: JSON.stringify({
+			i: title,
+			price: price,
+			description: description,
+			category: category,
+			image: image,
+		  }),
+		});
+			await response.json();
+	  };
 
 	useEffect(() => {
 		fetchSauces();
@@ -65,38 +88,38 @@ export const App = () => {
                 type="text"
                 placeholder="Item Price"
                 aria-label="item price"
-                onChange={(e) => setContent(e.target.value)}
-                value={content}
+                onChange={(e) => setPrice(e.target.value)}
+                value={price}
               />
               <input
                 type="text"
                 placeholder="Item Description"
                 aria-label="item description"
-                onChange={(e) => setName(e.target.value)}
-                value={name}
+                onChange={(e) => setDescription(e.target.value)}
+                value={description}
               />
               <input
                 type="text"
                 placeholder="Item Category"
                 aria-label="item category"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
+                onChange={(e) => setCategory(e.target.value)}
+                value={category}
               />
               <input
                 type="text"
                 placeholder="Image"
                 aria-label="image"
-                onChange={(e) => setTags(e.target.value)}
-                value={tags}
+                onChange={(e) => setImage(e.target.value)}
+                value={image}
               />
-             	 <button type="submit">Submit Article</button>
+             	 <button type="submit">Submit Item</button>
 			  </form>
 			</div>
 			) : (
 				<ItemsList items = {items} setItems = {setItems}/>
 			)}
 		
-			<SaucesList sauces={sauces} />
+			{/* <SaucesList sauces={sauces} /> */}
 			{/* <ItemsList items={items} /> */}
 
 			<button onClick={() => setIsAddingItem(!isAddingItem)}>Add Item</button>
