@@ -11,13 +11,9 @@ body {
   font-family: 'Oxygen', sans-serif;
 }
 
-.main {
-
-}
-
 .img{
-  width: 20em;
-  height: auto;
+  width: 300px;
+  height: 300px;
 }
 
 .addButton {
@@ -36,4 +32,71 @@ body {
 background-color: #515455; 
 color: white;
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.container {
+  padding: 2em 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 2px solid grey;
+}
+
+.container > div {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 58vw;
+  height: 450px;
+  border-radius: 10px;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.wrapper {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-snap-align: center;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+  grid-column: content;
+  overscroll-behavior-x: contain;
+  background: rgb(47, 45, 45);
+}
+
+#carouselButtonLeft {
+  opacity: .2;
+  height: 80px;
+  width: 60px;
+  margin: auto;
+  background-image: url('https://www.pngkey.com/png/detail/423-4232983_how-to-set-use-left-grey-arrow-svg.png');
+  background-size: 100% 75px;
+}
+
+#carouselButtonRight {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  opacity: .2;
+  height: 80px;
+  width: 60px;
+  margin: auto;
+  background-image: url('https://www.pngkey.com/png/detail/423-4232983_how-to-set-use-left-grey-arrow-svg.png');
+  background-size: 100% 75px;
+}
+
+.itemtitle{
+  width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.itemContainer {
+  border: 3px solid black;
 }

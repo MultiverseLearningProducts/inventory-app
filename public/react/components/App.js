@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { SaucesList } from "./SaucesList";
 import { ItemsList } from "./ItemsList";
+import { useRef } from "react";
 
 // import and prepend the api url to any fetch calls
 import apiURL from "../api";
@@ -17,6 +18,11 @@ export const App = () => {
   const [price, setPrice] = useState(0);
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
+
+  const ref = useRef()
+  const scroll = (scrolloffset) => {
+    ref.current.scrollLeft += scrolloffset
+  }
 
   async function fetchSauces() {
     try {
@@ -244,13 +250,25 @@ export const App = () => {
     </form>
         </> : (
         <>
-          <button className="addButton" onClick={() => formClick()}>Add Item</button>
+          {/* <button className="addButton" onClick={() => formClick()}>Add Item</button>
           <ItemsList
             handleClick={handleClick}
             items={items}
             individualItem={individualItem}
             setIndividualItem={setIndividualItem}
-          />
+          /> */}
+          <div className="spacer"></div>
+        <h1 className="carouselTitle"> Most Popular </h1>
+        <section className="container">
+          <button id="carouselButtonLeft" onClick={() => scroll(-500)}></button>
+          <div className="wrapper" ref={ref}>
+            <ItemsList handleClick={handleClick}
+            items={items}
+            individualItem={individualItem}
+            setIndividualItem={setIndividualItem} />
+          </div>
+          <button id="carouselButtonRight" onClick={() => scroll(500)}></button>
+        </section>
         </>
       )}
     </main>
