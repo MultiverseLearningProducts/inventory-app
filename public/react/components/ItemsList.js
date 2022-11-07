@@ -2,6 +2,12 @@ import React from "react";
 import { Item } from "./Item";
 
 export const ItemsList = ({ items, setItems, singleItem, setSingleItem }) => {
+
+  const openForm = () => {
+    return( 
+      <Form/>
+    )
+  }
   return singleItem ? (
     <div>
       {singleItem.map((item, idx) => {
@@ -28,6 +34,10 @@ export const ItemsList = ({ items, setItems, singleItem, setSingleItem }) => {
           />
         );
       })}
+      <button onClick={openForm}> 
+        Add item 
+      </button>
     </div>
+  
   );
 };
