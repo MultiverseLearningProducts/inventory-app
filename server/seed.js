@@ -6,7 +6,7 @@ const {Item, Cart, User} = require('./models');
 
 
 const seed = async () => {
-  try {
+  
     // drop and recreate tables per model definitions
     await sequelize.sync({ force: true });
 
