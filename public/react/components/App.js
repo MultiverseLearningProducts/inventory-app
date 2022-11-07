@@ -151,7 +151,7 @@ export const App = () => {
           <br/>
           <p>{individualItem.category}</p>
           <br/>
-          <p>{individualItem.description}</p>
+          <p className="description">{individualItem.description}</p>
           <br/>
           <p>{individualItem.price} $ </p>
           <br/>
@@ -169,7 +169,7 @@ export const App = () => {
         </>
       ) : addItems ? (
         <>
-          <form onSubmit={handleSubmit}>
+          <form className="formstyle" onSubmit={handleSubmit}>
             <input
               className="inputs"
               type="text"
@@ -178,6 +178,7 @@ export const App = () => {
               onChange={(e) => setTitle(e.target.value)}
               value={title}
             />
+            <br/>
             <input
               className="inputs"
               type="text"
@@ -186,6 +187,7 @@ export const App = () => {
               onChange={(e) => setDescription(e.target.value)}
               value={description}
             />
+            <br/>
             <input
               className="inputs"
               type="text"
@@ -194,6 +196,7 @@ export const App = () => {
               onChange={(e) => setPrice(e.target.value)}
               value={price}
             />
+            <br/>
             <input
               className="inputs"
               type="text"
@@ -202,6 +205,7 @@ export const App = () => {
               onChange={(e) => setCategory(e.target.value)}
               value={category}
             />
+            <br/>
             <input
               className="inputs"
               type="text"
@@ -210,13 +214,14 @@ export const App = () => {
               onChange={(e) => setImage(e.target.value)}
               value={image}
             />
+            <br/>
             <button className="buttonSubmit" type="submit">
               Submit
             </button>
           </form>
         </>
       ) : editedForm ? <>
-      <form onSubmit={() => updatedFormSubmit(formData.id)}>
+      <form className="formstyle" onSubmit={() => updatedFormSubmit(formData.id)}>
       <input
         className="inputs"
         type="text"
@@ -225,6 +230,7 @@ export const App = () => {
         onChange={(e) => setTitle(e.target.value)}
         value={title}
       />
+      <br/>
       <input
         className="inputs"
         type="text"
@@ -233,6 +239,7 @@ export const App = () => {
         onChange={(e) => setDescription(e.target.value)}
         value={description}
       />
+      <br/>
       <input
         className="inputs"
         type="text"
@@ -241,6 +248,7 @@ export const App = () => {
         onChange={(e) => setPrice(e.target.value)}
         value={price}
       />
+      <br/>
       <input
         className="inputs"
         type="text"
@@ -249,6 +257,7 @@ export const App = () => {
         onChange={(e) => setCategory(e.target.value)}
         value={category}
       />
+      <br/>
       <input
         className="inputs"
         type="text"
@@ -257,6 +266,7 @@ export const App = () => {
         onChange={(e) => setImage(e.target.value)}
         value={image}
       />
+      <br/>
       <button className="buttonSubmit" type="submit">
         Submit
       </button>

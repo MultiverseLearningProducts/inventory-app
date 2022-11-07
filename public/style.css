@@ -12,7 +12,6 @@
 body {
   text-align: center;
   font-family: 'Arimo', sans-serif;
-
 }
 
 
@@ -32,6 +31,8 @@ body {
   font-family: 'Koulen', cursive;
   letter-spacing: 3px;
 }
+
+
 
 .addButton {
   transition-duration: 0.4s;
@@ -58,13 +59,12 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   display: flex;
   justify-content: center;
   overflow: hidden;
-  border-bottom: 2px solid grey;
 }
 
 .container > div {
   scroll-snap-align: start;
   flex-shrink: 0;
-  width: 58vw;
+  width: 60vw;
   height: 450px;
   border-radius: 10px;
   transform-origin: center center;
@@ -90,7 +90,6 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 #carouselButtonLeft {
-  opacity: .2;
   height: 80px;
   width: 60px;
   margin: auto;
@@ -101,7 +100,6 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 #carouselButtonRight {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
-  opacity: .2;
   height: 80px;
   width: 60px;
   margin: auto;
@@ -128,6 +126,7 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   background-color:#fdfdfd;
   height: 35px;
   font-weight: bold;
+  margin-top: 40px;
 
   font-family: 'Oxygen', sans-serif;
 
@@ -207,4 +206,31 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 .itemTitle {
   
   font-size: 14px;
+}
+
+.img:hover{
+  scale: 1;
+  transition-duration: 0.2s;
+}
+
+.formstyle {
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+.inputs {
+  text-align: center;
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.description {
+  width: 35vw;
+  text-align: center;
+  margin: auto
 }
