@@ -51,6 +51,10 @@ A full-stack application to track your inventory
         }
     });
     ```
-    - Front-end View for all Items
+    - Front-end View for all Items: `/routes/items.js`
+    ```
+    
+    ```
+
     - Express Route to `GET` one Item
     - Front-end view for one item (click to see)
