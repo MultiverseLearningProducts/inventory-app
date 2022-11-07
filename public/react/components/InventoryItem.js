@@ -1,4 +1,6 @@
 import React from "react";
+import apiURL from "../api";
+
 import { Grid } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -6,7 +8,19 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-function InventoryItem({ item }) {
+function InventoryItem({
+  setSelectedItem,
+  item,
+  setShowDetails,
+  setCheckItems,
+}) {
+  async function handleDetailsClick(id) {
+    setShowDetails(true);
+    const response = await fetch(`${apiURL}/items/${id}`);
+    const data = await response.json();
+    setSelectedItem(data);
+  }
+
   return (
     <Grid className="inventorycard" key={item.id} item xs={3}>
       <Card sx={{ height: 410, maxWidth: 345 }}>
@@ -29,7 +43,9 @@ function InventoryItem({ item }) {
         </CardContent>
         <CardActions className="inventorybuttons">
           <Button size="small">delete</Button>
-          <Button size="small">Learn More</Button>
+          <Button onClick={() => handleDetailsClick(item.id)} size="small">
+            Learn More
+          </Button>
         </CardActions>
       </Card>
     </Grid>
