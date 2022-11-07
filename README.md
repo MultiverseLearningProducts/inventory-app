@@ -12,6 +12,7 @@ A full-stack application to track your inventory
 ## TIER I: MVP Application
 
 - ITEM MODEL
+
     ✅   Sequelize Model for Item: `/models/index.js`
     ```
     const {Sequelize} = require('sequelize')
@@ -39,6 +40,7 @@ A full-stack application to track your inventory
     };
     ```
 - ITEM ROUTES
+
     ✅ Express Route to `GET` all Items: `/routes/items.js`
     ```
     // GET /items
@@ -51,10 +53,15 @@ A full-stack application to track your inventory
         }
     });
     ```
-    - Front-end View for all Items: `/routes/items.js`
-    ```
+    ✅ Front-end View for all Items: `/routes/items.js`
     
-    ```
 
-    - Express Route to `GET` one Item
+    ✅ Express Route to `GET` one Item: `/routes/items.js`
+    ```
+    // GET single /item
+    router.get('/:id', async (req, res) => {
+    const itemParams = await Item.findByPk(request.params.id);
+    res.json(itemParams)
+    });
+    ```
     - Front-end view for one item (click to see)
