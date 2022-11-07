@@ -128,9 +128,9 @@ export const App = () => {
   }, []);
 
   return (
-    <main>
-      <h1>Sauce Store</h1>
-      <h2>All things 🔥</h2>
+    <main className="main">
+      <h1>Goods</h1>
+      <h2>Our Products</h2>
       {individualItem ? (
         <>
           <h3>{individualItem.title}</h3>
@@ -244,7 +244,7 @@ export const App = () => {
     </form>
         </> : (
         <>
-          <button onClick={() => formClick()}>Add Item</button>
+          <button className="addButton" onClick={() => formClick()}>Add Item</button>
           <ItemsList
             handleClick={handleClick}
             items={items}
