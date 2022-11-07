@@ -25,10 +25,8 @@ export const SingleItem = (props) => {
         <br></br>
         <h1>{props.items.title}</h1>
         <br></br>
-        <img src={props.items.image} />
-        <br></br>
-        <br></br>
-        <h3>{props.items.price}</h3>
+        <img src={props.items.image} style={{width:"200px",height:"200px",marginBottom:"30px"}} />
+        <h3><b>Price: ${props.items.price}</b></h3>
         <br></br>
         <br></br>
         <br></br>
@@ -37,10 +35,11 @@ export const SingleItem = (props) => {
         <br></br>
         <div>
             <button onClick={() => handleDelete(props.items.id)}>Delete Item</button>
-        </div>
-        <div>
             <button onClick={() => setIsEditing(true)}>Update Item</button>
         </div>
+        {/* <div>
+            <button onClick={() => setIsEditing(true)}>Update Item</button>
+        </div> */}
         <h1>{props.items.category}</h1></div>}
         {isEditing && <div>
             <UpdateForm

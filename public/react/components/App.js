@@ -34,6 +34,7 @@ export const App = () => {
 						Add Item
 					</button>
 					<h2>All things 🔥</h2>
+					<br></br>
 					<ItemsList items={items} setItems={setItems} fetchItems={fetchItems}/>
 				</>
 			)}
