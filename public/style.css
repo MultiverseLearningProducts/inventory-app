@@ -32,9 +32,9 @@ p {
 #each-item-image, #item-detail-image {
   height: 200px;
   width: 200px;
-  -moz-box-shadow: -5px -5px #777777;
-  -webkit-box-shadow: -5px -5px  #777777;
-  box-shadow: -5px -5px  #777777;
+  -moz-box-shadow: 5px 5px 5px #777777;
+  -webkit-box-shadow: 5px 5px 5px  #777777;
+  box-shadow: 5px 5px 5px  #777777;
 }
 
 #itemList {

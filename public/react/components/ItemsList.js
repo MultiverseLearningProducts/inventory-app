@@ -23,6 +23,11 @@ export const ItemsList = ({ items, setItems, singleItem, setSingleItem }) => {
       })}
     </div>
   ) : (
+    {
+      buttonClick ? return (
+        <Form setbuttonClick ={setbuttonClick} fetchPages={fetchPages}/>
+      )
+    }
     <div id="itemList">
       {items.map((item, idx) => {
         return (

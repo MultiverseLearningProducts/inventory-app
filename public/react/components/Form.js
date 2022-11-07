@@ -3,27 +3,35 @@ import { post } from "../../../server/routes";
 import apiURL from "../api"; 
 
 export const openForm = ({ props }) => {
+    const [itemtitle, setItemtitle] = useState('');
+    const [itemprice, setItemprice] = useState('');
+    const [itemdescription, setItemdescription] = useState('');
+    const [itemcategory, setItemcategory] = useState('');
+    const [itemimage, setItemimage] = useState(''); 
+
     const fetchopenForm = async() => {
-    const [itemname, setItemname] = useState('');
-    const response = await fetch (`${apiURL}/items`,{method:"Post"} );
+        const response = await fetch (`${apiURL}/items`,{method:"Post"} );
+        const data = await response.json();
+       // props.setSingleItem(null);
+       // props.fetchItems();
     }
 
     return (
         <form onSubmit = {fetchopenForm}> 
         <input type = 'text' placeholder="title" value ={itemname}
-        onSubmit = {ev => setItemname(ev.target.value)}/> 
+        onChange = {ev => setItemtitle(ev.target.value)}/> 
         
         <input  type = 'number' placeholder= "price" value ={price}
-        onSubmit = {ev => setItemname(ev.target.value)}/>
+        onChange = {ev => setItemprice(ev.target.value)}/>
         
         <input  type = 'text' placeholder="description" value ={itemname}
-        onSubmit = {ev => setItemname(ev.target.value)}/>
+        onChange = {ev => setItemdescription(ev.target.value)}/>
         
         <input  type = 'text' placeholder = "category" value ={itemname}
-        onSubmit = {ev => setItemname(ev.target.value)}/>
+        onChange = {ev => setItemcategory(ev.target.value)}/>
         
         <input  type = 'text' placeholder = "image" value ={URL}
-        onSubmit = {ev => setItemname(ev.target.value)}/>
+        onChange = {ev => setItemimage(ev.target.value)}/>
         
         <button type = "submit">Submit</button>
         </form> 
