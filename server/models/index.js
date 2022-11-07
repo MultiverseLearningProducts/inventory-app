@@ -1,12 +1,18 @@
 const {sequelize} = require('../db')
 
 const {Item} = require('./Item')
-const {Sauce} = require('./Sauce')
+const {User} = require('./User')
+const {Cart} = require('./Cart')
 
 // Relationships
+Cart.hasMany(Item)
+Cart.belongsTo(Cart)
+Item.belongsTo(Cart)
+User.hasOne(Cart)
 
 module.exports = {
   db: sequelize,
-  Sauce,
-  Item
+  Item,
+  Cart,
+  User
 };
