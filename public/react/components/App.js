@@ -250,14 +250,7 @@ export const App = () => {
     </form>
         </> : (
         <>
-          {/* <button className="addButton" onClick={() => formClick()}>Add Item</button>
-          <ItemsList
-            handleClick={handleClick}
-            items={items}
-            individualItem={individualItem}
-            setIndividualItem={setIndividualItem}
-          /> */}
-          <div className="spacer"></div>
+        <div className="spacer"></div>
         <h1 className="carouselTitle"> Most Popular </h1>
         <section className="container">
           <button id="carouselButtonLeft" onClick={() => scroll(-500)}></button>
