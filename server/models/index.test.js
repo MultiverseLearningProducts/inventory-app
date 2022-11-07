@@ -21,17 +21,14 @@ describe('Item', () => {
 
     //TEST FOR GET ALL ITEMS ROUTE /routes/item.js
     test('Item Route: Can find all items', async () => {
-
         const allItems = await Item.findAll()
-        // console.log(foundRes)
         expect(allItems[0].title).toEqual(allItems[0].title)
         expect(allItems[0].price).toEqual(109.95)
     });
 
     //TEST FOR GET SINGLE ITEM ROUTE /routes/item.js
     test('Item Route: Can find specific item', async () => {
-        const foundItem = await Item.findByPk(4);
-        expect(foundItem.category).toEqual("men's clothing");
-        // expect(foundRestaurant[0].name).toBe(seedRestaurant[0].name);
+        const foundItem = await Item.findByPk(1);
+        expect(foundItem.title).toEqual("Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops");
     });
 })
