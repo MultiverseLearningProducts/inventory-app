@@ -11,8 +11,13 @@ import InventoryItem from "./InventoryItem";
 function Inventory({ items }) {
   return (
     <div className="inventory-div">
-      {console.log(items)}
-      <Grid className="inventorygrid" container spacing={4}>
+      <Button className="additembutton">Add Item</Button>
+      <Grid
+        className="inventorygrid"
+        container
+        alignItems="stretch"
+        spacing={3}
+      >
         {items.map((item) => (
           <InventoryItem key={item.id} item={item} />
         ))}

@@ -130,7 +130,8 @@
   display: none;
 }
 
-.inventorycard {
-  height: 400px;
-  margin: 30px;
+.additembutton {
+  position: relative;
+
+  z-index: 3;
 }
