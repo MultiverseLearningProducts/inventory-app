@@ -275,8 +275,8 @@ export const App = () => {
           </div>
           <button id="carouselButtonRight" onClick={() => scroll(500)}></button>
         </section>
-        </>
         <button className="addButton" onClick={() => formClick()}>Add Item</button>
+        </>
       )}
     </main>
   );
