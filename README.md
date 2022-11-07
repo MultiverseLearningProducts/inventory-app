@@ -6,6 +6,9 @@ A Full-Stack RESTful CRUD inventory application using:
  - Node, Express
  - React
 
+## Wireframing/Planning for Inventory App
+
+
 As a User: 
 - I should be able to view all items in the inventory
 - View all information about the items
