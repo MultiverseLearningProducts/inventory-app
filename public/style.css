@@ -1,5 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo&family=Oxygen&family=Questrial&family=Quicksand:wght@300&display=swap');
+
 * {
   margin: 0;
   box-sizing: border-box;
   background-color: rgb(223, 223, 223);
+}
+
+body {
+  text-align: center;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.main {
+
+}
+
+.img{
+  width: 20em;
+  height: auto;
+}
+
+.addButton {
+  transition-duration: 0.4s;
+  font-size: 16px;
+  border-radius: 4px;
+  width: 150px;
+  background-color:#F2F7FA;
+  height: 35px;
+
+  font-family: 'Oxygen', sans-serif;
+}
+
+.addButton:hover {
+
+background-color: #515455; 
+color: white;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
