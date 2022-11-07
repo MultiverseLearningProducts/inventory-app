@@ -119,6 +119,11 @@ export const App = () => {
 
   const updatedFormSubmit = (id) => {
     updateItem(id)
+    setTitle('');
+    setDescription('');
+    setPrice('');
+    setCategory('');
+    setImage('');
     fetchItems()
     setEditedForm(false)
   }
@@ -137,10 +142,11 @@ export const App = () => {
     <main className="main">
       <h1>Goods</h1>
       <h2>Our Products</h2>
+      <br/>
       {individualItem ? (
         <>
           <h3>{individualItem.title}</h3>
-          <img src={individualItem.image}></img>
+          <img className="singleImg" src={individualItem.image}></img>
           <p>{individualItem.description}</p>
           <p>{individualItem.price}</p>
           <p>{individualItem.category}</p>
@@ -151,8 +157,8 @@ export const App = () => {
             }}>
             Delete
           </button>
-          <button onClick={() => goBack()}>Go Back</button>
-          <button onClick={() => editFormClick()}>Edit Form</button>
+          <button className='gobackButton' onClick={() => goBack()}>Go Back</button>
+          <button className="editButton" onClick={() => editFormClick()}>Edit Form</button>
         </>
       ) : addItems ? (
         <>
