@@ -28,5 +28,17 @@ router.delete('/:id', async (req, res) => {
     return res.json(currItem)
 });
 
+// Updating an item with a form:
+router.put('/:id', async (req, res) => {
+	console.log(req.body)
+	const id = req.params.id;
+	console.log(id);
+	const updatedItem = await Item.findByPk(id);
+	updatedItem.update(req.body);
+	res.json(updatedItem)
+});
+
+
+
 //EXPORTS
 module.exports = router;
