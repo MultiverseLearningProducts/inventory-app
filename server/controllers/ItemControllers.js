@@ -45,7 +45,7 @@ const DeleteItem = async (req, res) => {
     await Item.destroy({
         where: {id: itemId}
     })
-    res.send({message: `Deleted item with the if of ${itemId}`})
+    res.send({message: `Deleted item with the id of ${itemId}`})
 }
 
 module.exports = {
