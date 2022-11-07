@@ -4,7 +4,7 @@ import { SingleItem } from './SingleItem';
 import { AddForm } from './AddForm';
 import apiURL from '../api';
 
-export const ItemsList = ({items, setItems}) => {
+export const ItemsList = ({items, setItems, fetchItems}) => {
 	const[isClicked, setIsClicked] = useState(false)
 
 	console.log(isClicked)
@@ -18,6 +18,8 @@ export const ItemsList = ({items, setItems}) => {
 		{isClicked && (
 			<SingleItem
 			items = {items}
+			fetchItems={fetchItems}
+			setIsClicked={setIsClicked}
 			/>
 		)}
 		{!isClicked &&

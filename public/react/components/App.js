@@ -26,7 +26,7 @@ export const App = () => {
 
 	return (
 		<main>
-			{isAddingItem && <AddForm />}
+			{isAddingItem && <AddForm setIsAddingItem={setIsAddingItem} fetchItems={fetchItems}/>}
 			{!isAddingItem && (
 				<>
 					<h1>Item Store</h1>
@@ -34,7 +34,7 @@ export const App = () => {
 						Add Item
 					</button>
 					<h2>All things 🔥</h2>
-					<ItemsList items={items} setItems={setItems} />
+					<ItemsList items={items} setItems={setItems} fetchItems={fetchItems}/>
 				</>
 			)}
 		</main>

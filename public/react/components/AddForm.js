@@ -19,7 +19,7 @@ export const AddForm = (props) => {
 			image,
 		};
 
-		const response = await fetch(`${apiUrl}/items`, {
+		const response = await fetch(`${apiURL}/items`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(payload),
@@ -31,6 +31,8 @@ export const AddForm = (props) => {
 			setDescription('');
 			setCategory('');
 			setImage('');
+            props.fetchItems();
+            props.setIsAddingItem(false);
 		}
 	};
 
