@@ -1,4 +1,5 @@
 const { Item } = require('../models/index')
+const { validationResult } = require('express-validator')
 
 const GetItems = async (req, res) => {
     res.send(await Item.findAll())
@@ -10,11 +11,20 @@ const GetItemById = async (req, res) => {
 }
 
 const CreateItem = async (req, res) => {
-    let postBody = {
-        ...req.body
+
+    const errors = validationResult(req)
+
+    if(!errors.isEmpty()) {
+        res.json({ error: errors.array})
+    } else {
+
+        
+        let postBody = {
+            ...req.body
+        }
+        await Item.create(postBody)
+        res.send(await Item.findAll())
     }
-    await Item.create(postBody)
-    res.send(await Item.findAll())
 }
 
 const UpdateItem = async (req, res) => {

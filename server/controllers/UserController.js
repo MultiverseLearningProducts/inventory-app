@@ -1,4 +1,5 @@
 const { User } = require('../models/User')
+const { validationResult } = require('express-validator')
 
 const GetUsers = async (req,res) => {
     res.send(await User.findAll())
@@ -10,11 +11,19 @@ const GetUserById = async (req, res) => {
 }
 
 const CreateUser = async (req, res) => {
-    let postBody = {
-        ...req.body 
+
+    const errors = validationResult(req)
+
+    if (!errors.isEmpty()) {
+        res.json({error: errors.array})
+    } else {
+        
+        let postBody = {
+            ...req.body 
+        }
+        await User.create(postBody)
+        res.send(await User.findAll())
     }
-    await User.create(postBody)
-    res.send(await User.findAll())
 }
 
 const UpdateUser = async (req, res) => {
