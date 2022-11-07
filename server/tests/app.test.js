@@ -5,12 +5,15 @@ const { request } = require('../app');
 
 DESCRIBE('inventory api', () => {
     test('GET item/id', () => {
+//simpler version -- less room for error 
+//const testingApi = new Item()
+
         return request(app)
         .get('/item/1')
         .expect('Content-Type', /json/)
         .expect(200)
         .then((response) => {
-            expect(response.body).toEqual({
+            expect(object).toEqual({
                 title: expect.any(String),
                 price: expect.any(Number),
                 description: expect.any(String),
@@ -18,19 +21,19 @@ DESCRIBE('inventory api', () => {
                 image: expect.any(String)
             })
         })
-    }
+    },
     test('GET item/id -- 404 if not found', () => {
         return request(app).get('/items/12345').expect('404 - Not Found');
-    });
+    }),
     // test('POST item, create item', () => {
     //     return request (app).post('/items').send({
     //     })
     // });
     test('GET item, validate request body', () => {
         return request(app).post('/items').send({})
-    });
-    test('UPDATE item', () => {});
-    test('DELETE item', () => {});
+    }),
+    test('UPDATE item', () => {}),
+    test('DELETE item', () => {}),
  
 })
 

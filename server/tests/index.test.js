@@ -25,4 +25,5 @@ describe('Item Model Tests', () => {
         const removedItem = await Item.destroy(seedItems[0])
         expect(removedItem.title).toEqual('Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops');
     });
+    //test update
 })
