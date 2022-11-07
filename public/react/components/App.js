@@ -12,7 +12,8 @@ export const App = () => {
 	async function fetchItems(){
 		try {
 			const response = await fetch(`${apiURL}/items`);
-			const itemsData = await response.json();	
+			const itemsData = await response.json();
+			setSingleItem(null);	
 			setItems(itemsData);
 		} catch (err) {
 			console.log("Oh no an error! ", err)
@@ -26,7 +27,7 @@ export const App = () => {
 	return (
 		<main>	
       <h1>Items Store</h1>
-			<h2>All things 🔥</h2>
+			<h2 onClick={fetchItems}>All things 🔥</h2>
 			<ItemsList items={items} setItems={setItems} singleItem={singleItem} setSingleItem={setSingleItem} />
 		</main>
 	)
