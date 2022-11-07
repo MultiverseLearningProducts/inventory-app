@@ -9,15 +9,25 @@
 body {
   text-align: center;
   font-family: 'Oxygen', sans-serif;
+  background-color: #7d655e;
 }
 
 .main {
 
+
 }
 
 .img{
-  width: 20em;
+  width: 10em;
   height: auto;
+  border: 2px solid black;
+}
+
+.singleImg {
+  width: 10em;
+  height: auto;
+  border: 2px solid black;
+ 
 }
 
 .addButton {
@@ -37,3 +47,79 @@ background-color: #515455;
 color: white;
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+.buttonSubmit {
+  transition-duration: 0.4s;
+  font-size: 16px;
+  border-radius: 4px;
+  width: 150px;
+  background-color:#F2F7FA;
+  height: 35px;
+
+  font-family: 'Oxygen', sans-serif;
+
+}
+
+.buttonSubmit:hover {
+  background-color: #515455; 
+color: white;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+
+
+.gobackButton {
+  transition-duration: 0.4s;
+  font-size: 16px;
+  border-radius: 4px;
+  width: 150px;
+  background-color:#F2F7FA;
+  height: 35px;
+
+  font-family: 'Oxygen', sans-serif;
+
+}
+
+.gobackButton:hover {
+  background-color: #515455; 
+color: white;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.editButton {
+  transition-duration: 0.4s;
+  font-size: 16px;
+  border-radius: 4px;
+  width: 150px;
+  background-color:#F2F7FA;
+  height: 35px;
+
+  font-family: 'Oxygen', sans-serif;
+
+}
+
+.editButton:hover {
+  background-color: #515455; 
+color: white;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.buttonDelete {
+  transition-duration: 0.4s;
+  font-size: 16px;
+  border-radius: 4px;
+  width: 150px;
+  background-color:#F2F7FA;
+  height: 35px;
+
+  font-family: 'Oxygen', sans-serif;
+
+}
+
+.buttonDelete:hover {
+  background-color: #515455; 
+color: white;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
