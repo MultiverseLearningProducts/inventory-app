@@ -29,11 +29,17 @@ export const App = () => {
 			{isAddingItem && <AddForm setIsAddingItem={setIsAddingItem} fetchItems={fetchItems}/>}
 			{!isAddingItem && (
 				<>
-					<h1>Item Store</h1>
-					<button onClick={() => setIsAddingItem(!isAddingItem)}>
+					<h1>The Orange Store</h1>
+					<br></br>
+					{/* <button onClick={() => setIsAddingItem(!isAddingItem)}>
 						Add Item
+					</button> */}
+					<h2>Top 10 Oranges 🍊</h2>
+					<br></br>
+					<button onClick={() => setIsAddingItem(!isAddingItem)}>
+						<h2>Add Orange</h2>
 					</button>
-					<h2>All things 🔥</h2>
+					<br></br>
 					<br></br>
 					<ItemsList items={items} setItems={setItems} fetchItems={fetchItems}/>
 				</>

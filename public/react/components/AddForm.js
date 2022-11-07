@@ -39,7 +39,8 @@ export const AddForm = (props) => {
 	return (
 		<div>
 			<form onSubmit={handleSubmit}>
-				<h3>Add Item</h3>
+				<h2>Add Orange</h2>
+				<br></br>
 				<div>
 					<input
 						type="text"
@@ -49,6 +50,7 @@ export const AddForm = (props) => {
 						value={title}
 					/>
 				</div>
+				<br></br>
 				<div>
 					<input
 						type="integer"
@@ -58,6 +60,7 @@ export const AddForm = (props) => {
 						value={price}
 					/>
 				</div>
+				<br></br>
 				<div>
 					<input
 						type="text"
@@ -67,6 +70,7 @@ export const AddForm = (props) => {
 						value={description}
 					/>
 				</div>
+				<br></br>
 				<div>
 					<input
 						type="text"
@@ -76,6 +80,7 @@ export const AddForm = (props) => {
 						value={category}
 					/>
 				</div>
+				<br></br>
 				<div>
 					<input
 						type="text"
@@ -85,7 +90,9 @@ export const AddForm = (props) => {
 						value={image}
 					/>
 				</div>
-				<button type="submit">Submit Item</button>
+				<br></br>
+				<br></br>
+				<button type="submit"><h2>Submit Item</h2></button>
 			</form>
 		</div>
 	);
