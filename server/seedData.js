@@ -1,4 +1,18 @@
 module.exports = {
+   users: [
+      {
+         "username":"Brynner",
+         "email":"Brynner@Brynner.com",
+         "password":"Brynner"
+      }
+   ],
+   carts: [
+      {
+         "products": 1,
+         "quantity":20,
+         "total": 3000
+      }
+   ],
   items: [
     {
        "title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
