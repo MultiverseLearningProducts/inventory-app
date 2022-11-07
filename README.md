@@ -10,7 +10,7 @@ A Full Stack Inventory Application built using Sequelize, Express, NodeJS and Re
 
 ## Wireframe
 
-![wireframe1](https://imgur.com/a/PlcXImz)
+![wireframe1](./wireframe/wireframe1.png)
 ![wireframe2](https://imgur.com/a/sr0plyc)
 ![wireframe3](https://imgur.com/a/Y2dk6Gn)
 
