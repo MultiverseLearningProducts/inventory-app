@@ -16,6 +16,7 @@ export const App = () => {
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
 
+
   async function fetchSauces() {
     try {
       const response = await fetch(`${apiURL}/sauces`);
@@ -72,6 +73,14 @@ export const App = () => {
     const data = await res.json();
   };
 
+
+    const deleteItem = async (id)=> {
+		const response = await fetch(`${apiURL}/items/${id}`, {
+			method : "DELETE"
+		});
+		const data = await response.json();
+	}
+
   useEffect(() => {
     fetchSauces();
     fetchItems();
@@ -88,6 +97,7 @@ export const App = () => {
           <p>{individualItem.description}</p>
           <p>{individualItem.price}</p>
           <p>{individualItem.category}</p>
+          <button className='buttonDelete' onClick={()=>{deleteItem(individualItem.id)}}>Delete</button>
         </>
       ) : addItems ? (
         <>
