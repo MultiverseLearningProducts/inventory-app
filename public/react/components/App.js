@@ -64,7 +64,12 @@ function App() {
           />
         </div>
         <div className={isEdit === false ? "hideMe" : ""}>
-          <ItemEdit item={selectedItem} isEdit={isEdit} setIsEdit={setIsEdit} />
+          <ItemEdit
+            item={selectedItem}
+            fetchItems={fetchItems}
+            isEdit={isEdit}
+            setIsEdit={setIsEdit}
+          />
         </div>
       </div>
     </div>

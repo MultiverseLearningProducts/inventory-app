@@ -1,4 +1,26 @@
-.titleof {
+.itemedittitle {
+  position: relative;
+  top: 400px;
+  color: black;
+}
+.itemeditprice {
+  position: relative;
+  top: 400px;
+  color: black;
+}
+.itemeditcat {
+  position: relative;
+  top: 400px;
+  color: black;
+}
+
+.canceledit {
+  position: relative;
+  top: 400px;
+  color: black;
+}
+
+.submitedit {
   position: relative;
   top: 400px;
   color: black;
