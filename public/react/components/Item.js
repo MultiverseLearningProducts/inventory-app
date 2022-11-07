@@ -18,6 +18,7 @@ export const Item = (props) => {
   ) : (
     <>
       <div id="each-item">
+      <img id="each-item-image" src={props.item.image} alt={props.item.title} />
         <h3 className="each-item-title"
           onClick={() => {
             {handleClick(props.item.id)};
@@ -25,7 +26,7 @@ export const Item = (props) => {
         >
           {props.item.title}
         </h3>
-        <img id="each-item-image" src={props.item.image} alt={props.item.title} />
+       
       </div>
     </>
   );

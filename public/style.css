@@ -10,6 +10,7 @@
   align-items: center;
   height: 300px;
   width: 300px;
+  padding-top: 20px;
   border: 1px solid gray;
 }
 
@@ -65,5 +66,5 @@ h1 {
 
  h3 {
   text-align: center;
-  padding: 10px 5px 15px 5px;
+  padding: 5px;
  }
