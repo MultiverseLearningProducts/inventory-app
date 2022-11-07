@@ -33,6 +33,7 @@ export const App = () => {
         setItems={setItems}
         singleItem={singleItem}
         setSingleItem={setSingleItem}
+		fetchItems={fetchItems}
       />
     </main>
   );

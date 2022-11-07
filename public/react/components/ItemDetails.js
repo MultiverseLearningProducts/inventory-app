@@ -41,7 +41,7 @@ export const ItemDetails = ({ props }) => {
         <button onClick={fetchAllClick}>Back</button>
         <button onClick={editClick}>Edit</button>
         {
-            showEditForm ? <EditForm /> : null
+            showEditForm ? <EditForm props={props} /> : null
         }
       </div>
     </>

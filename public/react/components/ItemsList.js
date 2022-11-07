@@ -1,7 +1,7 @@
 import React from "react";
 import { Item } from "./Item";
 
-export const ItemsList = ({ items, setItems, singleItem, setSingleItem }) => {
+export const ItemsList = ({ items, setItems, singleItem, setSingleItem, fetchItems }) => {
   return singleItem ? (
     <div>
       {singleItem.map((item, idx) => {
@@ -12,6 +12,7 @@ export const ItemsList = ({ items, setItems, singleItem, setSingleItem }) => {
             singleItem={singleItem}
             setSingleItem={setSingleItem}
             key={idx}
+            fetchItems={fetchItems}
           />
         );
       })}
@@ -25,6 +26,7 @@ export const ItemsList = ({ items, setItems, singleItem, setSingleItem }) => {
             setItems={setItems}
             setSingleItem={setSingleItem}
             key={idx}
+            fetchItems={fetchItems}
           />
         );
       })}
