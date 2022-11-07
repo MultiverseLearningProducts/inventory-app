@@ -16,7 +16,6 @@ export const App = () => {
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
 
-
   async function fetchSauces() {
     try {
       const response = await fetch(`${apiURL}/sauces`);
@@ -73,13 +72,18 @@ export const App = () => {
     const data = await res.json();
   };
 
+  const deleteItem = async (id) => {
+    const response = await fetch(`${apiURL}/items/${id}`, {
+      method: "DELETE",
+    });
+    const data = await response.json();
+    goBack();
+  };
 
-    const deleteItem = async (id)=> {
-		const response = await fetch(`${apiURL}/items/${id}`, {
-			method : "DELETE"
-		});
-		const data = await response.json();
-	}
+  const goBack = async () => {
+    fetchItems();
+    setIndividualItem(false);
+  };
 
   useEffect(() => {
     fetchSauces();
@@ -97,7 +101,14 @@ export const App = () => {
           <p>{individualItem.description}</p>
           <p>{individualItem.price}</p>
           <p>{individualItem.category}</p>
-          <button className='buttonDelete' onClick={()=>{deleteItem(individualItem.id)}}>Delete</button>
+          <button
+            className="buttonDelete"
+            onClick={() => {
+              deleteItem(individualItem.id);
+            }}>
+            Delete
+          </button>
+          <button onClick={() => goBack()}>Go Back</button>
         </>
       ) : addItems ? (
         <>
