@@ -11,6 +11,7 @@ export const App = () => {
 
 	const [sauces, setSauces] = useState([]);
 	const [items, setItems] = useState([]);
+	const [isAddingItem, setIsAddingItem] = useState(false);
 
 	async function fetchSauces(){
 		try {
@@ -47,10 +48,60 @@ export const App = () => {
 	  <h1>Mario Test</h1>
 	  <h1>Francis</h1>
 
+			<div>
 			<h2>All things 🔥</h2>
+			{isAddingItem ? (
+          <div>
+            <form onSubmit={handleSubmit}>
+              <h4>Add an Item</h4>
+              <input
+                type="text"
+                placeholder="Item Title"
+                aria-label="item title"
+                onChange={(e) => setTitle(e.target.value)}
+                value={title}
+              />
+              <input
+                type="text"
+                placeholder="Item Price"
+                aria-label="item price"
+                onChange={(e) => setContent(e.target.value)}
+                value={content}
+              />
+              <input
+                type="text"
+                placeholder="Item Description"
+                aria-label="item description"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+              />
+              <input
+                type="text"
+                placeholder="Item Category"
+                aria-label="item category"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+              />
+              <input
+                type="text"
+                placeholder="Image"
+                aria-label="image"
+                onChange={(e) => setTags(e.target.value)}
+                value={tags}
+              />
+             	 <button type="submit">Submit Article</button>
+			  </form>
+			</div>
+			) : (
+				<ItemsList items = {items} setItems = {setItems}/>
+			)}
+		
 			<SaucesList sauces={sauces} />
-			<ItemsList items={items} />
+			{/* <ItemsList items={items} /> */}
 
+			<button onClick={() => setIsAddingItem(!isAddingItem)}>Add Item</button>
+
+			</div>
 		</main>
 	)
 }
