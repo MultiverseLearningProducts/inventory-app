@@ -1,33 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import { SaucesList } from './SaucesList';
+import React, { useState, useEffect } from "react";
+import { SaucesList } from "./SaucesList";
+import Header from "./Header";
+import Cart from "./Cart";
+import Inventory from "./Inventory";
+import { AppBar, Typography, Button } from "@mui/material";
 
 // import and prepend the api url to any fetch calls
-import apiURL from '../api';
+import apiURL from "../api";
 
-export const App = () => {
+function App() {
+  const [checkItems, setCheckItems] = useState(false);
 
-	const [sauces, setSauces] = useState([]);
+  const [items, setItems] = useState([]);
 
-	async function fetchSauces(){
-		try {
-			const response = await fetch(`${apiURL}/sauces`);
-			const saucesData = await response.json();
-			
-			setSauces(saucesData);
-		} catch (err) {
-			console.log("Oh no an error! ", err)
-		}
-	}
+  async function fetchItems() {
+    const response = await fetch(`${apiURL}/items`);
+    const data = await response.json();
+    setItems(data);
+  }
 
-	useEffect(() => {
-		fetchSauces();
-	}, []);
+  useEffect(() => {
+    fetchItems();
+  }, []);
 
-	return (
-		<main>	
-      <h1>Sauce Store</h1>
-			<h2>All things 🔥</h2>
-			<SaucesList sauces={sauces} />
-		</main>
-	)
+  return (
+    <div>
+      <Header setCheckItems={setCheckItems} />
+      <div className={checkItems === false ? "" : "hideMe"}>
+        <Cart items={items} setItems={setItems} />
+      </div>
+      <div className={checkItems === false ? "hideMe" : ""}>
+        <Inventory items={items} />
+      </div>
+    </div>
+  );
 }
+
+export default App;
