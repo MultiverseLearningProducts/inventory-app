@@ -27,4 +27,11 @@ describe('Item', () => {
         expect(allItems[0].title).toEqual(allItems[0].title)
         expect(allItems[0].price).toEqual(109.95)
     });
+
+    //TEST FOR GET SINGLE ITEM ROUTE /routes/item.js
+    test('Item Route: Can find specific item', async () => {
+        const foundItem = await Item.findByPk(4);
+        expect(foundItem.category).toEqual("men's clothing");
+        // expect(foundRestaurant[0].name).toBe(seedRestaurant[0].name);
+    });
 })

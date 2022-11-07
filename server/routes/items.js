@@ -13,7 +13,7 @@ router.get("/", async (req, res, next) => {
 });
 
 // GET single /item
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
   const itemParams = await Item.findByPk(request.params.id);
   res.json(itemParams)
 });
