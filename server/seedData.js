@@ -1,9 +1,24 @@
 module.exports = {
    users: [
       {
+         "username": "Maridalia",
+         "email": "Maridalia@Maridalia.com",
+         "password": "Maridalia"
+      },
+      {
+         "username": "Jasmine",
+         "email": "Jasmine@Jasmine.com",
+         "password": "Jasmine"
+      },
+      {
          "username":"Brynner",
          "email":"Brynner@Brynner.com",
          "password":"Brynner"
+      },
+      {
+         "username": "Vikalp",
+         "email": "Vikalp@Vikalp.com",
+         "password": "Vikalp"
       }
    ],
    carts: [
