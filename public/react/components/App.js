@@ -57,6 +57,7 @@ export const App = () => {
 
   const handleSubmit = () => {
     postRequest();
+    fetchItems();
     setAddingItems(false);
   };
 
