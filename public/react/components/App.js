@@ -165,7 +165,7 @@ export const App = () => {
           <br/>
           <button className='gobackButton' onClick={() => goBack()}>Go Back</button>
           <br/>
-          <button className="editButton" onClick={() => editFormClick()}>Edit Form</button>
+          <button className="editButton" onClick={() => editFormClick()}>Update Item</button>
         </>
       ) : addItems ? (
         <>
@@ -218,6 +218,8 @@ export const App = () => {
             <button className="buttonSubmit" type="submit">
               Submit
             </button>
+            <br/>
+            <button className='gobackButton' onClick={() => goBack()}>Go Back</button>
           </form>
         </>
       ) : editedForm ? <>
