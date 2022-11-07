@@ -46,4 +46,18 @@ router.delete("/:id", async (req, res, next) => {
   }
 });
 
+router.put('/:id', async (req, res, next) => {
+  try {
+    const updateItem = await Item.update(req.body, {
+      where: {
+        id: req.params.id
+      }
+    })
+    const findItem = await Item.findByPk(req.params.id)
+    res.send(findItem)
+  } catch (error) {
+    next(error)
+  }
+})
+
 module.exports = router;

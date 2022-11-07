@@ -9,6 +9,8 @@ export const App = () => {
   const [sauces, setSauces] = useState([]);
   const [items, setItems] = useState([]);
   const [individualItem, setIndividualItem] = useState(false);
+  const [formData, setFormData] = useState('')
+  const [editedForm, setEditedForm] = useState(false)
   const [addItems, setAddingItems] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -47,6 +49,18 @@ export const App = () => {
     setAddingItems(true);
   };
 
+  const editFormClick = () => {
+    setFormData(individualItem)
+    setTitle(individualItem.title)
+    setDescription(individualItem.description)
+    setPrice(individualItem.price)
+    setCategory(individualItem.category)
+    setImage(individualItem.image)
+    console.log(formData)
+    setIndividualItem(false)
+    setEditedForm(true)
+  }
+
   const newItem = {
     title: title,
     description: description,
@@ -80,6 +94,29 @@ export const App = () => {
     goBack();
   };
 
+  const updateItem = async (id) => {
+    const response = await fetch(`${apiURL}/items/${id}`, {
+      method: "PUT",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        title: title,
+        description: description,
+        price: price,
+        category: category,
+        image: image
+      })
+    })
+    const data = await response.json()
+  }
+
+  const updatedFormSubmit = (id) => {
+    updateItem(id)
+    fetchItems()
+    setEditedForm(false)
+  }
+
   const goBack = async () => {
     fetchItems();
     setIndividualItem(false);
@@ -109,6 +146,7 @@ export const App = () => {
             Delete
           </button>
           <button onClick={() => goBack()}>Go Back</button>
+          <button onClick={() => editFormClick()}>Edit Form</button>
         </>
       ) : addItems ? (
         <>
@@ -158,7 +196,53 @@ export const App = () => {
             </button>
           </form>
         </>
-      ) : (
+      ) : editedForm ? <>
+      <form onSubmit={() => updatedFormSubmit(formData.id)}>
+      <input
+        className="inputs"
+        type="text"
+        placeholder={title}
+        aria-label="title"
+        onChange={(e) => setTitle(e.target.value)}
+        value={title}
+      />
+      <input
+        className="inputs"
+        type="text"
+        placeholder={description}
+        aria-label="description"
+        onChange={(e) => setDescription(e.target.value)}
+        value={description}
+      />
+      <input
+        className="inputs"
+        type="text"
+        placeholder={price}
+        aria-label="price"
+        onChange={(e) => setPrice(e.target.value)}
+        value={price}
+      />
+      <input
+        className="inputs"
+        type="text"
+        placeholder={category}
+        aria-label="category"
+        onChange={(e) => setCategory(e.target.value)}
+        value={category}
+      />
+      <input
+        className="inputs"
+        type="text"
+        placeholder={image}
+        aria-label="image"
+        onChange={(e) => setImage(e.target.value)}
+        value={image}
+      />
+      <button className="buttonSubmit" type="submit">
+        Submit
+      </button>
+    </form>
+        </> : (
         <>
           <button onClick={() => formClick()}>Add Item</button>
           <ItemsList
