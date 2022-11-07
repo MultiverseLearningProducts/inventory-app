@@ -2,11 +2,13 @@ import React from "react";
 import "../itemdetail.css";
 import Button from "@mui/material/Button";
 
-function ItemDetail({ setShowDetails, item }) {
+function ItemDetail({ setShowDetails, item, isEdit, setIsEdit }) {
   console.log(item.image);
   return (
     <div>
-      <button className="editButton">Edit</button>
+      <button onClick={()=>setIsEdit(true)} className="editButton">
+        Edit
+      </button>
       <div className="itemDetailsContainer">
         <img className="itemimage" src={item.image} />
         <div>

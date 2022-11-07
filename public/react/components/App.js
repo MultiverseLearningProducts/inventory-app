@@ -4,6 +4,7 @@ import Header from "./Header";
 import Cart from "./Cart";
 import Inventory from "./Inventory";
 import ItemDetail from "./ItemDetail";
+import ItemEdit from "./ItemEdit";
 import { AppBar, Typography, Button } from "@mui/material";
 
 // import and prepend the api url to any fetch calls
@@ -12,6 +13,7 @@ import apiURL from "../api";
 function App() {
   const [checkItems, setCheckItems] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  const [isEdit, setIsEdit] = useState(false);
 
   const [items, setItems] = useState([]);
   const [selectedItem, setSelectedItem] = useState([]);
@@ -53,7 +55,17 @@ function App() {
         />
       </div>
       <div className={showDetails === false ? "hideMe" : ""}>
-        <ItemDetail setShowDetails={setShowDetails} item={selectedItem} />
+        <div className={isEdit === false ? "" : "hideMe"}>
+          <ItemDetail
+            setShowDetails={setShowDetails}
+            item={selectedItem}
+            isEdit={isEdit}
+            setIsEdit={setIsEdit}
+          />
+        </div>
+        <div className={isEdit === false ? "hideMe" : ""}>
+          <ItemEdit item={selectedItem} isEdit={isEdit} setIsEdit={setIsEdit} />
+        </div>
       </div>
     </div>
   );
