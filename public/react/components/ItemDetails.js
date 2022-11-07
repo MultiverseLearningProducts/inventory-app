@@ -28,8 +28,8 @@ export const ItemDetails = ({ props }) => {
       />
       <p>{props.item.description}</p>
       <div>${props.item.price}</div>
-      <button onClick={deleteClick}>Delete Item</button>
-      <button onClick={fetchAllClick}>Back</button>
+      <button className="button" onClick={deleteClick}>Delete Item</button>
+      <button className="button" onClick={fetchAllClick}>Back</button>
     </div>
   );
 };
