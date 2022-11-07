@@ -1,3 +1,17 @@
+Wireframe Draft #1 
+
+![image](https://user-images.githubusercontent.com/87344154/200094803-185d13bf-4bcb-4232-a009-79047d2394de.png)
+
+
+
+
+
+
+
+
+
+
+
 # inventory-app
 A full-stack application to track your inventory
 

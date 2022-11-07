@@ -50,4 +50,20 @@ router.delete('/:id', async (req, res, next) =>{
   }
 })
 
+//UPDATES SINGLE ITEM
+router.put('/:id', [check("title").notEmpty()], async (req, res, next)=>{
+  const errors = validationResult(req);
+  if(!errors.isEmpty()){
+    response.json({error: errors.array()});
+  }
+  else{
+    const num = req.params.id;
+    const itemToUpdate = await Item.create(req.body, {
+      where : {id : num}
+    }); 
+    res.send(itemToUpdate);
+  }
+
+})
+
 module.exports = router;
