@@ -9,7 +9,7 @@ import apiURL from '../api';
 
 export const App = () => {
 
-	const [sauces, setSauces] = useState([]);
+	// const [sauces, setSauces] = useState([]);
 	const [items, setItems] = useState([]);
 	const [isAddingItem, setIsAddingItem] = useState(false);
 	const  [title,setTitle] = useState("");
@@ -48,7 +48,7 @@ export const App = () => {
 			"Content-Type": "application/json",
 		  },
 		  body: JSON.stringify({
-			i: title,
+			title: title,
 			price: price,
 			description: description,
 			category: category,
@@ -107,7 +107,7 @@ export const App = () => {
               />
               <input
                 type="text"
-                placeholder="Image"
+                placeholder="ImageURL"
                 aria-label="image"
                 onChange={(e) => setImage(e.target.value)}
                 value={image}
