@@ -1,0 +1,57 @@
+.itemDetailsContainer {
+  position: relative;
+  display: flex;
+  gap: 400px;
+  align-items: center;
+  justify-content: center;
+  top: 300px;
+}
+
+.itemimage {
+  position: relative;
+  width: 689px;
+  height: 947px;
+  top: 77px;
+}
+
+.buttonitem {
+  position: relative;
+  top: 10px;
+  background-color: black;
+  color: white;
+  font-weight: 900;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.addtocart {
+  position: relative;
+  top: 10px;
+  left: 30px;
+  background-color: black;
+  color: white;
+  font-weight: 900;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.itemdescription {
+  width: 650px;
+  height: 500px;
+}
+
+.itemcat {
+  margin: 20px;
+  margin-left: 0;
+}
+
+.editButton {
+  position: relative;
+  top: 150px;
+  left: 50%;
+  background-color: black;
+  color: white;
+  font-weight: 900;
+  border-radius: 20px;
+  font-size: 20px;
+}
