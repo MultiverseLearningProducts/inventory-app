@@ -3,9 +3,6 @@ import apiURL from "../api";
 
 export const ItemDetails = ({ props }) => {
 
-
-    return <div id="itemDetails">
-
     const fetchAllClick = async () => {
         const res = await fetch(`${apiURL}/items`);
         const data = await res.json();
@@ -22,8 +19,7 @@ export const ItemDetails = ({ props }) => {
         fetchAllClick();
     };
 
-    return <>
-    
+    return (<div id="itemDetails">    
         <h3>{props.item.title}</h3>
         <img id="item-detail-image" src={props.item.image} alt={props.item.title}/>
         <p>{props.item.description}</p>
@@ -31,5 +27,5 @@ export const ItemDetails = ({ props }) => {
         <button onClick={deleteClick}>Delete Item</button>
         <button onClick={fetchAllClick}>Back</button>
     
-    </div>
+    </div>)
 }
