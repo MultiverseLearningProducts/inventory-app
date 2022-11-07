@@ -4,8 +4,9 @@ export const Item = (props) => {
 
   return <>
 
-    <h3>{props.item.title}</h3>
+    <h3 onClick={() => {props.clicked(props.item.id)}}>{props.item.title}</h3>
     <img id="itemImage" src={props.item.image} alt={props.item.name} />
+
   </>
 } 
 	
