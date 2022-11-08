@@ -29,6 +29,7 @@ function InventoryItem({
     } catch (error) {
       throw error
     }
+  }
 
   // Details button
   async function handleDetailsClick(id) {
@@ -68,6 +69,7 @@ function InventoryItem({
       </Card>
     </Grid>
   );
+
 }
 
 export default InventoryItem;
