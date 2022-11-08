@@ -8,10 +8,25 @@ export const AddForm = ({ props }) => {
   const [itemcategory, setItemcategory] = useState("");
   const [itemimage, setItemimage] = useState("");
 
-  const handleSubmit = (ev) => {
+  const itemData = {
+    itemtitle: itemtitle,
+    itemprice: itemprice,
+    itemdescription: itemdescription,
+    itemcategory: itemcategory,
+    itemimage: itemimage,
+  };
+
+  const handleSubmit = async (ev) => {
     ev.preventDefault();
-    // call Api and Fetch Api
-    console.log(itemtitle, itemprice, itemdescription, itemcategory, itemimage);
+    const res = await fetch(`${apiURL}/items/${props.item.id}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(itemData),
+    });
+    const data = await res.json();
+    props.setItem(data);
     setItemtitle("");
     setItemprice("");
     setItemdescription("");

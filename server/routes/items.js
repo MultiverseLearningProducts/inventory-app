@@ -51,7 +51,7 @@ router.delete('/:id', async (req, res, next) =>{
 })
 
 //UPDATES SINGLE ITEM
-router.put('/:id', [check("title").notEmpty()], async (req, res, next)=>{
+router.put('/:id', [check("title").notEmpty(), check("price").notEmpty(), check("description").notEmpty(), check("category").notEmpty(), check("image").notEmpty()], async (req, res, next)=>{
   const errors = validationResult(req);
   if(!errors.isEmpty()){
     response.json({error: errors.array()});

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import apiURL from "../api";
 
 export const EditForm = ({ props }) => {
-  console.log("what is props", props);
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState(0.0);
   const [description, setDescription] = useState("");
@@ -16,25 +15,23 @@ export const EditForm = ({ props }) => {
     category: category,
     image: image,
   };
-  console.log(itemData);
 
   const updateSingleItem = async (e) => {
     const res = await fetch(`${apiURL}/items/${props.item.id}`, {
       method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(itemData),
     });
     const data = await res.json();
-    console.log(data);
     props.setSingleItem([data]);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     updateSingleItem();
-    
+
     setTitle("");
     setPrice("");
     setDescription("");
