@@ -48,6 +48,7 @@ export const EditForm = ({ props }) => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
+      <br />
       <input
         type="number"
         placeholder="Price"
@@ -55,6 +56,7 @@ export const EditForm = ({ props }) => {
         value={price}
         onChange={(e) => setPrice(e.target.value)}
       />
+      <br />
       <input
         type="text"
         placeholder="Description"
@@ -62,6 +64,7 @@ export const EditForm = ({ props }) => {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
+      <br />
       <input
         type="text"
         placeholder="Category"
@@ -69,6 +72,7 @@ export const EditForm = ({ props }) => {
         value={category}
         onChange={(e) => setCategory(e.target.value)}
       />
+      <br />
       <input
         type="text"
         placeholder="Image URL"
@@ -76,7 +80,8 @@ export const EditForm = ({ props }) => {
         value={image}
         onChange={(e) => setImage(e.target.value)}
       />
-      <button type="submit">Submit Changes</button>
+      <br />
+      <button className="button" type="submit">Submit Changes</button>
     </form>
   );
 };
