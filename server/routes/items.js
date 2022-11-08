@@ -58,10 +58,11 @@ router.put('/:id', [check("title").notEmpty()], async (req, res, next)=>{
   }
   else{
     const num = req.params.id;
-    const itemToUpdate = await Item.create(req.body, {
+    const itemToUpdate = await Item.update(req.body, {
       where : {id : num}
     }); 
-    res.send(itemToUpdate);
+    const updatedItem = await Item.findByPk(num);
+    res.send(updatedItem);
   }
 
 })
