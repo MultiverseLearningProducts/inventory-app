@@ -34,7 +34,8 @@ export const ItemsList = ({ items, setItems, singleItem, setSingleItem }) => {
             key={idx}
           />
         );
-      })}
+       })};
+
       <button onClick={openForm}> 
         Add item 
       </button>

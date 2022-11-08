@@ -34,4 +34,4 @@ export const ItemDetails = ({ props }) => {
       <button onClick={fetchAllClick}>Back</button>
     </div>
   );
-};
+

@@ -12,7 +12,7 @@ export const openForm = ({ props }) => {
    
 
     return (
-        <form action = onSubmit = {fetchopenForm}> 
+        <form onClick = {fetchopenForm}> 
         <input type = 'text' placeholder="title" value ={itemname}
         onChange = {ev => setItemtitle(ev.target.value)}/> 
         
