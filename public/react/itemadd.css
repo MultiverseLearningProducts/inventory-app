@@ -34,13 +34,21 @@
 .canceladd {
   position: relative;
   top: 400px;
-  color: black;
+  background-color: black;
+  color: white;
+  font-weight: 900;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 .submitadd {
   position: relative;
-  top: 400px;
-  color: black;
+  top: 390px;
+  background-color: black;
+  color: white;
+  font-weight: 900;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 .addContainer {
