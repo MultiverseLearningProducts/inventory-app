@@ -8,17 +8,36 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+
 function InventoryItem({
   setSelectedItem,
   item,
   setShowDetails,
   setCheckItems,
+  fetchItems
 }) {
+
+  
+  // Delete button
+  const onClickHandler = async (item) => {
+    
+    try {
+      await fetch(`http://localhost:3000/api/items/${item.id}`, {
+        method: 'DELETE'
+      })
+      fetchItems()
+    } catch (error) {
+      throw error
+    }
+  }
+
+  // Details button
   async function handleDetailsClick(id) {
     setShowDetails(true);
     const response = await fetch(`${apiURL}/items/${id}`);
     const data = await response.json();
     setSelectedItem(data);
+
   }
 
   return (
@@ -42,7 +61,7 @@ function InventoryItem({
           </Typography>
         </CardContent>
         <CardActions className="inventorybuttons">
-          <Button size="small">delete</Button>
+          <Button size="small" onClick={() => onClickHandler(item)}>delete</Button>
           <Button onClick={() => handleDetailsClick(item.id)} size="small">
             Learn More
           </Button>
@@ -50,6 +69,7 @@ function InventoryItem({
       </Card>
     </Grid>
   );
+
 }
 
 export default InventoryItem;
