@@ -10,6 +10,7 @@ import InventoryItem from "./InventoryItem";
 
 
 function Inventory({
+  setIsAdd,
   selectedItem,
   setSelectedItem,
   items,
@@ -20,7 +21,9 @@ function Inventory({
 
   return (
     <div className="inventory-div">
-      <Button className="additembutton">Add Item</Button>
+      <Button className="additembutton" onClick={() => setIsAdd(true)}>
+        Add Item
+      </Button>
       <Grid
         className="inventorygrid"
         container

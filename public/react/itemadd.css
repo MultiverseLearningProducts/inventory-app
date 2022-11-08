@@ -1,32 +1,40 @@
-.itemedittitle {
+.itemimage {
+  position: relative;
+  top: 400px;
+  height: 22px;
+  width: 204.8px;
+  color: black;
+}
+
+.itemaddtitle {
   position: relative;
   top: 400px;
   color: black;
 }
-.itemeditprice {
+.itemaddprice {
   position: relative;
   top: 400px;
   color: black;
 }
-.itemeditcat {
+.itemaddcat {
   position: relative;
   top: 400px;
   color: black;
 }
 
-.canceledit {
+.canceladd {
   position: relative;
   top: 400px;
   color: black;
 }
 
-.submitedit {
+.submitadd {
   position: relative;
   top: 400px;
   color: black;
 }
 
-.editContainer {
+.addContainer {
   color: black;
 }
 
@@ -40,17 +48,16 @@
   gap: 32px;
 }
 
-.itemeditdescription {
+.itemadddescription {
   position: relative;
   top: 400px;
   color: black;
   width: 650px;
   height: 500px;
 }
-
-.itemimage {
-  position: relative;
-  width: 689px;
-  height: 947px;
-  top: 77px;
+.imagepreview {
+    position: relative;
+    width: 689px;
+    height: 947px;
+    top: 77px;
 }

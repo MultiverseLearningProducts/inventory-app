@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from "react";
-import "../itemedit.css";
+import React, { useState } from "react";
 import apiURL from "../api";
+import "../itemadd.css";
 
-function ItemEdit({ item, setIsEdit, fetchItems, isEdit }) {
+function AddItem({ item, fetchItems, isAdd, setIsAdd }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [cat, setCat] = useState("");
+  const [image, setImage] = useState("");
   const [price, setPrice] = useState(0);
 
-  async function updateItem(e) {
-    const response = await fetch(`${apiURL}/items/${item.id}`, {
-      method: "PUT",
+  async function Add(e) {
+    const response = await fetch(`${apiURL}/items/`, {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
@@ -18,6 +19,7 @@ function ItemEdit({ item, setIsEdit, fetchItems, isEdit }) {
         title: title,
         description: description,
         category: cat,
+        image: image,
         price: price,
       }),
     });
@@ -27,48 +29,55 @@ function ItemEdit({ item, setIsEdit, fetchItems, isEdit }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    updateItem(e);
-    setIsEdit(false);
+    Add(e);
+    setIsAdd(false);
     fetchItems();
   }
 
   return (
     <div className="itemDetailsContainer">
-      <img className="itemimage" src={item.image} />
+      <img className="imagepreview" src={image} />
       <form onSubmit={(e) => handleSubmit(e)}>
         <div className="formelements">
           <input
-            className="itemedittitle"
+            className="itemimage"
+            name="image"
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+            placeholder="image link"
+          ></input>
+          <input
+            className="itemaddtitle"
             name="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder={item.title}
+            placeholder="Title"
           ></input>
           <textarea
-            className="itemeditdescription"
+            className="itemadddescription"
             name="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            placeholder={item.description}
+            placeholder="Description"
           ></textarea>
           <input
             name="cat"
-            className="itemeditcat"
+            className="itemaddcat"
             value={cat}
             onChange={(e) => setCat(e.target.value)}
-            placeholder={item.category}
+            placeholder="Category"
           ></input>
           <input
             name="price"
-            className="itemeditprice"
+            className="itemaddprice"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
-            placeholder={item.price}
+            placeholder="Price"
           ></input>
-          <button className="canceledit" onClick={() => setIsEdit(false)}>
+          <button className="canceladd" onClick={() => setIsAdd(false)}>
             cancel
           </button>
-          <button className="submitedit" type="submit">
+          <button className="submitadd" type="submit">
             Submit
           </button>
         </div>
@@ -77,4 +86,4 @@ function ItemEdit({ item, setIsEdit, fetchItems, isEdit }) {
   );
 }
 
-export default ItemEdit;
+export default AddItem;
