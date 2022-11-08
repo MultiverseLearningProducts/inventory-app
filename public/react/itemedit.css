@@ -17,13 +17,21 @@
 .canceledit {
   position: relative;
   top: 400px;
-  color: black;
+  background-color: black;
+  color: white;
+  font-weight: 900;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 .submitedit {
   position: relative;
   top: 400px;
-  color: black;
+  background-color: black;
+  color: white;
+  font-weight: 900;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 .editContainer {
