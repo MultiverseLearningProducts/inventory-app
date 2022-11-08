@@ -18,6 +18,10 @@ export const ItemDetails = ({ props }) => {
     fetchAllClick();
   };
 
+  const addItemClick = async() => {
+    
+  }
+
   return (
     <div id="itemDetails">
       <h3>{props.item.title}</h3>

@@ -12,12 +12,11 @@ export const openForm = ({ props }) => {
     const fetchopenForm = async() => {
         const response = await fetch (`${apiURL}/items`,{method:"Post"} );
         const data = await response.json();
-       // props.setSingleItem(null);
-       // props.fetchItems();
+       
     }
 
     return (
-        <form onSubmit = {fetchopenForm}> 
+        <form onClick = {fetchopenForm}> 
         <input type = 'text' placeholder="title" value ={itemname}
         onChange = {ev => setItemtitle(ev.target.value)}/> 
         
