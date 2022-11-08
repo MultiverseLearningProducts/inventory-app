@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 
 import logo from "../logo.png";
+import user from "../User.png";
 import React from "react";
 
 function Header({ setCheckItems, setIsAdd, setShowDetails }) {
@@ -19,6 +20,8 @@ function Header({ setCheckItems, setIsAdd, setShowDetails }) {
 
   function goHome() {
     setCheckItems(false);
+    setShowDetails(false);
+    setIsAdd(false);
   }
   return (
     <div>
@@ -38,10 +41,6 @@ function Header({ setCheckItems, setIsAdd, setShowDetails }) {
             Inventory App
           </Typography>
           <Stack direction="row" spacing={2}>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Username
-            </Typography>
-
             <Button
               onClick={() => checkInventory()}
               component="div"
@@ -50,6 +49,7 @@ function Header({ setCheckItems, setIsAdd, setShowDetails }) {
             >
               Inventory
             </Button>
+            <img className="logo" src={user} />
           </Stack>
         </Toolbar>
       </AppBar>

@@ -36,11 +36,12 @@ function AddItem({ item, fetchItems, isAdd, setIsAdd }) {
 
   return (
     <div className="itemDetailsContainer">
+      <h1 className="addNewItemTitle">Add New Item</h1>
       <img className="imagepreview" src={image} />
       <form onSubmit={(e) => handleSubmit(e)}>
         <div className="formelements">
           <input
-            className="itemimage"
+            className="itemimageinput"
             name="image"
             value={image}
             onChange={(e) => setImage(e.target.value)}

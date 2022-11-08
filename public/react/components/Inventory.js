@@ -8,7 +8,6 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import InventoryItem from "./InventoryItem";
 
-
 function Inventory({
   setIsAdd,
   selectedItem,
@@ -16,12 +15,15 @@ function Inventory({
   items,
   setShowDetails,
   setCheckItems,
-  fetchItems
+  fetchItems,
 }) {
+  function handleAdd() {
+    setIsAdd(true);
+  }
 
   return (
     <div className="inventory-div">
-      <Button className="additembutton" onClick={() => setIsAdd(true)}>
+      <Button className="additembutton" onClick={handleAdd}>
         Add Item
       </Button>
       <Grid
@@ -31,7 +33,6 @@ function Inventory({
         spacing={3}
       >
         {items.map((item) => (
-
           <InventoryItem
             key={item.id}
             fetchItems={fetchItems}
@@ -41,7 +42,6 @@ function Inventory({
             selectedItem={selectedItem}
             setSelectedItem={setSelectedItem}
           />
-          
         ))}
         ;
       </Grid>

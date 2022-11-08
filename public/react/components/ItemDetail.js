@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import "../itemdetail.css";
 import Button from "@mui/material/Button";
+import { IconButton } from "@mui/material";
+import edit from "../edit.png";
 
 function ItemDetail({
   fetchItems,
@@ -21,9 +23,17 @@ function ItemDetail({
 
   return (
     <div>
-      <button onClick={() => setIsEdit(true)} className="editButton">
+      <IconButton
+        size="large"
+        color="inherit"
+        onClick={() => setIsEdit(true)}
+      >
+        <img className="editButton" src={edit} />
+      </IconButton>
+
+      {/* <button onClick={() => setIsEdit(true)} className="editButton">
         Edit
-      </button>
+      </button> */}
       <div className="itemDetailsContainer">
         <img className="itemimage" src={item?.image} />
         <div>

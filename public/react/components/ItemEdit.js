@@ -34,6 +34,8 @@ function ItemEdit({ item, setIsEdit, fetchItems, isEdit }) {
 
   return (
     <div className="itemDetailsContainer">
+      <h1 className="editNewItemTitle">Edit Item</h1>
+
       <img className="itemimage" src={item.image} />
       <form onSubmit={(e) => handleSubmit(e)}>
         <div className="formelements">

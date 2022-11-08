@@ -54,3 +54,22 @@
   height: 947px;
   top: 77px;
 }
+
+.editNewItemTitle {
+  position: fixed;
+  font-size: 60px;
+  top: 230px;
+  width: 400px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.editButton {
+  position: relative;
+  left: ;
+  float: right;
+  margin-left: auto;
+
+  height: 80px;
+  background-color: transparent;
+}
