@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Item } from "./Item";
+import { AddForm } from "./AddForm";
 
-export const ItemsList = ({ items, setItems, singleItem, setSingleItem }) => {
+export const ItemsList = ({ items, setItems, singleItem, setSingleItem, fetchItems }) => {
+
+  const [addbuttonClick, setbuttonClick] = useState(false);
+
+  const handleClick = () => {
+    setbuttonClick(true);
+  }
   return singleItem ? (
     <div>
       {singleItem.map((item, idx) => {
@@ -28,6 +35,9 @@ export const ItemsList = ({ items, setItems, singleItem, setSingleItem }) => {
           />
         );
       })}
+      <button className="button" onClick={handleClick}>Add Item</button>
+      {addbuttonClick ? 
+    <AddForm setbuttonClick={setbuttonClick} items={items} setItems={setItems} fetchItems={fetchItems}/> : null}
     </div>
   );
 };

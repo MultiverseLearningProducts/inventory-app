@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import apiURL from "../api";
 
 export const EditForm = ({ props }) => {
-  console.log("what is props", props);
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState(0.0);
   const [description, setDescription] = useState("");
@@ -16,25 +15,23 @@ export const EditForm = ({ props }) => {
     category: category,
     image: image,
   };
-  console.log(itemData);
 
-  const updateSingleItem = async (e) => {
+  const updateSingleItem = async () => {
     const res = await fetch(`${apiURL}/items/${props.item.id}`, {
       method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(itemData),
     });
     const data = await res.json();
-    console.log(data);
     props.setSingleItem([data]);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     updateSingleItem();
-    
+
     setTitle("");
     setPrice("");
     setDescription("");
@@ -51,6 +48,7 @@ export const EditForm = ({ props }) => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
+      <br />
       <input
         type="number"
         placeholder="Price"
@@ -58,6 +56,7 @@ export const EditForm = ({ props }) => {
         value={price}
         onChange={(e) => setPrice(e.target.value)}
       />
+      <br />
       <input
         type="text"
         placeholder="Description"
@@ -65,6 +64,7 @@ export const EditForm = ({ props }) => {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
+      <br />
       <input
         type="text"
         placeholder="Category"
@@ -72,6 +72,7 @@ export const EditForm = ({ props }) => {
         value={category}
         onChange={(e) => setCategory(e.target.value)}
       />
+      <br />
       <input
         type="text"
         placeholder="Image URL"
@@ -79,7 +80,8 @@ export const EditForm = ({ props }) => {
         value={image}
         onChange={(e) => setImage(e.target.value)}
       />
-      <button type="submit">Submit Changes</button>
+      <br />
+      <button className="button" type="submit">Submit Changes</button>
     </form>
   );
 };

@@ -1,7 +1,6 @@
 const express = require("express");
-const {check, validationResult} = require('express-validator'); 
+const { check, validationResult } = require("express-validator");
 const router = express.Router();
-
 
 const { Item } = require("../models");
 
@@ -26,45 +25,65 @@ router.get("/:id", async (req, res, next) => {
 });
 
 //ADD SINGLE ITEM
-router.post('/' ,[check("title").notEmpty(), check("price").notEmpty(), check("description").notEmpty(), check("category").notEmpty(), check("image").notEmpty()], async (req, res, next) =>{
-  const errors = validationResult(req);
-    if(!errors.isEmpty()){
-        response.json({error: errors.array()});
+router.post(
+  "/",
+  [
+    check("title").notEmpty(),
+    check("price").notEmpty(),
+    check("description").notEmpty(),
+    check("category").notEmpty(),
+    check("image").notEmpty(),
+  ],
+  async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      res.json({ error: errors.array() });
+    } else {
+     
+      const itemToAdd = await Item.create(req.body);
+      const items = await Item.findAll();
+      items.push(itemToAdd);
+      res.send(items);
     }
-    else{
-        const itemToAdd = await Item.create(req.body);
-        res.send(itemToAdd);
-    }
-})
+  }
+);
 //DELETE SINGLE ITEM
-router.delete('/:id', async (req, res, next) =>{
+router.delete("/:id", async (req, res, next) => {
   try {
     const num = req.params.id;
     const itemToDelete = await Item.destroy({
-      where : {id : num}
+      where: { id: num },
     });
     const items = await Item.findAll();
     res.send(items);
   } catch (error) {
     next(error);
   }
-})
+});
 
 //UPDATES SINGLE ITEM
-router.put('/:id', [check("title").notEmpty()], async (req, res, next)=>{
-  const errors = validationResult(req);
-  if(!errors.isEmpty()){
-    response.json({error: errors.array()});
+router.put(
+  "/:id",
+  [
+    check("title").notEmpty(),
+    check("price").notEmpty(),
+    check("description").notEmpty(),
+    check("category").notEmpty(),
+    check("image").notEmpty(),
+  ],
+  async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      response.json({ error: errors.array() });
+    } else {
+      const num = req.params.id;
+      const itemToUpdate = await Item.update(req.body, {
+        where: { id: num },
+      });
+      const updatedItem = await Item.findByPk(num);
+      res.send(updatedItem);
+    }
   }
-  else{
-    const num = req.params.id;
-    const itemToUpdate = await Item.update(req.body, {
-      where : {id : num}
-    }); 
-    const updatedItem = await Item.findByPk(num);
-    res.send(updatedItem);
-  }
-
-})
+);
 
 module.exports = router;
