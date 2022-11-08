@@ -148,7 +148,7 @@ export const App = () => {
     <main className="main">
       <h1 className="Header1">Fectory Goods.</h1>
       <h2 className="Header2" >Our Products</h2>
-      <button className="searchButton" onClick={() => searchClick()}>Search</button>
+      <button className="searchButton" onClick={() => searchClick()}>Filter</button>
       <br/>
       {individualItem ? (
         <>
@@ -282,7 +282,7 @@ export const App = () => {
       <br/>
       <button className='gobackButton' onClick={() => goBack()}>Go Back</button>
     </form>
-        </> : searching ? <Search fetchItems={fetchItems} items={items} setItems={setItems}/>
+        </> : searching ? <Search fetchItems={fetchItems} items={items} searching={searching} setSearching={setSearching} setItems={setItems}/>
         : (
         <>
         <div className="spacer"></div>
