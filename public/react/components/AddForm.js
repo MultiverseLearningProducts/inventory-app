@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import apiURL from "../api";
 
-export const AddForm = ({ props }) => {
+export const AddForm = (props) => {
+  console.log("what is props", props);
   const [itemtitle, setItemtitle] = useState("");
   const [itemprice, setItemprice] = useState("");
   const [itemdescription, setItemdescription] = useState("");
@@ -16,9 +17,8 @@ export const AddForm = ({ props }) => {
     itemimage: itemimage,
   };
 
-  const handleSubmit = async (ev) => {
-    ev.preventDefault();
-    const res = await fetch(`${apiURL}/items/${props.item.id}`, {
+  const addItem = async () => {
+    const res = await fetch(`${apiURL}/items`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -26,17 +26,26 @@ export const AddForm = ({ props }) => {
       body: JSON.stringify(itemData),
     });
     const data = await res.json();
-    props.setItem(data);
+    props.setItems([
+      ...props.items, data
+    ])
+  }
+
+  const handleSubmit =  (ev) => {
+    ev.preventDefault();
+    addItem();
+
     setItemtitle("");
     setItemprice("");
     setItemdescription("");
     setItemcategory("");
     setItemimage("");
     props.setbuttonClick(false);
+    // props.fetchItems();
   };
 
   return (
-    <form onClick={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="title"

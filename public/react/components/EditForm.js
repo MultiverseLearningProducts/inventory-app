@@ -16,7 +16,7 @@ export const EditForm = ({ props }) => {
     image: image,
   };
 
-  const updateSingleItem = async (e) => {
+  const updateSingleItem = async () => {
     const res = await fetch(`${apiURL}/items/${props.item.id}`, {
       method: "PUT",
       headers: {
