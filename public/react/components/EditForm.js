@@ -9,36 +9,32 @@ export const EditForm = ({ props }) => {
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
 
-  //   const itemData = {
-  //     title: title,
-  //     price: price,
-  //     description: description,
-  //     category: category,
-  //     image: image,
-  //   };
+  const itemData = {
+    title: title,
+    price: price,
+    description: description,
+    category: category,
+    image: image,
+  };
+  console.log(itemData);
 
-//   const updateSingleItem = async (e) => {
-   
-//   };
+  const updateSingleItem = async (e) => {
+    const res = await fetch(`${apiURL}/items/${props.item.id}`, {
+      method: "PUT",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(itemData),
+    });
+    const data = await res.json();
+    console.log(data);
+    props.setSingleItem([data]);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // updateSingleItem();
-    const res = await fetch(`${apiURL}/items/${props.item.id}`, {
-        method: "PUT",
-        body: JSON.stringify({
-          title: e.target.title.value,
-          price: e.target.price.value,
-          description: e.target.description.value,
-          category: e.target.category.value,
-          image: e.target.image.value,
-        }),
-      });
-      console.log("what is res", res);
-      const data = await res.json();
-      console.log("what is data", data);
-      props.setSingleItem([data]);
-    console.log("what is singleitem", props.singleItem);
+    updateSingleItem();
+    
     setTitle("");
     setPrice("");
     setDescription("");
