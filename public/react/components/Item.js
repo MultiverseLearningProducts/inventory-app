@@ -4,7 +4,6 @@ import { ItemDetails } from "./ItemDetails";
 
 export const Item = (props) => {
 
-
   const handleClick = async (id) => {
     const res = await fetch(`${apiURL}/items/${id}`);
     const data = await res.json();

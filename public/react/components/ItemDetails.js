@@ -3,6 +3,7 @@ import { EditForm } from "./EditForm";
 import apiURL from "../api";
 
 export const ItemDetails = ({ props }) => {
+
   const [showEditForm, setShowEditForm] = useState(false);
 
   const fetchAllClick = async () => {
@@ -45,6 +46,5 @@ export const ItemDetails = ({ props }) => {
         }
       </div>
     </>
-
   );
 };

@@ -17,23 +17,6 @@ export const AddForm = (props) => {
     image: image,
   };
 
-  console.log(itemData);
-
-  const addItem = async () => {
-    const res = await fetch(`${apiURL}/items`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(itemData),
-    });
-    const data = await res.json();
-
-    props.setItems([
-      ...props.item, data
-    ])
-  }
-
   const postItem = async () => {
 		try {
 			const res = await fetch(`${apiURL}/items`,{
