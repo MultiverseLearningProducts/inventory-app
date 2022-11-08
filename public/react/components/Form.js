@@ -9,10 +9,18 @@ export const openForm = ({ props }) => {
     const [itemcategory, setItemcategory] = useState('');
     const [itemimage, setItemimage] = useState(''); 
 
-   
+    const handleSubmit = (ev)=> {
+        ev.preventDefault();
+        console.log(itemtitle, itemprice, itemdescription, itemcategory, itemimage);
+        setItemtitle('');
+        setItemprice('');
+        setItemdescription('');
+        setItemcategory('');
+        setItemimage('');
+    }
 
     return (
-        <form onClick = {fetchopenForm}> 
+        <form onClick={handleSubmit}> 
         <input type = 'text' placeholder="title" value ={itemname}
         onChange = {ev => setItemtitle(ev.target.value)}/> 
         
