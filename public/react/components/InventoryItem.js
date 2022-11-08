@@ -1,4 +1,6 @@
 import React from "react";
+import apiURL from "../api";
+
 import { Grid } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -7,8 +9,15 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-function InventoryItem({ item, fetchItems }) {
+function InventoryItem({
+  setSelectedItem,
+  item,
+  setShowDetails,
+  setCheckItems,
+  fetchItems
+}) {
 
+  
   // Delete button
   const onClickHandler = async (item) => {
     
@@ -20,6 +29,14 @@ function InventoryItem({ item, fetchItems }) {
     } catch (error) {
       throw error
     }
+
+  // Details button
+  async function handleDetailsClick(id) {
+    setShowDetails(true);
+    const response = await fetch(`${apiURL}/items/${id}`);
+    const data = await response.json();
+    setSelectedItem(data);
+
   }
 
   return (
@@ -44,7 +61,9 @@ function InventoryItem({ item, fetchItems }) {
         </CardContent>
         <CardActions className="inventorybuttons">
           <Button size="small" onClick={() => onClickHandler(item)}>delete</Button>
-          <Button size="small">Learn More</Button>
+          <Button onClick={() => handleDetailsClick(item.id)} size="small">
+            Learn More
+          </Button>
         </CardActions>
       </Card>
     </Grid>

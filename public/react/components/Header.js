@@ -7,9 +7,17 @@ import {
   Stack,
 } from "@mui/material";
 
+import logo from "../logo.png";
 import React from "react";
 
-function Header({ setCheckItems }) {
+function Header({ setCheckItems, setShowDetails }) {
+  function checkInventory() {
+    setCheckItems(true);
+  }
+
+  function goHome() {
+    setCheckItems(false);
+  }
   return (
     <div>
       <AppBar>
@@ -19,9 +27,9 @@ function Header({ setCheckItems }) {
             edge="start"
             color="inherit"
             aria-label="logo"
-            onClick={() => setCheckItems(false)}
+            onClick={() => goHome()}
           >
-            <h1>Logo</h1>
+            <img className="logo" src={logo} />
           </IconButton>
 
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -33,12 +41,12 @@ function Header({ setCheckItems }) {
             </Typography>
 
             <Button
-              onClick={() => setCheckItems(true)}
+              onClick={() => checkInventory()}
               component="div"
               variant="h6"
               color="inherit"
             >
-              Items
+              Inventory
             </Button>
           </Stack>
         </Toolbar>
