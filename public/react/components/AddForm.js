@@ -97,7 +97,7 @@ export const AddForm = (props) => {
         value={image}
         onChange={(e) => setImage(e.target.value)}
       />
-      <button type="submit">Submit Changes</button>
+      <button className="button" type="submit">Submit</button>
     </form>
   );
 };
