@@ -32,7 +32,7 @@ export const ItemDetails = ({ props }) => {
       <div>${props.item.price}</div>
       <button onClick={deleteClick}>Delete Item</button>
       <button onClick={fetchAllClick}>Back</button>
-      <button onClicl ={fetchClick}> Update: Edit Item</button>
+      <button onClick ={fetchClick}> Update: Edit Item</button>
     </div>
   );
 

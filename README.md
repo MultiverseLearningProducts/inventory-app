@@ -1,6 +1,5 @@
 
-This is the greatest E-commerce store that has ever been. Don't you just love random items from the 99's and 2000s? Look no further. We have a few wireframes below for what our ideal site would look like for all of our consumers. With features such as single item view, multiview and onclick return to homepage. Please join us in our presentation! 
-
+This is the greatest E-commerce store that has ever been. Don't you just love random items from the 99's and 2000s? Look no further. We have a few wireframes below for what our ideal site would look like for all of our consumers. With features such as single item view, multiview, deleting items upon request, updating information for items and adding items to the store-front. 
 
 Siteowners: 
 
