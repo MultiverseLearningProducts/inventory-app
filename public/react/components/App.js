@@ -3,6 +3,7 @@ import { SaucesList } from "./SaucesList";
 import { ItemsList } from "./ItemsList";
 import { Search } from "./Search";
 import { useRef } from "react";
+import { Footer } from "./Footer";
 
 // import and prepend the api url to any fetch calls
 import apiURL from "../api";
@@ -300,6 +301,7 @@ export const App = () => {
         <button className="addButton" onClick={() => formClick()}>Add Item</button>
         </>
       )}
+     {/* <Footer/>*/}
     </main>
   );
 };
