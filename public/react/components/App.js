@@ -38,6 +38,6 @@ export const App = () => {
         setSingleItem={setSingleItem}
         fetchItems={fetchItems}
       />
-    </main>
+    </main> 
   );
 };

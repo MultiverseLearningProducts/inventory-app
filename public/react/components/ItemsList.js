@@ -35,7 +35,7 @@ export const ItemsList = ({ items, setItems, singleItem, setSingleItem, fetchIte
           />
         );
       })}
-      <button onClick={handleClick}>Add Item</button>
+      <button className="button" onClick={handleClick}>Add Item</button>
       {addbuttonClick ? 
     <AddForm setbuttonClick={setbuttonClick} items={items} setItems={setItems} fetchItems={fetchItems}/> : null}
     </div>
