@@ -3,7 +3,11 @@ import React from "react";
 export const Footer = () => (
   <div className="footer">
     <button className="facebook" ></button>
-    <p>This is some content in sticky footer</p>
+    <button className="instagram"></button>
+    <button className="pinterest"></button>
+    <button className="twitter"></button>
+    <br/>
+    <p className="footerTag">©2022 All Rights Reserved. Team yellow Guillermo Saul Shir®</p>
   </div>
 );
 
