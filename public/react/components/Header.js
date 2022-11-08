@@ -10,9 +10,11 @@ import {
 import logo from "../logo.png";
 import React from "react";
 
-function Header({ setCheckItems, setShowDetails }) {
+function Header({ setCheckItems, setIsAdd, setShowDetails }) {
   function checkInventory() {
     setCheckItems(true);
+    setShowDetails(false);
+    setIsAdd(false);
   }
 
   function goHome() {

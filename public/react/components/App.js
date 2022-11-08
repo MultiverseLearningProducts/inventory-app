@@ -5,6 +5,7 @@ import Cart from "./Cart";
 import Inventory from "./Inventory";
 import ItemDetail from "./ItemDetail";
 import ItemEdit from "./ItemEdit";
+import AddItem from "./AddItem";
 import { AppBar, Typography, Button } from "@mui/material";
 
 // import and prepend the api url to any fetch calls
@@ -14,6 +15,7 @@ function App() {
   const [checkItems, setCheckItems] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
+  const [isAdd, setIsAdd] = useState(false);
 
   const [items, setItems] = useState([]);
   const [selectedItem, setSelectedItem] = useState([]);
@@ -35,7 +37,8 @@ function App() {
     <div>
       <Header
         setCheckItems={setCheckItems}
-        // setShowDetails={setShowDetails}
+        setShowDetails={setShowDetails}
+        setIsAdd={setIsAdd}
       />
       <div className={checkItems === false ? "" : "hideMe"}>
         <Cart
@@ -45,22 +48,38 @@ function App() {
         />
       </div>
       <div
-        className={checkItems === false || showDetails === true ? "hideMe" : ""}
+        className={
+          checkItems === false || showDetails === true || isAdd === true
+            ? "hideMe"
+            : ""
+        }
       >
         <Inventory
+          setIsAdd={setIsAdd}
           setCheckItems={setCheckItems}
           setShowDetails={setShowDetails}
           items={items}
           setSelectedItem={setSelectedItem}
         />
       </div>
+
+      <div className={isAdd === false ? "hideMe" : ""}>
+        <AddItem
+          item={selectedItem}
+          fetchItems={fetchItems}
+          isAdd={isAdd}
+          setIsAdd={setIsAdd}
+        />
+      </div>
       <div className={showDetails === false ? "hideMe" : ""}>
         <div className={isEdit === false ? "" : "hideMe"}>
           <ItemDetail
+            items={items}
             setShowDetails={setShowDetails}
-            item={selectedItem}
+            selectedItem={selectedItem}
             isEdit={isEdit}
             setIsEdit={setIsEdit}
+            fetchItems={fetchItems}
           />
         </div>
         <div className={isEdit === false ? "hideMe" : ""}>
