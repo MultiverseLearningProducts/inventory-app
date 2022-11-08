@@ -65,3 +65,14 @@ h1 {
   text-align: center;
   padding-bottom: 20px;
  }
+
+ button {
+  background-color:gray ;
+  border: 2px;
+  color: black;
+  padding: 12px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
