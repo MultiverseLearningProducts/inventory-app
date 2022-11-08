@@ -16,3 +16,6 @@ Wireframe Draft #2
 
 ![image](https://user-images.githubusercontent.com/87344154/200378776-9f97d0c4-b5e1-4ab7-b692-2e32cd3eddbb.jpeg)
 
+
+Delete Button Feature: 
+
