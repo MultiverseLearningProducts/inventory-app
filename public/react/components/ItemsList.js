@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { Item } from "./Item";
 import { AddForm } from "./AddForm";
 
-export const ItemsList = ({ items, setItems, singleItem, setSingleItem }) => {
+export const ItemsList = ({ items, props, setItems, singleItem, setSingleItem }) => {
   const [addbuttonClick, setbuttonClick] = useState(false);
+  const handleClick = () => {
+    setbuttonClick(true);
+  }
   return singleItem ? (
     <div>
       {singleItem.map((item, idx) => {
@@ -30,9 +33,9 @@ export const ItemsList = ({ items, setItems, singleItem, setSingleItem }) => {
           />
         );
       })}
-      <button onClick={setbuttonClick(true)}>Add Item</button>
+      <button onClick={handleClick}>Add Item</button>
       {addbuttonClick ? 
-    <AddForm addbuttonClick = {addbuttonClick} setbuttonClick = {setbuttonClick}/> : null}
+    <AddForm props={props}/> : null}
     </div>
   );
 };
