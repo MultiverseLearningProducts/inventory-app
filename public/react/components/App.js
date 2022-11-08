@@ -18,7 +18,7 @@ export const App = () => {
   const [addItems, setAddingItems] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState('');
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
 
@@ -82,6 +82,12 @@ export const App = () => {
     postRequest();
     fetchItems();
     setAddingItems(false);
+    fetchItems();
+    setTitle('');
+    setDescription('');
+    setPrice('');
+    setCategory('');
+    setImage('');
   };
 
   const postRequest = async () => {
@@ -301,7 +307,7 @@ export const App = () => {
         <button className="addButton" onClick={() => formClick()}>Add Item</button>
         </>
       )}
-     {/* <Footer/>*/}
+     <Footer/>
     </main>
   );
 };
