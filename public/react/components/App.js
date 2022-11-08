@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { SaucesList } from "./SaucesList";
 import { ItemsList } from "./ItemsList";
+import { Search } from "./Search";
 import { useRef } from "react";
 
 // import and prepend the api url to any fetch calls
@@ -11,6 +12,7 @@ export const App = () => {
   const [items, setItems] = useState([]);
   const [individualItem, setIndividualItem] = useState(false);
   const [formData, setFormData] = useState('')
+  const [searching,setSearching] = useState(false)
   const [editedForm, setEditedForm] = useState(false)
   const [addItems, setAddingItems] = useState(false);
   const [title, setTitle] = useState("");
@@ -133,6 +135,10 @@ export const App = () => {
     setIndividualItem(false);
   };
 
+  const searchClick = () => {
+    setSearching(true)
+  }
+
   useEffect(() => {
     fetchSauces();
     fetchItems();
@@ -142,6 +148,7 @@ export const App = () => {
     <main className="main">
       <h1 className="Header1">Fectory Goods.</h1>
       <h2 className="Header2" >Our Products</h2>
+      <button className="searchButton" onClick={() => searchClick()}>Search</button>
       <br/>
       {individualItem ? (
         <>
@@ -275,7 +282,8 @@ export const App = () => {
       <br/>
       <button className='gobackButton' onClick={() => goBack()}>Go Back</button>
     </form>
-        </> : (
+        </> : searching ? <Search fetchItems={fetchItems} items={items} setItems={setItems}/>
+        : (
         <>
         <div className="spacer"></div>
         <h1 className="carouselTitle"> MOST POPULAR </h1>
