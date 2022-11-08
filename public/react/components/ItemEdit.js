@@ -24,6 +24,14 @@ function ItemEdit({ item, setIsEdit, fetchItems, isEdit }) {
     fetchItems();
   }
 
+  function handleCancel() {
+    setTitle(item.title);
+    setDescription(item.description);
+    setCat(item.cat);
+    setPrice(item.price);
+    setIsEdit(false);
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -67,7 +75,7 @@ function ItemEdit({ item, setIsEdit, fetchItems, isEdit }) {
             onChange={(e) => setPrice(e.target.value)}
             placeholder={item.price}
           ></input>
-          <button className="canceledit" onClick={() => setIsEdit(false)}>
+          <button className="canceledit" onClick={handleCancel}>
             cancel
           </button>
           <button className="submitedit" type="submit">
