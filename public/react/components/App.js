@@ -149,11 +149,11 @@ export const App = () => {
           <br/>
           <img className="singleImg" src={individualItem.image}></img>
           <br/>
-          <p>{individualItem.category}</p>
+          <p className="categorystyle">-{individualItem.category}-</p>
           <br/>
           <p className="description">{individualItem.description}</p>
           <br/>
-          <p>{individualItem.price} $ </p>
+          <p className="pricestyle">{individualItem.price} $ </p>
           <br/>
           <button
             className="buttonDelete"
@@ -162,9 +162,9 @@ export const App = () => {
             }}>
             Delete
           </button>
-          <br/>
+          
           <button className='gobackButton' onClick={() => goBack()}>Go Back</button>
-          <br/>
+        
           <button className="editButton" onClick={() => editFormClick()}>Update Item</button>
         </>
       ) : addItems ? (
@@ -209,7 +209,7 @@ export const App = () => {
             <input
               className="inputs"
               type="text"
-              placeholder="Image"
+              placeholder="Image URL"
               aria-label="image"
               onChange={(e) => setImage(e.target.value)}
               value={image}
@@ -272,11 +272,13 @@ export const App = () => {
       <button className="buttonSubmit" type="submit">
         Submit
       </button>
+      <br/>
+      <button className='gobackButton' onClick={() => goBack()}>Go Back</button>
     </form>
         </> : (
         <>
         <div className="spacer"></div>
-        <h1 className="carouselTitle"> Most Popular </h1>
+        <h1 className="carouselTitle"> MOST POPULAR </h1>
         <section className="container">
           <button id="carouselButtonLeft" onClick={() => scroll(-500)}></button>
           <div className="wrapper" ref={ref}>

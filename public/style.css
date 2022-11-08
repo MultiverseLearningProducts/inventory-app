@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Aleo&family=Arimo&family=Koulen&family=Oxygen&family=Questrial&family=Quicksand:wght@300&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aleo&family=Arimo&family=Julius+Sans+One&family=Koulen&family=Oxygen&family=Questrial&family=Quicksand:wght@300&family=Staatliches&display=swap');
 
 
 
@@ -30,6 +30,12 @@ body {
 .Header1 {
   font-family: 'Koulen', cursive;
   letter-spacing: 3px;
+  font-size: 50px;
+}
+
+.Header2 {
+  font-size: 25px;
+  margin-bottom: 20px;
 }
 
 
@@ -43,13 +49,14 @@ body {
   background-color:#fdfdfd;
   height: 35px;
   font-family: 'Arimo', sans-serif;
+  margin-top: 25px;
 
   font-family: 'Oxygen', sans-serif;
 }
 
 .addButton:hover {
 
-background-color: #515455; 
+background-color: rgb(47, 45, 45); 
 color: white;
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -87,26 +94,40 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   grid-column: content;
   overscroll-behavior-x: contain;
   background: rgb(47, 45, 45);
+  
 }
 
 #carouselButtonLeft {
-  height: 80px;
-  width: 60px;
-  margin: auto;
-  margin-right: 20px;
-  background-image: url('https://www.pngkey.com/png/detail/423-4232983_how-to-set-use-left-grey-arrow-svg.png');
-  background-size: 100% 75px;
-}
-
-#carouselButtonRight {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
   height: 80px;
   width: 60px;
   margin: auto;
-  margin-left: 20px;
-  background-image: url('https://www.pngkey.com/png/detail/423-4232983_how-to-set-use-left-grey-arrow-svg.png');
+  margin-right: 20px;
+  background-image: url('https://www.pngkey.com/png/detail/830-8304891_png-file-svg-carousel-button-left-right.png');
   background-size: 100% 75px;
+}
+
+#carouselButtonLeft:hover {
+  box-shadow: 0 12px 12px 0 rgba(0,0,0,0.24), 0 17px 30px 0 rgba(0,0,0,0.19);
+  border: 3px solid black;
+
+}
+
+#carouselButtonRight {
+
+  height: 80px;
+  width: 60px;
+  margin: auto;
+  margin-left: 20px;
+  background-image: url('https://www.pngkey.com/png/detail/830-8304891_png-file-svg-carousel-button-left-right.png');
+  background-size: 100% 75px;
+}
+
+#carouselButtonRight:hover {
+  box-shadow: 0 12px 12px 0 rgba(0,0,0,0.24), 0 17px 30px 0 rgba(0,0,0,0.19);
+  border: 3px solid black;
+
 }
 
 .itemtitle{
@@ -118,7 +139,11 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 
 .itemContainer {
   border: 3px solid black;
+  font-size: 15px;
+  
 }
+
+
 
 .buttonSubmit {
   transition-duration: 0.4s;
@@ -135,7 +160,7 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .buttonSubmit:hover {
-  background-color: #515455; 
+  background-color: rgb(47, 45, 45); 
 color: white;
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 
@@ -152,13 +177,15 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 
   font-family: 'Oxygen', sans-serif;
 
 }
 
 .gobackButton:hover {
-  background-color: #515455; 
+  background-color: rgb(47, 45, 45); 
 color: white;
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -172,14 +199,14 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   height: 35px;
   font-weight: bold;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 
   font-family: 'Oxygen', sans-serif;
 
 }
 
 .editButton:hover {
-  background-color: #515455; 
+  background-color: rgb(47, 45, 45); 
 color: white;
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -200,7 +227,7 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .buttonDelete:hover {
-  background-color: #515455; 
+  background-color: rgb(47, 45, 45); 
 color: white;
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -208,6 +235,7 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 .itemTitle {
   
   font-size: 14px;
+ 
 }
 
 .img:hover{
@@ -232,14 +260,30 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .description {
-  width: 35vw;
+  width: 20vw;
   text-align: center;
-  margin: auto
+  margin: auto;
+  font-weight: 500;
+  
 }
 
 .carouselTitle {
   text-decoration: solid;
   margin-top: 1em;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Julius Sans One', sans-serif;
+  opacity: 0.7;
+  font-size: 18px;
   /* text-decoration-thickness: none; */
+}
+
+.categorystyle {
+  color: #979797;
+  font-size: 16px;
+}
+
+.pricestyle {
+  color: black;
+  font-weight:300;
+  font-size: 20px;
+  font-family: 'Staatliches', cursive;
 }
