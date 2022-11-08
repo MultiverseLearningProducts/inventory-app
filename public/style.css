@@ -232,6 +232,29 @@ color: white;
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+
+.searchButton {
+  transition-duration: 0.4s;
+  font-size: 12px;
+  border-radius: 4px;
+  width: 60px;
+  background-color: #fdfdfd;
+  height: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  font-family: 'Oxygen', sans-serif;
+
+}
+
+.searchButton:hover {
+  background-color: rgb(47, 45, 45); 
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+
 .itemTitle {
   
   font-size: 14px;
@@ -269,7 +292,7 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 
 .carouselTitle {
   text-decoration: solid;
-  margin-top: 1em;
+  margin-top: 10px;
   font-family: 'Julius Sans One', sans-serif;
   opacity: 0.7;
   font-size: 18px;
