@@ -26,8 +26,8 @@ export const App = () => {
   return (
     <main>
       <h1>Items Store</h1>
-			<p> Welcome to our infamous E-Commerce site, there's a ton of options to select from.
-				We strive to meet the needs of all of our customers and plan to expand our inventory selection in the near future.
+			<p> Welcome to our infamous E-Commerce site, throwing it back to the 99's and 2000's, here's a great selection of old school products your parents and grandparents loved. 
+				Thank you for joining us on this unique experience and hope you enjoy your shopping today.
 			</p>
 
 			<h2 onClick={fetchItems}>All things 🔥</h2>
