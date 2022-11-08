@@ -39,9 +39,9 @@ export const Search = ({fetchItems, items, setItems}) => {
     <div className="searchResults">
         {searching ? categorySearch.map(item => <>
         <div key={item.id}>
-            <h3>{item.title}</h3>
+            <h3 className="carouselTitle">{item.title}</h3>
             <br/>
-            <img className="singleImg"src={item.image} alt={item.title}></img>
+            <img className="img"src={item.image} alt={item.title}></img>
         </div>
         </>) : null}
     </div>
