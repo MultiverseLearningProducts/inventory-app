@@ -1,6 +1,6 @@
 const {Sequelize} = require('sequelize')
 const {sequelize} = require('../db')
-import 'regenerator-runtime/runtime'
+// import 'regenerator-runtime/runtime'
 
 const Item = sequelize.define("items", {
   title: Sequelize.STRING,
