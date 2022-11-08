@@ -141,7 +141,7 @@ export const App = () => {
   return (
     <main className="main">
       <h1 className="Header1">Fectory Goods.</h1>
-      <h2 className="Header2" >Products Proficiency</h2>
+      <h2 className="Header2" >Our Products</h2>
       <br/>
       {individualItem ? (
         <>
