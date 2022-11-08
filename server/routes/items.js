@@ -41,9 +41,7 @@ router.post(
     } else {
      
       const itemToAdd = await Item.create(req.body);
-      const items = await Item.findAll();
-      items.push(itemToAdd);
-      res.send(items);
+      res.send(itemToAdd);
     }
   }
 );
@@ -74,7 +72,7 @@ router.put(
   async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      response.json({ error: errors.array() });
+      res.json({ error: errors.array() });
     } else {
       const num = req.params.id;
       const itemToUpdate = await Item.update(req.body, {
