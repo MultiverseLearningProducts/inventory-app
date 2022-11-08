@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import InventoryItem from "./InventoryItem";
 
-function Inventory({ items }) {
+function Inventory({ items, fetchItems }) {
   return (
     <div className="inventory-div">
       <Button className="additembutton">Add Item</Button>
@@ -19,7 +19,7 @@ function Inventory({ items }) {
         spacing={3}
       >
         {items.map((item) => (
-          <InventoryItem key={item.id} item={item} />
+          <InventoryItem key={item.id} items={items} item={item} fetchItems={fetchItems} />
         ))}
         ;
       </Grid>

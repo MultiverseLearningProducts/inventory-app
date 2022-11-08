@@ -30,7 +30,7 @@ function App() {
         <Cart items={items} setItems={setItems} />
       </div>
       <div className={checkItems === false ? "hideMe" : ""}>
-        <Inventory items={items} />
+        <Inventory items={items} fetchItems={fetchItems} />
       </div>
     </div>
   );

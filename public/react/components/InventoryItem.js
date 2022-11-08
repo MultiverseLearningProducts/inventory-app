@@ -6,7 +6,22 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-function InventoryItem({ item }) {
+
+function InventoryItem({ item, fetchItems }) {
+
+  // Delete button
+  const onClickHandler = async (item) => {
+    
+    try {
+      await fetch(`http://localhost:3000/api/items/${item.id}`, {
+        method: 'DELETE'
+      })
+      fetchItems()
+    } catch (error) {
+      throw error
+    }
+  }
+
   return (
     <Grid className="inventorycard" key={item.id} item xs={3}>
       <Card sx={{ height: 410, maxWidth: 345 }}>
@@ -28,7 +43,7 @@ function InventoryItem({ item }) {
           </Typography>
         </CardContent>
         <CardActions className="inventorybuttons">
-          <Button size="small">delete</Button>
+          <Button size="small" onClick={() => onClickHandler(item)}>delete</Button>
           <Button size="small">Learn More</Button>
         </CardActions>
       </Card>
