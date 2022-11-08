@@ -17,8 +17,6 @@ export const ItemDetails = ({ props }) => {
     console.log(deletedData);
     fetchAllClick();
   };
-
-  const addItemClick = async() => {
     
   }
 

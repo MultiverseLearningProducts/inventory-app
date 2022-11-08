@@ -23,7 +23,7 @@ export const ItemsList = ({ items, setItems, singleItem, setSingleItem }) => {
       })}
     </div>
   ) : (
-
+   
     <div id="itemList">
       {items.map((item, idx) => {
         return (
@@ -37,6 +37,10 @@ export const ItemsList = ({ items, setItems, singleItem, setSingleItem }) => {
       })}
       <button onClick={openForm}> 
         Add item 
+      </button>
+
+      <button onClick={openForm}>
+        Update:Edit Item
       </button>
     </div>
   
