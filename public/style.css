@@ -329,10 +329,9 @@ cursor: pointer;
 }
 
 .footer{
-  margin-top: 1rem;
-  /* padding: 1rem; */
+  padding: 1rem;
   background-color: #fdfdfd;
-  position: fixed;
+  position: absolute fixed;
   bottom: 0;
   left: 0;
   width: 100%;
