@@ -52,8 +52,10 @@ function App() {
           setShowDetails={setShowDetails}
           items={items}
           setSelectedItem={setSelectedItem}
+          fetchItems={fetchItems} 
         />
       </div>
+
       <div className={showDetails === false ? "hideMe" : ""}>
         <div className={isEdit === false ? "" : "hideMe"}>
           <ItemDetail
@@ -71,6 +73,7 @@ function App() {
             setIsEdit={setIsEdit}
           />
         </div>
+
       </div>
     </div>
   );
