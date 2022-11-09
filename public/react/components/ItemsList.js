@@ -7,7 +7,7 @@ export const ItemsList = ({ items, setItems, singleItem, setSingleItem, fetchIte
   const [addbuttonClick, setbuttonClick] = useState(false);
 
   const handleClick = () => {
-    setbuttonClick(true);
+    setbuttonClick(!addbuttonClick);
   }
   return singleItem ? (
     <div>

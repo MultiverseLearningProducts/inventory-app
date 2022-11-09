@@ -27,6 +27,7 @@ export const EditForm = ({ props }) => {
       });
       const data = await res.json();
       props.setSingleItem([data]);
+      
     }catch(err){
       console.log("Oh no an error! ", err)
     }
