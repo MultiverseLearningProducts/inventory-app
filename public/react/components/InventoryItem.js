@@ -14,22 +14,19 @@ function InventoryItem({
   item,
   setShowDetails,
   setCheckItems,
-  fetchItems
+  fetchItems,
 }) {
-
-  
   // Delete button
   const onClickHandler = async (item) => {
-    
     try {
       await fetch(`http://localhost:3000/api/items/${item.id}`, {
-        method: 'DELETE'
-      })
-      fetchItems()
+        method: "DELETE",
+      });
+      fetchItems();
     } catch (error) {
-      throw error
+      throw error;
     }
-  }
+  };
 
   // Details button
   async function handleDetailsClick(id) {
@@ -37,7 +34,6 @@ function InventoryItem({
     const response = await fetch(`${apiURL}/items/${id}`);
     const data = await response.json();
     setSelectedItem(data);
-
   }
 
   return (
@@ -57,11 +53,13 @@ function InventoryItem({
             {item.category}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            <h3>${item.price}</h3>
+            <h3>${item.price.toFixed(2)}</h3>
           </Typography>
         </CardContent>
         <CardActions className="inventorybuttons">
-          <Button size="small" onClick={() => onClickHandler(item)}>delete</Button>
+          <Button size="small" onClick={() => onClickHandler(item)}>
+            delete
+          </Button>
           <Button onClick={() => handleDetailsClick(item.id)} size="small">
             Learn More
           </Button>
@@ -69,7 +67,6 @@ function InventoryItem({
       </Card>
     </Grid>
   );
-
 }
 
 export default InventoryItem;

@@ -65,7 +65,7 @@ function CartItem({ item }) {
           </Card>
         </th>
         <th align="left">
-          <div className="price">${item.price}</div>
+          <div className="price">${item.price.toFixed(2)}</div>
         </th>
         <th align="left">
           <div className="qty">QTY</div>

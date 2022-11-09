@@ -43,9 +43,7 @@ function Inventory({
             setSelectedItem={setSelectedItem}
           />
         ))}
-        ;
       </Grid>
-      ;
     </div>
   );
 }

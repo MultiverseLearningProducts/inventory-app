@@ -60,10 +60,9 @@ function App() {
           setShowDetails={setShowDetails}
           items={items}
           setSelectedItem={setSelectedItem}
-          fetchItems={fetchItems} 
+          fetchItems={fetchItems}
         />
       </div>
-
 
       <div className={isAdd === false ? "hideMe" : ""}>
         <AddItem
@@ -74,7 +73,7 @@ function App() {
         />
       </div>
 
-<div className={showDetails === false ? "hideMe" : ""}>
+      <div className={showDetails === false ? "hideMe" : ""}>
         <div className={isEdit === false ? "" : "hideMe"}>
           <ItemDetail
             items={items}
@@ -87,14 +86,13 @@ function App() {
         </div>
         <div className={isEdit === false ? "hideMe" : ""}>
           <ItemEdit
-            item={selectedItem}
+            selectedItem={selectedItem}
             fetchItems={fetchItems}
             isEdit={isEdit}
             setIsEdit={setIsEdit}
-            
+            items={items}
           />
         </div>
-
       </div>
     </div>
   );

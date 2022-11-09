@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import "../itemedit.css";
 import apiURL from "../api";
 
-function ItemEdit({ item, setIsEdit, fetchItems, isEdit }) {
+function ItemEdit({ items, selectedItem, setIsEdit, fetchItems, isEdit }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [cat, setCat] = useState("");
   const [price, setPrice] = useState(0);
+
+  const ind = items.findIndex((x) => x.id === selectedItem.id);
+  const item = items[ind];
 
   async function updateItem(e) {
     const response = await fetch(`${apiURL}/items/${item.id}`, {
@@ -25,10 +28,10 @@ function ItemEdit({ item, setIsEdit, fetchItems, isEdit }) {
   }
 
   function handleCancel() {
-    setTitle(item.title);
-    setDescription(item.description);
-    setCat(item.cat);
-    setPrice(item.price);
+    setTitle(item?.title);
+    setDescription(item?.description);
+    setCat(item?.cat);
+    setPrice(item?.price);
     setIsEdit(false);
   }
 
@@ -44,7 +47,7 @@ function ItemEdit({ item, setIsEdit, fetchItems, isEdit }) {
     <div className="itemDetailsContainer">
       <h1 className="editNewItemTitle">Edit Item</h1>
 
-      <img className="itemimage" src={item.image} />
+      <img className="itemimage" src={item?.image} />
       <form onSubmit={(e) => handleSubmit(e)}>
         <div className="formelements">
           <input
@@ -52,28 +55,28 @@ function ItemEdit({ item, setIsEdit, fetchItems, isEdit }) {
             name="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder={item.title}
+            placeholder={item?.title}
           ></input>
           <textarea
             className="itemeditdescription"
             name="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            placeholder={item.description}
+            placeholder={item?.description}
           ></textarea>
           <input
             name="cat"
             className="itemeditcat"
             value={cat}
             onChange={(e) => setCat(e.target.value)}
-            placeholder={item.category}
+            placeholder={item?.category}
           ></input>
           <input
             name="price"
             className="itemeditprice"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
-            placeholder={item.price}
+            placeholder={item?.price}
           ></input>
           <button className="canceledit" onClick={handleCancel}>
             cancel
