@@ -17,15 +17,19 @@ export const EditForm = ({ props }) => {
   };
 
   const updateSingleItem = async () => {
-    const res = await fetch(`${apiURL}/items/${props.item.id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(itemData),
-    });
-    const data = await res.json();
-    props.setSingleItem([data]);
+    try{
+      const res = await fetch(`${apiURL}/items/${props.item.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(itemData),
+      });
+      const data = await res.json();
+      props.setSingleItem([data]);
+    }catch(err){
+      console.log("Oh no an error! ", err)
+    }
   };
 
   const handleSubmit = async (e) => {
