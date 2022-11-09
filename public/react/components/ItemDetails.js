@@ -22,7 +22,7 @@ export const ItemDetails = ({ props }) => {
   };
 
   const editClick = () => {
-    setShowEditForm(true);
+    setShowEditForm(!showEditForm);
   };
 
   return (
