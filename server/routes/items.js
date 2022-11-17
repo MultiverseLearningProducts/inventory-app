@@ -24,4 +24,16 @@ router.get('/:id', async (req, res, next) => {
   }
 })
 
+//Routes to ADD Item
+router.post('/', async (req, res, next) => {
+  try {
+    const addItem = await Item.create(req.body)
+    res.send(addItem)
+  } catch (error) {
+    next(error)
+  }
+})
+
+
+
 module.exports = router
