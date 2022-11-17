@@ -17,5 +17,5 @@ const seed = async () => {
         console.error(error);
     }
 }
-
+// Run the seed
 seed();
