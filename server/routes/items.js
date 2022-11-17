@@ -33,6 +33,16 @@ router.post('/', async (req, res, next) => {
     next(error)
   }
 })
+// Delete item
+router.delete('/:id', async (req, res, next) =>{
+  try {
+    const deletedItem = await Item.findByPk(req.params.id)
+     await deletedItem.destroy()
+    res.send(await Item.findAll())
+  } catch (error) {
+    next(error)
+  }
+})
 
 
 
