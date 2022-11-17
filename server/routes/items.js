@@ -31,10 +31,9 @@ router.post('/', [
 ], async (req, res) => {
   const errors = validationResult(req)
 
-  if(!errors){
+  if(errors.isEmpty()){
     await Item.create(req.body)
-    let findAllItems = await Item.findAll()
-    res.json(findAllItems)
+    res.json(await Item.findAll())
   } else {
     res.json({error: errors.array()})
   }
@@ -42,14 +41,22 @@ router.post('/', [
 
 // UPDATE
 router.put('/:id', async (req, res) => {
-  seedData[req.params.id - 1] = req.body
-  res.json(seedData)
+  const updateItem = await Item.update(req.body, {
+    where:{
+      id: req.params.id
+    }
+  })
+  res.json(await Item.findAll())
 })
 
 // DELETE
 router.delete('/:id', async (req, res) => {
-  seedData.splice(req.params.id - 1, 1)
-  res.json(seedData)
+  const deleteItem = await Item.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  res.json(await Item.findAll())
 })
 
 module.exports = router;
