@@ -20,7 +20,7 @@ export const App = () => {
 	}
 
 	useEffect(() => {
-		fetchs();
+		fetchItems();
 	}, []);
 
 	return (
