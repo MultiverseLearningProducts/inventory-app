@@ -8,8 +8,7 @@ router.get("/", async (req, res, next) => {
     const items = await Item.findAll();
     res.send(items);
   } catch (error) {
-    next(error);
-  }
+    next(error);}
 });
 
 module.exports = router;
