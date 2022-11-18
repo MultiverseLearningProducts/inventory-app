@@ -85,7 +85,9 @@ export const App = () => {
 					<input onChange={(e) => setDescription(e.target.value)} type="text" placeholder='Description' value={description}/>
 					<input onChange={(e) => setCategory(e.target.value)} type="text" placeholder='Category' value={category}/>
 					<input onChange={(e) => setImage(e.target.value)} type="text" placeholder='Image LInk' value={image}/>
+					<button type="submit">Create your new Item</button>
 				</form>
+				
 			</div>
 			:
 			<div>
