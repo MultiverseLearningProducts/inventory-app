@@ -3,7 +3,13 @@ import { ItemsList } from './ItemsList';
 
 // import and prepend the api url to any fetch calls
 import apiURL from '../api';
+export function Item() {
+	return <>{
+		<h1>Hello World </h1>
+		
+	}</>
 
+}
 export const App = () => {
 
 	const [items, setItems] = useState([]);
@@ -24,7 +30,8 @@ export const App = () => {
 	}, []);
 
 	return (
-		<main>	
+		<main>
+			<Item />	
       <h1>The FUN Store</h1>
 			<h2>All things 🔥</h2>
 			<ItemsList items={items} />
