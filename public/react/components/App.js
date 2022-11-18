@@ -8,6 +8,9 @@ export const App = () => {
 
 	const [items, setItems] = useState([]);
 	const [addItem, setAddItem] = useState(false)
+	const [itemDetails, setItemDetails] = useState(null)
+	const [singleView, setSingleView] = useState(false)
+	const [singleItemId, setSingleItemId] = useState(0)
 	// create forms 
 	// create usestates for all the properties from database
 	// title, price, description, category, image
@@ -63,6 +66,8 @@ export const App = () => {
 			console.log("Oh no an error! ", err)
 		}
 	}
+
+	
 	
 	useEffect(() => {
 		fetchItems();
@@ -87,7 +92,8 @@ export const App = () => {
 				<h2 >All things 🔥</h2>
 				<button onClick={addClickHandler}>Add a new Item</button>
 				</div>}
-			<ItemsList items={items} />
+			<ItemsList items={items} singleItemId={singleItemId} singleView={singleView} 
+			setSingleItemId={setSingleItemId} setSingleView={setSingleView}/>
 		</main>
 	)
 }
