@@ -9,3 +9,15 @@
   max-width: 15%;
   height: auto;
 }
+
+body{padding: 1%;}
+
+h3{
+  color: blue;
+  text-decoration: underline;
+}
+
+h3:hover{
+  text-decoration: underline;
+  color: rgb(9, 135, 137);
+}
