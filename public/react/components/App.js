@@ -7,6 +7,7 @@ import apiURL from '../api';
 export const App = () => {
 
 	const [items, setItems] = useState([]);
+	const [showSingleItem, setShowSingleItem] =  useState(false)
 
 	async function fetchItems(){
 		try {
@@ -27,7 +28,7 @@ export const App = () => {
 		<main>	
     <h1>Items Store</h1>
 			<h2>All things</h2>
-			<ItemsList items={items} />
+			<ItemsList items={items} showSingleItem={showSingleItem} setShowSingleItem={setShowSingleItem}/>
 		</main>
 	)
 }
