@@ -8,7 +8,7 @@ export const App = () => {
 
 	const [items, setItems] = useState([]);
 	const [addItem, setAddItem] = useState(false)
-	const [itemDetails, setItemDetails] = useState(null)
+	
 	const [singleView, setSingleView] = useState(false)
 	const [singleItemId, setSingleItemId] = useState(0)
 	// create forms 
