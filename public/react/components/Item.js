@@ -3,6 +3,9 @@ import apiURL from '../api'
 
 export const Item = (props) => {
   const [details, setDetails] = useState(false)
+
+  const [mks, setMks] = useState()
+
   const handleSingleItem = () => {
     props.setSingleView(!props.singleView)
     if (props.singleItemId === 0) {
