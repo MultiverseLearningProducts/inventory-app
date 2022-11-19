@@ -8,7 +8,7 @@ export const App = () => {
 
 	const [items, setItems] = useState([]);
 	const [isSinglePageView, setSinglePageView] = useState(false);
-	const [itemObject, setItemObject] = useState([])
+	const [itemObjectTitle, setItemObjectTitle] = useState('')
 	
 	async function fetchItems(){
 		try {
@@ -29,7 +29,7 @@ export const App = () => {
 		<main>	
       <h1>The FUN Store</h1>
 			<h2>All things 🔥</h2>
-			<ItemsList items={items} isSinglePageView={isSinglePageView} setSinglePageView={setSinglePageView} fetchItems={fetchItems} itemObject = {itemObject} setItemObject = {setItemObject}/>
+			<ItemsList items={items} isSinglePageView={isSinglePageView} setSinglePageView={setSinglePageView} fetchItems={fetchItems} itemObjectTitle={itemObjectTitle} setItemObjectTitle={setItemObjectTitle}/>
 		</main>
 	)
 }
