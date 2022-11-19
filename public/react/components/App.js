@@ -29,11 +29,7 @@ export const App = () => {
 		<main>	
       <h1>The FUN Store</h1>
 			<h2>All things 🔥</h2>
-			<ItemsList items={items} isSinglePageView={isSinglePageView} setSinglePageView={setSinglePageView} fetchItems={fetchItems} itemObjectTitle={itemObjectTitle} setItemObjectTitle={setItemObjectTitle}/>
+			<ItemsList items={items} isSinglePageView={isSinglePageView} setSinglePageView={setSinglePageView} itemObjectTitle={itemObjectTitle} setItemObjectTitle={setItemObjectTitle}/>
 		</main>
 	)
 }
-
-// id [setID] and pass it down to the fetch items
-//set signle page = true
-// if signle page view is true than run fiter else run map
