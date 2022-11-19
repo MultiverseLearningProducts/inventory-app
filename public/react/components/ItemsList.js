@@ -1,7 +1,7 @@
 import React from 'react';
 import { Item } from './Item';
 
-export const ItemsList = ({items, isSinglePageView, setSinglePageView, fetchItems, itemObject, setItemObject}) => {
+export const ItemsList = ({items, isSinglePageView, setSinglePageView, itemObjectTitle, setItemObjectTitle}) => {
    /*const handleItemClick = async (id) => {
     const response = await fetch (`${apiURL}/items/${id}`)
     const singleItem = await response.json()
@@ -14,12 +14,13 @@ export const ItemsList = ({items, isSinglePageView, setSinglePageView, fetchItem
    
    //if itemObject.length >0 map
    
-   return <>
-		
-        {
-            isSinglePageView 
-                ?items.filter((item, idx) => <Item item={item} key={idx} itemObject ={itemObject} setItemObject = {setItemObject} />)
-                : items.map((item, idx) => <Item item={item} key={idx} itemObject ={itemObject} setItemObject = {setItemObject} />)
-		}
-	</>
+   return (
+    <>
+      {
+        isSinglePageView
+        ? items.filter(item => item.title === itemObjectTitle).map((item1, idx) => <Item item={item1} key={idx} setItemObjectTitle={setItemObjectTitle} isSinglePageView={isSinglePageView} setSinglePageView={setSinglePageView}/>)
+        : items.map((item, idx) => <Item item={item} key={idx} setItemObjectTitle={setItemObjectTitle} isSinglePageView={isSinglePageView} setSinglePageView={setSinglePageView}/>)
+      }
+    </>
+  )
 }
