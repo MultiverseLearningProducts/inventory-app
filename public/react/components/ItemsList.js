@@ -17,8 +17,8 @@ export const ItemsList = ({items, isSinglePageView, setSinglePageView, fetchItem
    return <>
 		
         {
-            itemObject.length 
-                ? itemObject.map((item, idx) => <Item item={item} key={idx} itemObject ={itemObject} setItemObject = {setItemObject} />)
+            isSinglePageView 
+                ?items.filter((item, idx) => <Item item={item} key={idx} itemObject ={itemObject} setItemObject = {setItemObject} />)
                 : items.map((item, idx) => <Item item={item} key={idx} itemObject ={itemObject} setItemObject = {setItemObject} />)
 		}
 	</>

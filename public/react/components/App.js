@@ -24,7 +24,7 @@ export const App = () => {
 	useEffect(() => {
 		fetchItems();
 	}, []);
-
+	
 	return (
 		<main>	
       <h1>The FUN Store</h1>

@@ -2,12 +2,12 @@ import React from 'react';
 import apiURL from '../api';
 
 export const Item = ({item, items, setItems, isSinglePageView, setSinglePageView, fetchItems, itemObject, setItemObject}) => {
-    const handleItemClick = async (id) => {
-        const response = await fetch (`${apiURL}/items/${id}`)
-        const singleItem = await response.json()
-        console.log(singleItem)
+    const handleItemClick = () => {
+        /*const response = await fetch (`${apiURL}/items/${id}`)
+        const singleItem = await response.json() 
+        console.log(singleItem) */
         setSinglePageView(!isSinglePageView)
-        setItemObject([singleItem])
+        setItemObject([item])
       }
   return <>
     <h3>{item.title}</h3>
