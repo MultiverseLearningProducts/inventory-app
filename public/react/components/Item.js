@@ -18,7 +18,7 @@ export const Item = (props) => {
     setDetails(dataDetails)
   }
 
-// THIS IS WHERE WE NEED ASSISTANCE...  IT IS DELETING THE DETAILS NOT THE ITEMS
+  // THIS IS WHERE WE NEED ASSISTANCE...  IT IS DELETING THE DETAILS NOT THE ITEMS!
   const deleteHandler = async (props) => {
     const res = await fetch(`${apiURL}/items/${props.id}`, {
       method: 'DELETE',
@@ -26,7 +26,7 @@ export const Item = (props) => {
     const deleteItems = await res.json()
     setDetails(null)
   }
-////////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////////
   return (
     <>
       <div onClick={handleSingleItem}>
