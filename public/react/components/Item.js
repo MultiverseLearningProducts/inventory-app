@@ -1,11 +1,12 @@
 import React from 'react';
 
-export const Item = (props) => {
+export const Item = ({item, items, setItems, isSinglePageView, setSinglePageView, fetchItems, itemObject, setItemObject, handleItemClick}) => {
 
   return <>
-    <h3>{props.item.title}</h3>
-    <img src={props.item.image} alt={props.item.title} />
-    <p>{props.item.price}
-    {props.item.description}</p>
+    <h3>{item.title}</h3>
+    <img src={item.image} alt={item.title} />
+    <p>{item.price}</p>
+    <p>{item.description}</p>
+    <button onClick = {handleItemClick}>Its a Button ... maybe?</button>
   </>
 } 
