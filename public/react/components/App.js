@@ -8,7 +8,7 @@ export const App = () => {
 
 	const [items, setItems] = useState([]);
 	const [isSinglePageView, setSinglePageView] = useState(false);
-	const [itemObject, setItemObject] = useState(null)
+	const [itemObject, setItemObject] = useState([])
 	
 	async function fetchItems(){
 		try {
