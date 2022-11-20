@@ -7,11 +7,15 @@ export const Item = ({item, isSinglePageView, setSinglePageView, setItemObjectTi
     setItemObjectTitle(item.title);
   }
 
+  const handleBackButton = async () => {
+    setSinglePageView(!isSinglePageView);
+  }
+
   return <>
     <h3>{item.title}</h3>
     <img src={item.image} alt={item.title} />
     <p>{item.price}</p>
     <p>{item.description}</p>
-    <button onClick={handleItemClick}>{item.id}</button>
+    <button onClick={!isSinglePageView ? handleItemClick : handleBackButton}>{!isSinglePageView ? `Go to item` : 'Back To List'}</button>
   </>
 } 
