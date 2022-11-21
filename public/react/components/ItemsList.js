@@ -49,7 +49,7 @@ export const ItemsList = ({items, fetchItems, setSingleItemId, setSingleView, si
 									<input onChange={(e) => setDescription(e.target.value)} type="text" placeholder='Description' value={item.description}/>
 									<input onChange={(e) => setCategory(e.target.value)} type="text" placeholder='Category' value={item.category}/>
 									<input onChange={(e) => setImage(e.target.value)} type="text" placeholder='Image LInk' value={item.image}/>
-									<button type="submit">Update your new Item</button>
+									<button className="button2" type="submit">Update your new Item</button>
 								</form>
 								):(
 									null

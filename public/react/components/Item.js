@@ -53,7 +53,8 @@ export const Item = (props) => {
   return (
     <>
    { 
-   <div>
+   
+   <div className='cards'>
         <h3>{props.item.title}</h3>
         <img src={props.item.image} alt={props.item.title} />
       
@@ -75,6 +76,7 @@ export const Item = (props) => {
           </div>
         )}
         </div>
+        
       
       }
       

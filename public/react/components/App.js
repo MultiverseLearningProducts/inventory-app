@@ -75,7 +75,7 @@ export const App = () => {
 
 	return (
 		<main>	
-      <h1>Item Store</h1>
+      <h1>DDHM APPAREL </h1>
 			
 			{addItem ?
 			(<div>
@@ -85,12 +85,12 @@ export const App = () => {
 					<input onChange={(e) => setDescription(e.target.value)} type="text" placeholder='Description' value={description}/>
 					<input onChange={(e) => setCategory(e.target.value)} type="text" placeholder='Category' value={category}/>
 					<input onChange={(e) => setImage(e.target.value)} type="text" placeholder='Image LInk' value={image}/>
-					<button type="submit">Create your new Item</button>
+					<button className="button1" type="submit">Create your new Item</button>
 				</form>
 				
 			</div>)
 			:
-			(<div>
+			(<div className='container'>
 				<h2 >All things 🔥</h2>
 				<button onClick={addClickHandler}>Add a new Item</button>
 			<ItemsList items={items} setItems={setItems}singleItemId={singleItemId} singleView={singleView} 
