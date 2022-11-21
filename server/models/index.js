@@ -6,13 +6,9 @@ const {Item} = require('./Item');
 
 
 
-const Sauce = sequelize.define("sauces", {
-  name: Sequelize.STRING,
-  image: Sequelize.STRING,
-});
+
 
 module.exports = {
   sequelize,
-  Sauce,
   Item
 };
