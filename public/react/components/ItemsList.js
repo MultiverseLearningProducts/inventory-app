@@ -7,7 +7,9 @@ export const ItemsList = ({items, isSinglePageView, setSinglePageView, itemObjec
     <>
       {
         isSinglePageView
-        ? items.filter(item => item.title === itemObjectTitle).map((item1, idx) => <Item item={item1} key={idx} setItemObjectTitle={setItemObjectTitle} isSinglePageView={isSinglePageView} setSinglePageView={setSinglePageView}/>)
+        ? items.filter(item => item.title === itemObjectTitle).map((item1, idx) =>
+            <Item item={item1} key={idx} setItemObjectTitle={setItemObjectTitle} isSinglePageView={isSinglePageView} setSinglePageView={setSinglePageView}/>
+          )
         : items.map((item, idx) => <Item item={item} key={idx} setItemObjectTitle={setItemObjectTitle} isSinglePageView={isSinglePageView} setSinglePageView={setSinglePageView}/>)
       }
     </>
