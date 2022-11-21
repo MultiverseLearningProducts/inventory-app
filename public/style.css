@@ -1,8 +1,157 @@
-* {
+body {
   margin: 0;
   box-sizing: border-box;
-  background-color: rgb(223, 223, 223);
+  background: url('https://images.unsplash.com/photo-1520034475321-cbe63696469a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZGFyayUyMHNreSUyMHdpdGglMjBzdGFyc3xlbnwwfHwwfHw%3D&w=1000&q=80');
+  color: white;
+  font-family:Arial, Helvetica, sans-serif;
+  
+}
+/* img{
+  width: 200px;
+  margin: 20px;
+
+} */
+h1{
+  display: flex;
+  justify-content: center;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  align-items: center;
+  
+}
+.cards{
+  margin:10% auto 0 auto;
+	padding:30px;
+	width:400px;
+	height:auto;
+	overflow:hidden;
+  background-size: cover;
+	border-radius:10px;
+  /* color: white;
+  align-items: center;
+  margin-top: 100px;  */
 }
 img{
-  width: 300px;
+  object-fit: contain;
+  column-gap: 20px;
+  border-radius: 5px;
+  /* width: 300px; */
+  max-width: 100%;
+  height: auto;
+  border-color: black;
+  border-width: 20px;
+  /* width: 200px;
+  margin: 20px; */
+  
+}
+
+button{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    height: 60px;
+    margin-top: 30px;
+    margin-left:80px ;
+    font-size: 24px;
+    font-family: 'Roboto Condensed', sans-serif;
+    border-radius: 50px;
+    border-width: 0;
+    color: black;
+    background-color: white;
+    outline: 0;
+}
+
+form {
+	margin:10% auto 0 auto;
+	padding:30px;
+	width:400px;
+	height:auto;
+	overflow:hidden;
+	background: url("https://www.addictioncenter.com/app/uploads/2020/01/online_shopping_addiction-scaled.jpeg");
+  background-size: cover;
+	border-radius:10px;
+}
+
+form input {
+	margin:15px 0;
+	padding:15px 10px;
+	width:100%;
+	outline:none;
+	border:1px solid #bbb;
+	border-radius:20px;
+	display:inline-block;
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+	        box-sizing:border-box;
+    -webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+form input[type=text]:focus,
+form input[type="password"]:focus {
+	border-color:cornflowerblue;
+}
+
+input[type=submit] {
+	padding:15px 50px;
+	width:auto;
+	background:#1abc9c;
+	border:none;
+	color:white;
+	cursor:pointer;
+	display:inline-block;
+	float:right;
+	clear:right;
+	-webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+input[type=submit]:hover {
+	opacity:0.8;
+}
+
+input[type="submit"]:active {
+	opacity:0.4;
+}
+.button1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+  height: 60px;
+  margin-top: 30px;
+  margin-left: 80px;
+  font-size: 24px;
+  font-family: 'Roboto Condensed', sans-serif;
+  border-radius: 16px;
+  border-width: 0;
+  color: white;
+  background-color: black;
+  outline: 0;
+}
+.button2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+  height: 60px;
+  margin-top: 30px;
+  margin-left: 80px;
+  font-size: 24px;
+  font-family: 'Roboto Condensed', sans-serif;
+  border-radius: 16px;
+  border-width: 0;
+  color: white;
+  background-color: black;
+  outline: 0;
 }
