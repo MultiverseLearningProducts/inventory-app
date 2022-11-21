@@ -1,9 +1,33 @@
-* {
-  margin: 0;
-  box-sizing: border-box;
-  background-color: rgb(223, 223, 223);
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  margin-right: 30px;
 }
+.menu{
+  color: black;
 
-img{
-  height: 200px;
+}
+header{
+  height: 200px
+}
+section {
+  background: url("https://img.freepik.com/premium-photo/sale-offer-black-friday-shopping-discount-closeup-woman-hand-holding-purchase-bags-isolated-orange-empty-space-background_279525-17960.jpg?w=2000");
+  background-size: contain;
+  height: 600px;
+}
+ #itemsContainer{
+    display: flex;
+  flex-direction: row;
+ }
+ 
+#itemContainer{
+  box-shadow: 2px 2px 2px 5px (255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+#itemDescription{
+  font-size: 10px
 }

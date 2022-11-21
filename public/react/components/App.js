@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ItemsList } from './ItemsList';
 import { Form } from "./Form";
+//import {middleImage} from "https://img.freepik.com/premium-photo/sale-offer-black-friday-shopping-discount-closeup-woman-hand-holding-purchase-bags-isolated-orange-empty-space-background_279525-17960.jpg"
  
 // import and prepend the api url to any fetch calls
 import apiURL from '../api';
@@ -29,6 +30,18 @@ export const App = () => {
 	}, []);
 	
 	return (
+		<>
+		<header>The F.U.N Store 
+			<nav>
+        		<ul>
+            	<ul class="menu"><a href="/">Home</a></ul>
+            	<ul class="menu"><a href="/">About Us</a></ul>
+            	<ul class="menu"><a href="/">Where to Find</a></ul>
+            	<ul class="menu"><a href="/">Cart</a></ul>
+        		</ul>
+    		</nav>
+		</header>
+		<section id="middle-image"></section>
 		<main>	
       <h1>The FUN Store</h1>
 			<h2>All things 🔥</h2>
@@ -41,5 +54,6 @@ export const App = () => {
         fetchItems={fetchItems}
 				/>
 		</main>
+		</>
 	)
 }
