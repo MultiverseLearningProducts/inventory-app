@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import apiURL from '../api'
 
 export const Item = (props) => {
-  const [details, setDetails] = useState(false)
+  
+  
+  
 
-  const [mks, setMks] = useState()
+  
 
   const handleSingleItem = () => {
     props.setSingleView(!props.singleView)
@@ -14,46 +16,69 @@ export const Item = (props) => {
       props.setSingleItemId(0)
     }
   }
-  const userClick = async (props) => {
+  const userClick = async () => {
+    console.log(props.item)
     const res = await fetch(`${apiURL}/items/${props.item.id}`)
     const dataDetails = await res.json()
     console.log(dataDetails)
-    setDetails(dataDetails)
+    props.setDetails(dataDetails)
+    console.log(props.details)
+    props.setSingleView(true)
+    props.setSingleItemId(props.item.id)
+   
   }
 
   // THIS IS WHERE WE NEED ASSISTANCE...  IT IS DELETING THE DETAILS NOT THE ITEMS!
-  const deleteHandler = async (props) => {
-    const res = await fetch(`${apiURL}/items/${props.id}`, {
+  const deleteHandler = async () => {
+    console.log(props.item)
+    const res = await fetch(`${apiURL}/items/${props.item.id}`, {
       method: 'DELETE',
     })
     const deleteItems = await res.json()
-    setDetails(null)
+    const response = await fetch(`${apiURL}/items`);
+			const itemsData = await response.json();
+      props.setItems(itemsData)
+    props.setDetails(false)
+    handleSingleItem()
   }
+  const updateHandler =() =>{
+    // props.setSingleView(true)
+    // props.setSingleItemId(props.item.id)
+    props.setEditItem(true)
+    
+
+  }
+  
   ////////////////////////////////////////////////////////////////////////////////////
   return (
     <>
-      <div onClick={handleSingleItem}>
+   { 
+   <div>
         <h3>{props.item.title}</h3>
         <img src={props.item.image} alt={props.item.title} />
-      </div>
-      <div>
-        {details ? (
+      
+       {Object.keys(props.details).length ?  (
           <>
             <h3>{props.item.title}</h3>
             <h4> Price:</h4>
-            <p>{details.price}</p>
+            <p>{props.details.price}</p>
             <h4> Description:</h4>
-            <p>{details.description}</p>
+            <p>{props.details.description}</p>
             <button onClick={handleSingleItem}>Back to main list</button>
             <button onClick={deleteHandler}>Delete Item</button>
+            <button onClick ={updateHandler}>Update Item</button>
           </>
         ) : (
           <div>
             <h3>{props.item.title}</h3>
-            <button onClick={() => userClick(props)}> Details</button>
+            <button onClick={userClick}> Details</button>
           </div>
         )}
-      </div>
+        </div>
+      
+      }
+      
     </>
   )
+      
 }

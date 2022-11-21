@@ -60,7 +60,7 @@ export const App = () => {
 		try {
 			const response = await fetch(`${apiURL}/items`);
 			const itemsData = await response.json();
-			
+			console.log(fetchItems)
 			setItems(itemsData);
 		} catch (err) {
 			console.log("Oh no an error! ", err)
@@ -78,7 +78,7 @@ export const App = () => {
       <h1>Item Store</h1>
 			
 			{addItem ?
-			<div>
+			(<div>
 				<form onSubmit={handleSubmit}>
 					<input onChange={(e) => setTitle(e.target.value)} type="text" placeholder='Title' value={title}/>
 					<input onChange={(e) => setPrice(e.target.value)} type="number" placeholder='Price' value={price}/>
@@ -88,14 +88,15 @@ export const App = () => {
 					<button type="submit">Create your new Item</button>
 				</form>
 				
-			</div>
+			</div>)
 			:
-			<div>
+			(<div>
 				<h2 >All things 🔥</h2>
 				<button onClick={addClickHandler}>Add a new Item</button>
-				</div>}
-			<ItemsList items={items} singleItemId={singleItemId} singleView={singleView} 
-			setSingleItemId={setSingleItemId} setSingleView={setSingleView}/>
+			<ItemsList items={items} setItems={setItems}singleItemId={singleItemId} singleView={singleView} 
+			setSingleItemId={setSingleItemId} setSingleView={setSingleView} setTitle={setTitle} setDescription= {setDescription} setPrice={setPrice} setCategory={setCategory} setImage={setImage} title={title} description={description} price={price} category={category} image={image}/>
+			</div>)
+}
 		</main>
 	)
 }
