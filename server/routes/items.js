@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const {Item} = require('../models/Item')
+const {Item} = require('../models/Item');
+const { items } = require("../seedData");
 
-// GET/items
+// GET/item
 router.get("/", async (req, res, next) => {
   try {
     const items = await Item.findAll();
@@ -15,12 +16,12 @@ router.get("/", async (req, res, next) => {
 
 });
 
-//Get/ one item
+//Get/one item
 router.get("/:id", async (req, res, next) => {
   try {
     const items = await Item.findByPk(req.params.id);
-    const eachItem = await items.json();
-    res.send(eachItem);
+    //const eachItem = await items.json();
+    res.send(items);
   } catch (error) {
     next(error);
   }
@@ -28,12 +29,12 @@ router.get("/:id", async (req, res, next) => {
 
 });
 
-//Post/items 
+//Post/item
 router.post("/", async (req, res, next) => {
   try {
     const items = await Item.create(req.body);
-    const newItem = await items.json();
-    res.send(newItem);
+    // const newItem = await items.json();
+    res.send(items);
   } catch (error) {
     next(error);
   }
@@ -41,7 +42,7 @@ router.post("/", async (req, res, next) => {
 
 });
 
-//Delete/items 
+//Delete/item
 router.delete("/:id", async (req, res, next) => {
   try {
     const deleteItem = await Item.destroy({
@@ -50,6 +51,22 @@ router.delete("/:id", async (req, res, next) => {
       }
     })
     res.send(await Item.findAll());
+  } catch (error) {
+    next(error);
+  }
+
+
+});
+
+//Update/item
+router.put("/:id", async (req, res, next) => {
+  try {
+    const updateItems = await Item.update(req.body,{
+      where:{
+        id: req.params.id
+      }
+    })
+    res.send(updateItems);
   } catch (error) {
     next(error);
   }
