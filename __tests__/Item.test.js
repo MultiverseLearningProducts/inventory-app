@@ -34,5 +34,16 @@ describe('------ testing Item calls ------', () => {
         
     });
 
+    it('can delete an item', async () => {
+        const deleteItem = await Item.findAll();
+        const destroyItem = await deleteItem[0].destroy();
+        expect(destroyItem.title).toBe('Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops');
+        expect(destroyItem.price).toBe(99.95);
+        expect(destroyItem.description).toBe('Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday');
+        expect(destroyItem.category).toBe('men\'s clothing');
+        expect(destroyItem.image).toBe('https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg');
+
+    });
+
 
 });
