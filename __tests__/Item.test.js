@@ -21,7 +21,18 @@ describe('------ testing Item calls ------', () => {
     it('can find an item', async () => {
         const findItem = await Item.findAll()
         expect(findItem[0].title).toEqual('Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops');
-    })
+    });
+
+    it('can update an item', async () => {
+        const foundItem = await Item.findAll();
+        const updateItem = await foundItem[0].update({price: 99.95})
+        expect(updateItem.title).toBe('Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops');
+        expect(updateItem.price).toBe(99.95);
+        expect(updateItem.description).toBe('Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday');
+        expect(updateItem.category).toBe('men\'s clothing');
+        expect(updateItem.image).toBe('https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg');
+        
+    });
 
 
 });
