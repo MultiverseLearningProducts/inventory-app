@@ -18,5 +18,10 @@ describe('------ testing Item calls ------', () => {
         expect(backpack.image).toBe('https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg');
     });
 
+    it('can find an item', async () => {
+        const findItem = await Item.findAll()
+        expect(findItem[0].title).toEqual('Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops');
+    })
+
 
 });
