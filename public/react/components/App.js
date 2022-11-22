@@ -31,7 +31,7 @@ export const App = () => {
 	
 	return (
 		<>
-		<header>The F.U.N Store 
+		<header> 
 			<nav>
         		<ul>
             	<ul class="menu"><a href="/">Home</a></ul>
@@ -40,20 +40,21 @@ export const App = () => {
             	<ul class="menu"><a href="/">Cart</a></ul>
         		</ul>
     		</nav>
+			<img class ="logo" src= {"https://cdn.shopify.com/s/files/1/0606/7663/6843/files/Original_size_Funshop_1_da4e7e2d-d7fc-46fb-94f7-3f5b8e6ee987_1200x1200.png"}></img>
 		</header>
 		<section id="middle-image"></section>
-		<main>	
-      <h1>The FUN Store</h1>
-			<h2>All things 🔥</h2>
-			<ItemsList items={items} isSinglePageView={isSinglePageView} setSinglePageView={setSinglePageView} itemObjectTitle={itemObjectTitle} setItemObjectTitle={setItemObjectTitle}/>
-		<Form
+		
+		<main id ="itemsContainer">	
+			<ItemsList  items={items} isSinglePageView={isSinglePageView} setSinglePageView={setSinglePageView} itemObjectTitle={itemObjectTitle} setItemObjectTitle={setItemObjectTitle}/>
+
+		</main>			
+			<Form
 			isAddingItem={isAddingItem}
-        setIsAddingItem={setIsAddingItem}
-        items={items}
-        setItems={setItems}
-        fetchItems={fetchItems}
-				/>
-		</main>
+        	setIsAddingItem={setIsAddingItem}
+        	items={items}
+        	setItems={setItems}
+        	fetchItems={fetchItems}
+			/>
 		</>
 	)
 }

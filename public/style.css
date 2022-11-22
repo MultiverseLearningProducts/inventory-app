@@ -1,33 +1,58 @@
+.logo {
+  height: 100px;
+  margin-bottom: 10px;
+  margin-left: 35px;
+}
 ul {
   display: flex;
   flex-direction: row;
   justify-content: right;
   margin-right: 30px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: black
 }
-.menu{
+ul:visited {
+  color: black
+}
+ul:hover{
   color: black;
-
+  font-style: bold;
 }
 header{
-  height: 200px
+  height: 20px
 }
 section {
-  background: url("https://img.freepik.com/premium-photo/sale-offer-black-friday-shopping-discount-closeup-woman-hand-holding-purchase-bags-isolated-orange-empty-space-background_279525-17960.jpg?w=2000");
-  background-size: contain;
+  background: url("https://thedrum-media.imgix.net/thedrum-prod/s3/adobestock_348839765.jpeg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-color: rgb(255, 132, 153);
   height: 600px;
+  margin-top: 150px;
+  margin-left: 35px;
+  margin-right: 35px;
 }
+
  #itemsContainer{
-    display: flex;
+  display: flex;
   flex-direction: row;
+  flex-wrap:wrap;
+  align-items: center;
  }
  
 #itemContainer{
-  box-shadow: 2px 2px 2px 5px (255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  margin: 35px;
+  padding: 10px;
+  font-size: 15px;
   text-align: center;
+  height: 400px;
+  width: 400px;
 }
 #itemDescription{
   font-size: 10px
+}
+#itemImage{
+  height: 200px;
+  width: 200px;
 }
