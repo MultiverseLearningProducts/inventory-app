@@ -91,8 +91,8 @@ export const App = () => {
 			</div>)
 			:
 			(<div className='container'>
-				<h2 >All things 🔥</h2>
-				<button onClick={addClickHandler}>Add a new Item</button>
+				<h2 >Brand new Inventory 🔥</h2>
+				<button className='buttonAdd' onClick={addClickHandler}>Add a new Item</button>
 			<ItemsList items={items} setItems={setItems}singleItemId={singleItemId} singleView={singleView} 
 			setSingleItemId={setSingleItemId} setSingleView={setSingleView} setTitle={setTitle} setDescription= {setDescription} setPrice={setPrice} setCategory={setCategory} setImage={setImage} title={title} description={description} price={price} category={category} image={image}/>
 			</div>)
