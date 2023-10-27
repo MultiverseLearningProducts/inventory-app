@@ -12,7 +12,7 @@ export const ItemShow = ({setItem, item}) => {
             <div>
                 <img src={item.image} width="100" height="100" />
                 <p>{item.name}</p>
-                <p>{item.price}</p>
+                <p>{Number(props.item.price).toFixed(2)}</p>
                 <p>{item.description}</p>
             </div>
         </div>

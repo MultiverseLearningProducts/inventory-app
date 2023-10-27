@@ -6,10 +6,7 @@ class Item extends Model {};
 
 Item.init({
     name: DataTypes.STRING,
-    price: {
-        type: DECIMAL(10, 2),
-        field: 'price'
-    },
+    price: DataTypes.DECIMAL(10, 2),
     description:DataTypes.STRING,
     category:DataTypes.STRING,
     image:DataTypes.STRING
