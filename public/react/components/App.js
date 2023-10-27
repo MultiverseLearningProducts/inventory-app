@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ItemsList } from './ItemsList';
+import { ItemShow } from './ItemShow';
 
 // import and prepend the api url to any fetch calls
 import apiURL from '../api';
@@ -19,9 +20,9 @@ export const App = () => {
 		}
 	}
 
-	async function fetchItem(){
+	async function fetchItem(id){
 		try {
-			const response = await fetch('${apiURL}/items/:id');
+			const response = await fetch(`${apiURL}/items/${id}`);
 			const itemData = await response.json();
 			setItem(itemData);
 		} catch(err) {
@@ -39,18 +40,11 @@ export const App = () => {
 			{!item
 			?
 			<>
-			<h2>All things 🔥!</h2>
-			<ItemsList items={items} />
+				<h2>All things 🔥!</h2>
+				<ItemsList items={items} fetchItem={fetchItem}/>
 			</>
 			:
-			<>
-			<h2>🔥!</h2>
-			<button onClick={()=>setItem({})}>Back</button>
-			<img src={item.image}/>
-			<p>{item.name}</p>
-			<p>{item.price}</p>
-			<p>{item.description}</p>
-			</>
+				<ItemShow item={item} setItem={setItem}/>
 			}
 		</main>
 	)
