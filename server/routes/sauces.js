@@ -14,4 +14,14 @@ sauceRouter.get("/", async (req, res, next) => {
   }
 });
 
+// GET sauces/:id
+sauceRouter.get('/:id', async (req, res, next) => {
+  try {
+      const found = await Sauce.findByPk(req.params.id);
+      res.json(found)
+  } catch (err) {
+      next(err)
+  }
+})
+
 module.exports = sauceRouter;

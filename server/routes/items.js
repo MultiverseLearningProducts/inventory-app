@@ -14,4 +14,14 @@ itemRouter.get("/", async (req, res, next) => {
   }
 });
 
+// GET item/:id
+itemRouter.get('/:id', async (req, res, next) => {
+  try {
+      const found = await Item.findByPk(req.params.id);
+      res.json(found)
+  } catch (err) {
+      next(err)
+  }
+})
+
 module.exports = itemRouter;
