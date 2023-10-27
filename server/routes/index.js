@@ -1,7 +1,9 @@
 const express = require("express");
-const router = express.Router();
+const sauceRouter = require("./sauces");
+const itemRouter = require("./items");
 
 // different model routers
-router.use('/sauces', require('./sauces'));
 
-module.exports = router;
+
+
+module.exports = sauceRouter, itemRouter;
