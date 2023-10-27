@@ -5,8 +5,8 @@ const app = express();
 const morgan = require('morgan');
 const path = require('path');
 const cors = require('cors');
-// const itemRouter = require('./routes')
-const sauceRouter = require('./routes')
+const itemRouter = require('./routes/items')
+const sauceRouter = require('./routes/sauces')
 
 
 //Allow CORS requests
@@ -20,10 +20,12 @@ app.use(express.json());
 // serve up static files (e.g. html and css files)
 app.use(express.static(path.join(__dirname, '../dist')));
 
+// api router
+// app.use('/api', require('./routes'));
 
 // routers
 app.use('/sauces', sauceRouter);
-// app.use('/items', itemRouter);
+app.use('/items', itemRouter);
 
 
 // 404 handler
