@@ -1,10 +1,12 @@
-const express = require("express");
-const router = express.Router();
+const {Router} = require('express');
 const { Sauce } = require("../models");
 
+const sauceRouter = Router();
+
 // GET /sauce
-router.get("/", async (req, res, next) => {
+sauceRouter.get("/", async (req, res, next) => {
   try {
+      // might need res.json() for the info to be parsed into JSON
     const sauces = await Sauce.findAll();
     res.send(sauces);
   } catch (error) {
@@ -12,4 +14,4 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-module.exports = router;
+module.exports = sauceRouter;
