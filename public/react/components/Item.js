@@ -6,7 +6,7 @@ export const Item = (props) => {
   <div onClick={()=> props.fetchItem(props.item.id)}>
     <h3>{props.item.name}</h3>
     <h4>{props.item.price}</h4>
-    <img src={props.item.image} alt={props.item.name} />
+    <img src={props.item.image} alt={props.item.name} width="100" height="100" />
   </div>
   )
 } 
