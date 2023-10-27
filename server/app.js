@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../dist')));
 
 // api router
-// app.use('/api', require('./routes'));
+app.use('/api', require('./routes'));
 
 // routers
 app.use('/sauces', sauceRouter);
