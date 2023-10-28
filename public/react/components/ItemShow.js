@@ -4,7 +4,7 @@ export const ItemShow = ({setItem, item}) => {
 
 
     return(
-        <div>
+        <div className="show">
             <div>
                 <h2>🔥!</h2>
 			    <button onClick={()=>setItem({})}>Back</button>
