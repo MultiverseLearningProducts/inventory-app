@@ -15,6 +15,7 @@ export const App = () => {
 			const response = await fetch(`${apiURL}/items`);
 			const itemsData = await response.json();
 			setItems(itemsData);
+			console.log(items, itemsData)
 		} catch (err) {
 			console.log("Oh no an error! ", err)
 		}
@@ -37,7 +38,7 @@ export const App = () => {
 	return (
 		<main>	
       <h1>CADS-DRY INC & Sons Store</h1>
-			{!item
+			{!item.name
 			?
 			<>
 				<h2>All things 🔥!</h2>
