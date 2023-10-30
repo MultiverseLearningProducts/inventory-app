@@ -46,7 +46,7 @@ export const App = () => {
 				<ItemsList items={items} fetchItem={fetchItem}/>
 			</>
 			:
-				<ItemShow item={item} setItem={setItem}/>
+				<ItemShow item={item} setItem={setItem} fetchItems={fetchItems}/>
 			}
 		</main>
 	)
