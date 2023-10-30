@@ -26,9 +26,9 @@ itemRouter.get("/:id", async (req, res, next) => {
 // POST new Item
 itemRouter.post("/", async (req, res, next) => {
   try {
-    await Item.create(req.body)
-    const all = await Item.findAll()
-    res.json(all)
+    const createdItem = await Item.create(req.body)
+    console.log(createdItem)
+    res.json(createdItem)
   } catch (err){
     next(err)
   }
