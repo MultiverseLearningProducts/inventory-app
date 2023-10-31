@@ -15,14 +15,6 @@ Item.init({
     modelName: "Item"
 })
 
-// const Item = db.define("items", {
-//     name: Sequelize.STRING,
-//     price: Sequelize.DECIMAL(10, 2),
-//     description:Sequelize.STRING,
-//     category:Sequelize.STRING,
-//     image:Sequelize.STRING
-//   });
-
 module.exports = {
     Item
 }
