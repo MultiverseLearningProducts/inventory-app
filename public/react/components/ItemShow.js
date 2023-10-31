@@ -22,10 +22,11 @@ export const ItemShow = ({setItem, item, fetchItems}) => {
 						method:"DELETE"
 					})
                     fetchItems()
+                    setItem({})
                     }
 				}>
-					Delete
-				</button>
+				Delete
+			</button>
         </div>
     )
 
