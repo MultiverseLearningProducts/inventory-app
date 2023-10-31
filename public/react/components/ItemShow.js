@@ -1,6 +1,7 @@
 import React from "react"
+import apiURL from '../api';
 
-export const ItemShow = ({setItem, item}) => {
+export const ItemShow = ({setItem, item, fetchItems}) => {
 
 
     return(
@@ -15,6 +16,17 @@ export const ItemShow = ({setItem, item}) => {
                 <p>{Number(item.price).toFixed(2)}</p>
                 <p>{item.description}</p>
             </div>
+            <button className="deleteBtn" onClick={
+					async()=>{
+					fetch(`${apiURL}/items/`+ item.id,{
+						method:"DELETE"
+					})
+                    fetchItems()
+                    setItem({})
+                    }
+				}>
+				Delete
+			</button>
         </div>
     )
 
