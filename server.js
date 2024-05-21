@@ -1,11 +1,12 @@
-const { db } = require("./server/models");
+const sequelize = require("./server/db");
 const app = require("./server/app");
+const seed = require("./server/seed")
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 const init = async () => {
   try {
-    await db.sync();
+    await sequelize.sync();
 
     app.listen(PORT, () => {
       console.log(`Server listening at http://localhost:${PORT}`);
@@ -14,5 +15,7 @@ const init = async () => {
     console.error('Error starting server:', error)
   }
 };
+
+
 
 init();
