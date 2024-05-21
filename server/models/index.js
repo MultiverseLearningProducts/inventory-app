@@ -1,12 +1,8 @@
-const {Sequelize} = require('sequelize')
-const {sequelize} = require('../db')
+// import Book model
+const {Book} = require('../models/Book')
 
-const Sauce = sequelize.define("sauces", {
-  name: Sequelize.STRING,
-  image: Sequelize.STRING,
-});
+
 
 module.exports = {
-  db: sequelize,
-  Sauce,
+  Book
 };
