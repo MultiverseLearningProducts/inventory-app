@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
 import apiURL from "../api";
 import axios from "axios";
 import BookCard from "./BookCards";
 
+// GET all books
 function Books() {
   const [books, setBooks] = useState([])
   useEffect(() => {

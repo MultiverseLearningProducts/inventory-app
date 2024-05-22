@@ -8,11 +8,7 @@ function BookCard(props) {
                 <img src={img} />
                 <h3>{title}</h3>
                 <p>{author}</p>
-                <p>{description}</p>
-                <p>{price}</p>
-                <p>{quantity}</p>
-                <p>{genre}</p>
-            <Link to={`/${id}`}>
+            <Link to={`/books/${id}`}>
                 <button>Details</button>
             </Link>
         </div>
