@@ -7,11 +7,11 @@ import BookDetailCard from "./BookDetailCard";
 // GET one books details
 function BookDetails() {
     const { id } = useParams();
-    const [book, setBook] = useState([])
+    const [book, setBook] = useState({})
     useEffect(() => {
       const getBook = async () => {
         try {
-          const result = await axios.get(`${apiURL}/books/:${id}`)
+          const result = await axios.get(`${apiURL}/books/${id}`)
           const bookDetails = result.data
             setBook(bookDetails)
             console.log(setBook)
