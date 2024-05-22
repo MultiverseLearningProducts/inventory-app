@@ -76,42 +76,14 @@ const updateBook = async (req, res) => {
             res.status(404).send("Book not found!")
         } else{
             //update
-            // console.log(book)
             const updatedBook = await book.update(newBookInfo)
-            // console.log(updatedBook)
-            if(updatedBook === book) {
-                res.status(200).send("Book has been updated!")
-            } else {
-                res.status(400).send(`Couldn't update book, try again!`)
-            }
+            res.status(200).send("Book has been updated!")
         }
     } catch (error) {
         console.error(error)
         res.status(500).send(error)
     }
 };
-
-// const updateBook = async (req, res) => {
-//     try {
-//         const newBookInfo = req.body;
-//         const bookId = req.params.bookId;
-//         // Find the book by primary key
-//         const book = await Book.findByPk(bookId);
-//         if (!book) {
-//             return res.status(404).send("Book not found.");
-//         }
-//         // Update the book with new information
-//         const [updateCount] = await book.update(newBookInfo);
-//         if (updateCount > 0) {
-//             res.status(200).send("Book updated!");
-//         } else {
-//             res.status(200).send("No changes made to the book.");
-//         }
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).send("Failed to update the book.");
-//     }
-// };
 
 
 module.exports = {

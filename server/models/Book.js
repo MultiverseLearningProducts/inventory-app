@@ -15,11 +15,16 @@ const Book = sequelize.define('book', {
     },
     price: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            isNumeric: true
+        }
+        
     },
     quantity: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        isNumeric: true
     },
     genre: {
         type: DataTypes.STRING,
