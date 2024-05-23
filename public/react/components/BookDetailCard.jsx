@@ -26,7 +26,7 @@ function BookDetailCard(props) {
                 <Link to={`/`}>
                     <button onClick={handleDelete}>Delete</button>
                 </Link>
-                <Link to={`/books/${id}`}>
+                <Link to={`/edit-book/${id}`}>
                     <button>Edit</button>
                 </Link>
         </div>
