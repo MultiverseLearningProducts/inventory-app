@@ -1,5 +1,7 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import apiURL from '../api'
+import { Link } from 'react-router-dom'
 
 function CreateBookForm() {
     const [title, setTitle] = useState('')
@@ -11,6 +13,33 @@ function CreateBookForm() {
 
     const [message, setMessage] = useState('')
     const [submitted, setSubmitted] = useState(false)
+
+    async function handleSubmit(event) {
+        event.preventDefault() //stop the page from auto refreshing
+        const requestBody = {
+            title,
+            author,
+            price,
+            description,
+            genre,
+            quantity,
+        }
+        //check to see if there are any empty fields
+        const isEmptyCheck = Object.values(requestBody).some((property) => (property === ''))
+        setSubmitted(true)
+        try {
+           //check to make sure no field is empty
+           if(!isEmptyCheck) {
+            await axios.post(`${apiURL}/books/`, requestBody)
+            setMessage("Book has been added successfully")
+           } else {
+            setMessage("Error in creating book, Try again!")
+           }
+        } catch (error) {
+            setMessage("Error in creating book, Try again!")
+            console.error(error)
+        }
+    }
 
     return(
         <>
@@ -77,7 +106,12 @@ function CreateBookForm() {
                         }}
                     />
                 </label>
+                <Link to='/'>
                 <button type="submit">Add New Book</button>
+                </Link>
+                    
+                
+                
             </form>
         </>
     )
