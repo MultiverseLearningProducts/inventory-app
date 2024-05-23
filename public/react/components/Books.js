@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import apiURL from "../api";
 import axios from "axios";
 import BookCard from "./BookCards";
-
+import {Link} from "react-router-dom"
 // GET all books
 function Books() {
   const [books, setBooks] = useState([])
@@ -23,6 +23,9 @@ function Books() {
   <>
     <div className="books-container">
       <h1>Books</h1>
+      <Link to="/new-book">
+          <button>Add a Book</button>
+      </Link>
       {books.map((book, idx) => {
         return <BookCard key={idx} bookInfo={book} />
       })}
