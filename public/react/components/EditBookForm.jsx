@@ -1,9 +1,14 @@
+import React from "react";
+
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import apiURL from '../api'
 import { Link } from 'react-router-dom'
+import { useParams, Link } from "react-router-dom";
 
-function CreateBookForm() {
+function EditBookForm() {
+    const { id } = useParams();
+    const [book, setBook] = useState({})
     const [title, setTitle] = useState('')
     const [author, setAuthor] = useState('')
     const [price, setPrice] = useState('')
@@ -30,16 +35,45 @@ function CreateBookForm() {
         try {
            //check to make sure no field is empty
            if(!isEmptyCheck) {
-            await axios.post(`${apiURL}/books/`, requestBody)
-            setMessage("Book has been added successfully")
+            await axios.put(`${apiURL}/books/${id}`, requestBody)
+            setMessage("Book has been updated successfully")
            } else {
-            setMessage("Error in creating book, Try again!")
+            setMessage("Error updating book, Try again!")
            }
         } catch (error) {
-            setMessage("Error in creating book, Try again!")
+            setMessage("Error updating book, Try again!")
             console.error(error)
         }
     }
+
+    function BookDetails() {
+        const { id } = useParams();
+
+        useEffect(() => {
+          const getBook = async () => {
+            try {
+              const result = await axios.get(`${apiURL}/books/${id}`)
+              const bookDetails = result.data
+                setBook(bookDetails)
+                setTitle(bookDetails.title)
+                setPrice(bookDetails.price)
+                setAuthor(bookDetails.author)
+                setDescription(bookDetails.description)
+                setGenre(bookDetails.genre)
+                setQuantity(bookDetails.quantity)
+                
+                
+                
+            } catch (error) {
+              console.error("Could not get book", error);
+            }
+            
+          }
+          getBook()
+          
+        }, [id])
+    }
+    BookDetails()
 
     return(
         <>
@@ -107,8 +141,9 @@ function CreateBookForm() {
                     />
                 </label>
                 
-                <button type="submit">Add New Book</button>
-                <Link to='/'><botton>Back to main</botton></Link>
+                <button type="submit">Save</button>
+                <Link to='/'><button>Go back to main</button></Link>
+                
                     
                 
                 
@@ -117,4 +152,4 @@ function CreateBookForm() {
     )
 }
 
-export default CreateBookForm
+export default EditBookForm
