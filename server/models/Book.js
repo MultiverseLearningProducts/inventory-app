@@ -9,6 +9,10 @@ const Book = sequelize.define('book', {
         type: DataTypes.STRING,
         allowNull: false
     },
+    author: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     description: {
         type: DataTypes.STRING,
         allowNull: false
@@ -18,8 +22,7 @@ const Book = sequelize.define('book', {
         allowNull: false,
         validate: {
             isNumeric: true
-        }
-        
+        } 
     },
     quantity: {
         type: DataTypes.INTEGER,
