@@ -25,6 +25,7 @@ function CreateBookForm() {
             description,
             genre,
             quantity,
+            imageUrl
         }
         //check to see if there are any empty fields
         const isEmptyCheck = Object.values(requestBody).some((property) => (property === ''))
