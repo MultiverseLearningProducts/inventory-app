@@ -120,7 +120,7 @@ function CreateBookForm() {
                 </label>
                 
                 <button type="submit">Add New Book</button>
-                <Link to='/'><botton>Back to main</botton></Link>
+                <Link to='/books'><botton>Back to main</botton></Link>
                     
                 
                 

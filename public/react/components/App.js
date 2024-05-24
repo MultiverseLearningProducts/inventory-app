@@ -4,15 +4,15 @@ import BookDetails from "./BookDetails";
 import BookDetailCard from "./BookDetailCard";
 import CreateBookForm from "./CreateBookForm";
 import EditBookForm from "./EditBookForm";
-import NavBar from "./BooksNavBar"
+import HomePage from "./Homepage"
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        
         <Routes>
-          <Route path="/" element={<Books />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/books" element={<Books />}/>
           <Route path="/books/:id" element={<BookDetails />} />
           <Route path="/new-book" element={<CreateBookForm />} />
           <Route path={`/edit-book/:id`} element={<EditBookForm />} />

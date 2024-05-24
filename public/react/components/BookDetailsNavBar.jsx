@@ -4,7 +4,7 @@ function BooksDetailsNavBar() {
     return (
         <>
             <Link to="/">Home Page</Link>
-            <Link to="/">Inventory</Link>
+            <Link to="/books">Inventory</Link>
         </>
     )
 }
