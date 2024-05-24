@@ -15,6 +15,7 @@ function EditBookForm() {
     const [description, setDescription] = useState('')
     const [genre, setGenre] = useState('') 
     const [quantity, setQuantity] = useState('') 
+    const [imageUrl, setImageUrl] = useState('')
 
     const [message, setMessage] = useState('')
     const [submitted, setSubmitted] = useState(false)
@@ -28,6 +29,7 @@ function EditBookForm() {
             description,
             genre,
             quantity,
+            imageUrl
         }
         //check to see if there are any empty fields
         const isEmptyCheck = Object.values(requestBody).some((property) => (property === ''))
@@ -138,6 +140,15 @@ function EditBookForm() {
                         onChange={(event) =>{
                             setQuantity(event.target.value)
                         }}
+                    />
+                </label>
+                <label>
+                    Image URL:
+                    <input
+                        type="url"
+                        value={imageUrl}
+                        onChange={(event) => setImageUrl(event.target.value)}
+                        required
                     />
                 </label>
                 

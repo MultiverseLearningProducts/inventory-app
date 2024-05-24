@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 
 function BookCard(props) {
-    const {id, title, author, description, price, quantity, genre, img} = props.bookInfo
+    const {id, title, author, description, price, quantity, genre, imageUrl} = props.bookInfo
     return (
         <>
             <div className="book-card">
-                <img src={img} />
+                <img src={imageUrl} />
                 <h3>{title}</h3>
                 <p>{author}</p>
             <Link to={`/books/${id}`}>
