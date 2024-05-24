@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import apiURL from '../api'
 import { Link } from 'react-router-dom'
+import BookDetailsNavBar from "./BookDetailsNavBar"
 
 function CreateBookForm() {
     const [title, setTitle] = useState('')
@@ -44,6 +45,7 @@ function CreateBookForm() {
 
     return(
         <>
+            <BookDetailsNavBar />
             <h1>Create book form</h1>
             <h3>{(submitted) ? message : ""}</h3>
             <form onSubmit={handleSubmit}>

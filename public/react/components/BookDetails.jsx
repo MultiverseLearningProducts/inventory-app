@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import apiURL from "../api";
 import axios from "axios";
 import BookDetailCard from "./BookDetailCard";
+import BookDetailsNavBar from "./BookDetailsNavBar";
 
 // GET one books details
 function BookDetails() {
@@ -23,7 +24,8 @@ function BookDetails() {
     }, [id])
   
     return (
-    <>
+        <>
+            <BookDetailsNavBar />
         <div className="books-container">
         <h1>Book Details</h1>
         <BookDetailCard bookInfo={book} />

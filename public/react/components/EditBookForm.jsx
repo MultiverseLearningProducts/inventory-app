@@ -1,5 +1,5 @@
 import React from "react";
-
+import BookDetailsNavBar from "./BookDetailsNavBar"
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import apiURL from '../api'
@@ -79,6 +79,7 @@ function EditBookForm() {
 
     return(
         <>
+            <BookDetailsNavBar />
             <h1>Create book form</h1>
             <h3>{(submitted) ? message : ""}</h3>
             <form onSubmit={handleSubmit}>
