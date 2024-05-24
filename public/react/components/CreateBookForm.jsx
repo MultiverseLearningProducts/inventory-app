@@ -10,6 +10,7 @@ function CreateBookForm() {
     const [description, setDescription] = useState('')
     const [genre, setGenre] = useState('') 
     const [quantity, setQuantity] = useState('') 
+    const [imageUrl, setImageUrl] = useState('')
 
     const [message, setMessage] = useState('')
     const [submitted, setSubmitted] = useState(false)
@@ -104,6 +105,15 @@ function CreateBookForm() {
                         onChange={(event) =>{
                             setQuantity(event.target.value)
                         }}
+                    />
+                </label>
+                <label>
+                    Image URL:
+                    <input
+                        type="url"
+                        value={imageUrl}
+                        onChange={(event) => setImageUrl(event.target.value)}
+                        required
                     />
                 </label>
                 

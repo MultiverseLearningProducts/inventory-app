@@ -3,7 +3,7 @@ import axios from 'axios'
 import apiURL from '../api';
 
 function BookDetailCard(props) {
-    const { id, title, author, description, price, quantity, genre, img } = props.bookInfo
+    const { id, title, author, description, price, quantity, genre, imageUrl } = props.bookInfo
     
     const handleDelete = async () => {
         try {
@@ -16,7 +16,7 @@ function BookDetailCard(props) {
     return (
         <>
             <div className="book-card">
-                <img src={img} />
+                <img src={imageUrl} />
                 <h3>{title}</h3>
                 <p>{author}</p>
                 <p>{description}</p>
