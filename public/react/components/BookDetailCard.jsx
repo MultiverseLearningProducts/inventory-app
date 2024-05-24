@@ -23,7 +23,7 @@ function BookDetailCard(props) {
                 <p>{price}</p>
                 <p>{quantity}</p>
                 <p>{genre}</p>
-                <Link to={`/`}>
+                <Link to={`/books`}>
                     <button onClick={handleDelete}>Delete</button>
                 </Link>
                 <Link to={`/edit-book/${id}`}>

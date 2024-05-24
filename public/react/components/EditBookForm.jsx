@@ -154,7 +154,7 @@ function EditBookForm() {
                 </label>
                 
                 <button type="submit">Save</button>
-                <Link to='/'><button>Go back to main</button></Link>
+                <Link to='/books'><button>Go back to main</button></Link>
                 
                     
                 
