@@ -8,7 +8,8 @@ module.exports = {
       price: 10.99,
       quantity: 50,
       genre: "Fiction",
-      imageUrl: "link_to_image_1",
+      imageUrl:
+        "https://media.glamour.com/photos/56e1f3c4bebf143c52613c04/master/w_1600,c_limit/entertainment-2016-02-12-main.jpg",
     },
     {
       title: "1984",
@@ -18,7 +19,8 @@ module.exports = {
       price: 9.99,
       quantity: 30,
       genre: "Fiction",
-      imageUrl: "link_to_image_2",
+      imageUrl:
+        "https://target.scene7.com/is/image/Target/GUEST_4b5087d0-2ca3-4e48-a041-31d29bf8979e?wid=800&hei=800&qlt=80&fmt=webp",
     },
     {
       title: "The Great Gatsby",
@@ -27,7 +29,8 @@ module.exports = {
       price: 8.5,
       quantity: 40,
       genre: "Fiction",
-      imageUrl: "link_to_image_3",
+      imageUrl:
+        "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781524879761/the-great-gatsby-9781524879761_lg.jpg",
     },
     {
       title: "Pride and Prejudice",
@@ -37,7 +40,8 @@ module.exports = {
       price: 7.99,
       quantity: 45,
       genre: "Fiction",
-      imageUrl: "link_to_image_4",
+      imageUrl:
+        "https://themarblefaunbooksandgifts.com/cdn/shop/products/Peacock_Cover_glitter_card_5_x_7.jpg?v=1571638712",
     },
     {
       title: "The Catcher in the Rye",
@@ -47,7 +51,7 @@ module.exports = {
       price: 11.25,
       quantity: 35,
       genre: "Fiction",
-      imageUrl: "link_to_image_5",
+      imageUrl: "https://m.media-amazon.com/images/I/91HPG31dTwL._SL1500_.jpg",
     },
     {
       title: "Harry Potter and the Sorcerer's Stone",
@@ -68,7 +72,8 @@ module.exports = {
       price: 10.75,
       quantity: 25,
       genre: "Fantasy",
-      imageUrl: "link_to_image_7",
+      imageUrl:
+        "https://cdn11.bigcommerce.com/s-nfxi2m/images/stencil/1280x1280/products/646/3216/Hobbit-book2__13763.1694542278.jpg?c=2",
     },
     {
       title: "The Hunger Games",
@@ -78,7 +83,7 @@ module.exports = {
       price: 9.75,
       quantity: 55,
       genre: "Science Fiction",
-      imageUrl: "link_to_image_8",
+      imageUrl: "https://m.media-amazon.com/images/I/71un2hI4mcL._SL1500_.jpg",
     },
     {
       title: "The Da Vinci Code",
@@ -88,7 +93,7 @@ module.exports = {
       price: 8.99,
       quantity: 48,
       genre: "Mystery",
-      imageUrl: "link_to_image_9",
+      imageUrl: "https://m.media-amazon.com/images/I/61-NtNgM1ZL._SL1024_.jpg",
     },
     {
       title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -98,7 +103,7 @@ module.exports = {
       price: 14.5,
       quantity: 20,
       genre: "Fantasy",
-      imageUrl: "link_to_image_10",
+      imageUrl: "https://m.media-amazon.com/images/I/71lKy8RoFUL._SL1402_.jpg",
     },
   ],
 };
