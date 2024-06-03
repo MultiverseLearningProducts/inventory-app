@@ -1,5 +1,40 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  background-color: aquamarine;
+  background-color: white;
 }
+
+.image{
+  height: 150px;
+  width: 150px;
+  margin-left: 30%;
+}
+
+h3{
+  margin-left: 30%;
+}
+
+h1, h2{
+  margin-left: 50%;
+}
+
+
+
+/* * {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.slider-label {
+  background-color: rgba(214, 203, 196, 0.1);
+  font-size: 0.875rem; 
+  margin-bottom: 0.25rem; 
+  margin-left: .2rem;
+}
+
+.slider-input {
+  height: 3rem; 
+  border-radius: 0.375rem;
+  margin-bottom: 2.5rem;
+  padding: 0 1.25rem; 
+} */
