@@ -11,7 +11,7 @@ const Item = sequelize.define("item", {
   name: Sequelize.STRING,
   description: Sequelize.STRING,
   price: Sequelize.DOUBLE, //check if float or double is correct for numbers
-  catagory: Sequelize.STRING,
+  category: Sequelize.STRING,
   image: Sequelize.STRING,
 });
 

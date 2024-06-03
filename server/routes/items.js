@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { Items } = require("../models");
+const { Item } = require("../models");
 
 // GET /sauce
 router.get("/", async (req, res, next) => {
@@ -13,3 +13,5 @@ router.get("/", async (req, res, next) => {
 });
 
 module.exports = router;
+
+// added this file here copying sauces exactly for back end something
