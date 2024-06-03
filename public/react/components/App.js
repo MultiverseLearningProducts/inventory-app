@@ -60,3 +60,48 @@ export const App = () => {
 		</main>
 	)
 }
+
+
+
+
+
+
+
+// We need to edit this bit as this is a delete button but currently edited for wikiverse
+// return (
+//     <main>
+//       <h1 style={{ marginBottom: 0 }}>WikiVerse</h1>
+//       <p style={{ marginTop: 0 }}>An interesting 📚</p>
+//       <ul>
+//         {pages.map((page) => (
+//           <li key={page.id}>
+//             <button
+//               className="link"
+//               type="button"
+//               onClick={() => getPage(page.slug)}
+//             >
+//               {page.title}
+//             </button>
+//             <button
+//               className="link"
+//               type="button"
+//               onClick={() => deletePage(page.id)}
+//               style={{ marginLeft: '10px', color: 'red' }}
+//             >
+//               Delete
+//             </button>
+//           </li>
+//         ))}
+//       </ul>
+//       <p>
+//         <button
+//           className="link"
+//           type="button"
+//           onClick={() => setIsAddingPage(true)}
+//         >
+//           Add a Page &rarr;
+//         </button>
+//       </p>
+//     </main>
+//   )
+// }
