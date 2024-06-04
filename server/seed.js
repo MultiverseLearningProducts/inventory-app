@@ -14,6 +14,7 @@ const seed = async () => {
         // insert data
         await Promise.all(sauces.map(sauce => Sauce.create(sauce)));
         await Promise.all(items.map(item => Item.create(item)));
+        //THIS LOOPS THROUGH ALL THE ITEMS AND INSERTS THEM INTO THE DATABASE
 
         console.log("db populated!");
     } catch (error) {
