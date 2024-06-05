@@ -70,15 +70,24 @@ function confirmDelete(id) {
 	}
 }
 
-// async function addItem(item) {
-	//     const response = await fetch(`${apiURL}/items`, {
-	//       method: 'POST',
-	//       headers: {
-	//         'Content-Type': 'application/json'
-	//       },
-	//       body: JSON.stringify(item)
-	//     })
-// review this commented above as this adds items
+
+
+async function addItem(item) {
+	    const response = await fetch(`${apiURL}/items`, {
+	      method: 'POST',
+	      headers: {
+	        'Content-Type': 'application/json'
+	      },
+	      body: JSON.stringify(item)
+	    })
+			if (response.ok) {
+				return('Item successfully added')
+				} else {
+				throw new Error('Failed to add item');
+			}
+			return await response.json();
+		}
+//review this commented above as this adds items
 
 
 
@@ -97,19 +106,19 @@ useEffect(() => {
 		fetchItems();
 	}, []);
 
-	// useEffect(() => {
-	// 	if (activeItem) {
-	// 		document.name = `${activeItem.name} - Inventory App`
-	// 	} else if (isAddingItem) {
-	// 		document.name = `Add an Item - Inventory App`
-	// 	} else {
-	// 		document.name = `Inventory App`
-	// 	}
-	// }, [activeItem, isAddingItem])
+	useEffect(() => {
+		if (activeItem) {
+			document.name = `${activeItem.name} - Inventory App`
+		} else if (isAddingItem) {
+			document.name = `Add an Item - Inventory App`
+		} else {
+			document.name = `Inventory App`
+		}
+	}, [activeItem, isAddingItem])
 
-	// if (isAddingItem) {
-	// 	return <Form addItem={addItem} setIsAddingItem={setIsAddingItem} />
-	//   }
+	if (isAddingItem) {
+		return <Form addItem={addItem} setIsAddingItem={setIsAddingItem} />
+	  } // review this for add item 
 	
 	  if (activeItem) {
 		return (
@@ -166,13 +175,20 @@ useEffect(() => {
 			</li>        
 			))}       
 			</ul> {selectedItem && <Item item={selectedItem} />} </div>  ); }; export default App; */}
-
+  
 			<ItemsList items={items} />
+			<button
+          className="link"
+          type="button"
+          onClick={() => setIsAddingItem(true)}
+        >
+          Add a Page &rarr;
+        </button>
 		</main>
 	)
 }
 
-
+//add item button
 
 
 

@@ -27,6 +27,43 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
+// POST /item
+router.post('/', async (req, res, next) => {
+  try {
+    const [item, wasCreated] = await Item.findOrCreate({
+      where: {
+        name: req.body.name,
+        description: req.body.description,
+        price: req.body.price,
+        category: req.body.category,
+        image: req.body.image,
+      }
+    });
+ 
+    const page = await Page.create(req.body)
+ 
+    await page.setName(item)
+ 
+    if (req.body.categorys) {
+      const categoryArray = req.body.categorys.split(' ')
+      const categorys = []
+      for (const categoryName of categoryArray) {
+        const [category, wasCreated] = await Category.findOrCreate({
+          where: {
+            name: categoryName
+          }
+        })
+        categorys.push(category)
+      }
+      await page.addCategorys(categorys)
+    }
+ 
+    res.send(page)
+  } catch (error) {
+    next(error)
+  }
+})
+
 //PUT /api/items:id
 
 
@@ -45,7 +82,6 @@ router.delete("/:id", async (req, res, next) => {
     next(error);
   }
 });
-
 
 
 module.exports = router;

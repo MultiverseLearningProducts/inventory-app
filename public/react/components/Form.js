@@ -18,7 +18,7 @@ export const Form = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    props.addPage(data)
+    props.addItem(data)
   }
 
   return (
@@ -80,13 +80,13 @@ export const Form = (props) => {
           />
         </p>
         <p>
-          <button type="submit">Create Page</button>
+          <button type="submit">Create Item</button>
         </p>
       </form>
       <button
         type="button"
         className="link"
-        onClick={() => props.setIsAddingPage(false)}
+        onClick={() => props.setIsAddingItem(false)}
       >
         &larr; Back to Inventory
       </button>
