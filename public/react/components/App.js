@@ -17,6 +17,8 @@ export const App = () => {
 	const [isAddingItem, setIsAddingItem] = useState(false)
 //this should allow adding page
 
+const [isEditFormShowing, setIsEditFormShowing] = useState(false)
+
 // async function getItem(id) {
 // 	const response = await fetch(`${apiURL}/items/${id}`)
 // 	const itemData = await response.json()
@@ -73,6 +75,7 @@ function confirmDelete(id) {
 
 
 async function addItem(item) {
+	// Event.preventDefault();
 	    const response = await fetch(`${apiURL}/items`, {
 	      method: 'POST',
 	      headers: {
@@ -80,12 +83,23 @@ async function addItem(item) {
 	      },
 	      body: JSON.stringify(item)
 	    })
-			if (response.ok) {
-				return('Item successfully added')
-				} else {
-				throw new Error('Failed to add item');
-			}
-			return await response.json();
+		if (!response.ok) {
+			// const newItem = await response.json();
+			// setItems([newItem, ...items]);
+			// setName("");
+			// setDescription("");
+			// setPrice("");
+			// setCatagory("");
+			// setImage("");
+			// If response is not OK, throw an error with the status text
+			throw new Error(`Failed to add item: ${response.statusText}`);
+		  }
+		
+		  // Ensure we wait for the response to be parsed as JSON
+		  const data = await response.json();
+		
+		  // Return the parsed data or a success message
+		  return data;
 		}
 //review this commented above as this adds items
 
@@ -142,7 +156,7 @@ useEffect(() => {
       <h1>Items Store</h1>
 			<h2>We Sell Everything</h2>
 
-		<ul>
+		<ul className="inventory">
 			{items.map(item => (
 				<li key={item.id}>
 					<div>
