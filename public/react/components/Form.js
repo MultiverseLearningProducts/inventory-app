@@ -67,7 +67,7 @@ function Form(props) {
 					onChange={event => setImage(event.target.value)}
 				/>
 			</p>
-			<p>
+			<p class="positionofadditembutton">
 				<button type="submit">Add Item</button>
 			</p>
 		</form>

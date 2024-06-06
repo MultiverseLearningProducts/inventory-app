@@ -118,11 +118,19 @@ export const App = () => {
 		return (
 			<main>
 				<h1>Inventory App</h1>
+				
+				<ItemsList items={items} setCurrentItem={setCurrentItem} />
+				<br></br>
+				<br></br>
+				<br></br>
+
+				<div class="additembutton">
 				<button onClick={() => setIsCreateFormShowing(!isCreateFormShowing)}>
 					{isCreateFormShowing ? "Hide Form" : "Show Form"}
 				</button>
+				
 				{isCreateFormShowing && <Form addItem={addItem} />}
-				<ItemsList items={items} setCurrentItem={setCurrentItem} />
+				</div>
 			</main>
 		);
 	}
@@ -135,9 +143,15 @@ export const App = () => {
 			</button>
 			{isUpdateFormShowing && <UpdateItemForm {...currentItem} updateItem={updateItem} />}
 			<h1>{currentItem.name}</h1>
-			<p>£{currentItem.price.toFixed(2)}</p>
-			<p>{currentItem.description}</p>
-			<img src={currentItem.image} alt="" />
+			<div className="item-details">
+  				<div className="left">
+    			<img src={currentItem.image} alt="" />
+  				</div>
+  				<div className="right">
+    			<p>£{currentItem.price.toFixed(2)}</p>
+    			<p>{currentItem.description}</p>
+  				</div>
+			</div>
 			<p>
 				<button onClick={() => setCurrentItem(null)}>All Items</button>
 			</p>
