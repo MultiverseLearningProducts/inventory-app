@@ -11,6 +11,7 @@ router.get("/", async (req, res, next) => {
     next(error);
   }
 });
+//checked
 
 // GET /api/items:id
 router.get("/:id", async (req, res, next) => {
@@ -26,6 +27,7 @@ router.get("/:id", async (req, res, next) => {
     next(error);
   }
 });
+//checked
 
 // POST /item
 // router.post('/', async (req, res, next) => {
@@ -75,6 +77,7 @@ router.post("/", async (req, res, next) => {
   
   }
 });
+//checked
 
 
 //PUT/PATCH /api/items:id
@@ -91,6 +94,7 @@ router.patch("/:id", async (req, res, next) => {
     next(error);
   }
 });
+//checked
 
 
 //Delete request /api/items/:id
@@ -109,8 +113,9 @@ router.delete("/:id", async (req, res, next) => {
   }
 });
 
+//checked
+
 
 module.exports = router;
 
 
-// added this file here copying sauces exactly for back end something
