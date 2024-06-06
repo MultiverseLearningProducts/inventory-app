@@ -146,6 +146,7 @@ export const App = () => {
   				</div>
   				<div className="right">
 				<p><b>Description:</b> <p></p>{currentItem.description}</p>
+				<p><b>Quantity:</b> <p></p>{currentItem.quantity}</p>
     			<p><b>Price:</b> <p></p>£{currentItem.price.toFixed(2)}</p>
     			
   				</div>

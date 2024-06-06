@@ -12,6 +12,7 @@ const Item = sequelize.define("item", {
   description: Sequelize.TEXT,
   price: Sequelize.REAL, 
   category: Sequelize.TEXT,
+  quantity: Sequelize.REAL,
   image: Sequelize.TEXT,
 });
 

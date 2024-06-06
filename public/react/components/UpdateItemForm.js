@@ -5,15 +5,17 @@ function UpdateItemForm(props) {
 	const [description, setDescription] = useState(props.description);
 	const [price, setPrice] = useState(props.price);
 	const [category, setCategory] = useState(props.category);
+	const [quantity, setQuantity] = useState(props.quantity);
 	const [image, setImage] = useState(props.image);
 
 	function handleSubmit(event) {
 		event.preventDefault();
-		props.updateItem(props.id, { name, description, price, category, image });
+		props.updateItem(props.id, { name, description, price, category, quantity, image });
 		setName("");
 		setDescription("");
 		setPrice(0);
 		setCategory("");
+		setQuantity(0);
 		setImage("");
 	}
 
@@ -54,6 +56,17 @@ function UpdateItemForm(props) {
 					id="category"
 					value={category}
 					onChange={event => setCategory(event.target.value)}
+				/>
+			</p>
+			<p>
+				<label htmlFor="quantity">Quantity</label>
+				<br />
+				<input
+					type="number"
+					name="quantity"
+					id="quantity"
+					value={quantity}
+					onChange={event => setQuantity(event.target.valueAsNumber)}
 				/>
 			</p>
 			<p>

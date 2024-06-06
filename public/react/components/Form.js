@@ -5,15 +5,17 @@ function Form(props) {
 	const [description, setDescription] = useState("");
 	const [price, setPrice] = useState(0);
 	const [category, setCategory] = useState("");
+	const [quantity, setQuantity] = useState(0);
 	const [image, setImage] = useState("");
 
 	function handleSubmit(event) {
 		event.preventDefault();
-		props.addItem({ name, description, price, category, image });
+		props.addItem({ name, description, price, category, quantity, image });
 		setName("");
 		setDescription("");
 		setPrice(0);
 		setCategory("");
+		setQuantity(0)
 		setImage("");
 	}
 
@@ -54,6 +56,17 @@ function Form(props) {
 					id="category"
 					value={category}
 					onChange={event => setCategory(event.target.value)}
+				/>
+			</p>
+			<p>
+				<label htmlFor="quantity">Quantity</label>
+				<br />
+				<input
+					type="number"
+					name="quantity"
+					id="quantity"
+					value={quantity}
+					onChange={event => setQuantity(event.target.valueAsNumber)}
 				/>
 			</p>
 			<p>
