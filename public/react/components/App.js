@@ -126,7 +126,7 @@ export const App = () => {
 
 				<div class="additembutton">
 				<button onClick={() => setIsCreateFormShowing(!isCreateFormShowing)}>
-					{isCreateFormShowing ? "Hide Form" : "Show Form"}
+					{isCreateFormShowing ? "Hide Form" : "Add New Item"}
 				</button>
 				
 				{isCreateFormShowing && <Form addItem={addItem} />}
@@ -138,26 +138,33 @@ export const App = () => {
 	// Otherwise, show the single item view
 	return (
 		<main>
-			<button onClick={() => setIsUpdateFormShowing(!isUpdateFormShowing)}>
-				{isUpdateFormShowing ? "Hide Form" : "Show Form"}
-			</button>
-			{isUpdateFormShowing && <UpdateItemForm {...currentItem} updateItem={updateItem} />}
+			
 			<h1>{currentItem.name}</h1>
 			<div className="item-details">
   				<div className="left">
     			<img src={currentItem.image} alt="" />
   				</div>
   				<div className="right">
-    			<p>£{currentItem.price.toFixed(2)}</p>
-    			<p>{currentItem.description}</p>
+				<p><b>Description:</b> <p></p>{currentItem.description}</p>
+    			<p><b>Price:</b> <p></p>£{currentItem.price.toFixed(2)}</p>
+    			
   				</div>
 			</div>
-			<p>
+			<p></p>
+			<br></br>
+			<div class="singleitembuttons2">
+			
 				<button onClick={() => setCurrentItem(null)}>All Items</button>
-			</p>
-			<p>
+			
 				<button onClick={() => confirmDelete(currentItem.id)}>Delete Item</button>
-			</p>
+			</div>
+			<br></br>
+			<div class="singleitembuttons">
+			<button onClick={() => setIsUpdateFormShowing(!isUpdateFormShowing)}>
+				{isUpdateFormShowing ? "Hide Form" : "Update Form"}
+				</button>
+				{isUpdateFormShowing && <UpdateItemForm {...currentItem} updateItem={updateItem} />}
+			</div>
 		</main>
 	);
 };

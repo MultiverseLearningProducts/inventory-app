@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { Item } = require("../models");
+const { Item }  = require("../models/index.js");
 
 // GET /api/items
 router.get("/", async (req, res, next) => {
@@ -83,12 +83,12 @@ router.post("/", async (req, res, next) => {
 //PUT/PATCH /api/items:id
 router.patch("/:id", async (req, res, next) => {
   try {
-    let item = await item.findByPk(req.params.id);
-    if (item) {
-      item = await item.update(req.body);
-      res.send(item);
+    let foundItem = await Item.findByPk(req.params.id);
+    if (foundItem) {
+      foundItem = await foundItem.update(req.body);
+      res.send(foundItem);
     } else {
-      res.status(404).send({ error: "Not Found" })
+      res.status(404).send({ error: "Not Found" });
     }
   } catch (error) {
     next(error);
