@@ -15,7 +15,7 @@ function Form(props) {
 		setDescription("");
 		setPrice(0);
 		setCategory("");
-		setQuantity(0)
+		setQuantity(0);
 		setImage("");
 	}
 
