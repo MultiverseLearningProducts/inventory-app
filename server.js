@@ -11,7 +11,9 @@ const init = async () => {
       console.log(`Server listening at http://localhost:${PORT}`);
     });
   } catch (error) {
-    console.error('Error starting the server:', error)
+    
+    console.error("Error starting server, Oh Error:", error);
+
   }
 };
 
