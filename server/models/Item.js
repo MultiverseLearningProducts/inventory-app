@@ -1,6 +1,5 @@
 const {db, DataTypes, Model} = require('../db');
 
-
 class Item extends Model {
 
 }
@@ -13,7 +12,7 @@ Item.init({
     image: DataTypes.STRING
 },{
     sequelize: db,
-    modelName: 'Attack'
+    modelName: 'items'
 })
 
 module.exports = {
