@@ -1,47 +1,85 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { ItemsList } from "./ItemsList";  // Component for displaying all items
-import SingleItem from "./SingleItemView";    // Component for displaying single item details
-import apiURL from "../api";              // API base URL
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, useParams } from 'react-router-dom';
+import Items from './Items';
+import ItemsList from './ItemsList';
+import apiURL from '../api';
 
-// import and prepend the api url to any fetch calls
-import apiURL from "../api";
+const App = () => {
+  const [singleItem, setSingleItem] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [itemList, setItemList] = useState([]);
 
-export const App = () => {
-  const [items, setItems] = useState([]);
-
-  async function fetchItems() {
-    try {
-      const response = await fetch(`${apiURL}/items`);
-      const itemsData = await response.json();
-
-      setItems(itemsData);
-    } catch (err) {
-      console.log("Oh no an error! ", err);
-    }
-  }
-
+  // Fetch all items from the backend
   useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        const response = await fetch(`${apiURL}/items`);
+        if (response.ok) {
+          const data = await response.json();
+          setItemList(data);
+        } else {
+          throw new Error('Failed to load items');
+        }
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchItems();
   }, []);
 
-  return (
-    <Router>
-      <main>
-        <h1>Items Store</h1>
-        <h2>All things 🔥</h2>
-        <Switch>
-          {/* Route for the list of all items */}
-          <Route exact path="/">
-            <ItemsList items={items} />
-          </Route>
+  if (loading) return <div>Loading items...</div>;
+  if (error) return <div>Error: {error}</div>;
 
-          {/* Route for viewing a single item */}
-          <Route path="/items/:id">
-            <SingleItem />
-          </Route>
-        </Switch>
-      </main>
-    </Router>
+  return (
+    <>
+      <Router>
+        <Routes>
+          {/* Pass the item list to ItemsList */}
+          <Route exact path="/" element={<ItemsList items={itemList} />} />
+          {/* Use SingleItemWrapper to fetch and display single item */}
+          <Route path="/items/:id" element={<SingleItemWrapper />} />
+        </Routes>
+      </Router>
+    </>
   );
 };
+
+// Wrapper component to handle single item fetching by ID
+const SingleItemWrapper = () => {
+  const { id } = useParams();
+  const [singleItem, setSingleItem] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Fetch the single item when the ID changes
+  useEffect(() => {
+    const fetchItem = async () => {
+      try {
+        const response = await fetch(`${apiURL}/items/${id}`);
+        if (response.ok) {
+          const data = await response.json();
+          setSingleItem(data);
+        } else {
+          throw new Error('Item not found');
+        }
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchItem();
+  }, [id]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
+
+  return <Items item={singleItem} />;
+};
+
+export default App;
