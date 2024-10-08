@@ -8,7 +8,7 @@ const Items = ({ item }) => {
       <h2>{item.name}</h2>
       <img src={item.image} alt={item.name} />
       <p>{item.description}</p>
-      <p>Price: ${item.price / 100}</p>
+      <p>Price: ${item.price.toFixed(2)}</p>
       <p>Category: {item.category}</p>
     </div>
   );

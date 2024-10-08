@@ -12,7 +12,7 @@ const ItemsList = ({ items }) => {
           <div key={item.id} className="item-card">
             <img src={item.image} alt={item.name} className="item-image" />
             <h2>{item.name}</h2>
-            <p>Price: ${item.price / 100}</p>
+            <p>Price: ${item.price.toFixed(2)}</p>
             <p>Category: {item.category}</p>
             <Link to={`/items/${item.id}`}>
               <button>View Details</button>
