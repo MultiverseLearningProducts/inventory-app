@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import apiURL from '../api';
+import { Link } from 'react-router-dom'
 
 const AllItemsView = () => {
   const [items, setItems] = useState([]);
@@ -42,10 +43,10 @@ const AllItemsView = () => {
             <p>{item.description}</p>
             <p>Price: ${item.price / 100}</p>
             <p>Category: {item.category}</p>
-            <button onClick={() => window.location.href = `/items/${item.id}`}>
-              View Details
-            </button>
-          </div>
+            <Link to={`/items/${item.id}`}>{item.name}
+             <button> View Details </button>
+            </Link>
+        </div>
         ))}
       </div>
     </div>
