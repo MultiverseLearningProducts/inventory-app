@@ -9,8 +9,8 @@ Users can see all items on the main page, which includes descriptions for each i
 
 ## Functionality Descriptions
 
-1. View All Items
-   Users can view a comprehensive list of all items on the main page. Each item is displayed with key information, including:
+View All Items
+Users can view a comprehensive list of all items on the main page. Each item is displayed with key information, including:
 
 Name: The title of the item.
 Price: The cost associated with the item.
@@ -73,9 +73,9 @@ github repo:
 
 ### Contributors
 
-Blake Jones
-Justin Berg
-Lilit Sanjyan
+Blake Jones,
+Justin Berg,
+Lilit Sanjyan,
 Sione Joseph
 
 ### Contact info
