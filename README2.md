@@ -1,7 +1,7 @@
 # Project Title
 
-Inventory app
-Online clothes store app
+Inventory app,
+Clothes store app
 
 ## Introduction
 
