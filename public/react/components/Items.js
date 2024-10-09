@@ -1,10 +1,17 @@
-import React from "react";
+import React from 'react';
 
-export const Items = (props) => {
+const Items = ({ item }) => {
+  if (!item) return <div>No item details to show</div>;
+
   return (
-    <>
-      <h3>{props.items.name}</h3>
-      <img src={props.items.image} alt={props.items.name} />
-    </>
+    <div className="item-details">
+      <h2>{item.name}</h2>
+      <img src={item.image} alt={item.name} />
+      <p>{item.description}</p>
+      <p>Price: ${item.price.toFixed(2)}</p>
+      <p>Category: {item.category}</p>
+    </div>
   );
 };
+
+export default Items;
