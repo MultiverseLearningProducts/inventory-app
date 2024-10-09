@@ -8,7 +8,7 @@ const AddItem = ({ addOnItem }) => {
     description: "",
     price: "",
     category: "",
-    imageUrl: "",
+    image: "",
   });
 
   function handleChange(e) {
@@ -19,12 +19,15 @@ const AddItem = ({ addOnItem }) => {
     });
   }
 
+  useEffect(() => {
+    console.log(formInput)  },[formInput])
+
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const response = await fetch(`${apiURL}/`, {
+      const response = await fetch(`${apiURL}/items`, {
         method: "POST",
-        headers: { "Content type": "application/json" },
+        headers: { "Content-type": "application/json" },
         body: JSON.stringify(formInput),
       });
 
@@ -39,7 +42,7 @@ const AddItem = ({ addOnItem }) => {
         description: "",
         price: "",
         category: "",
-        imageUrl: "",
+        image: "",
       });
     } catch (error) {
       console.log("error adding item", error);
@@ -94,11 +97,11 @@ const AddItem = ({ addOnItem }) => {
           />
         </label>
         <label>
-          Image URL:
+          Image
           <input
-            type="url"
-            name="imageUrl"
-            value={formInput.imageUrl}
+            type="text"
+            name="image"
+            value={formInput.image}
             onChange={handleChange}
             placeholder="Image URL"
             required

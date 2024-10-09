@@ -26,6 +26,23 @@ router.get("/:itemId", async (req, res, next) => {
     next(e);
   }
 });
+
+router.post("/", async (req, res) => {
+  const { name, description, price, category, image } = req.body;
+
+  try {
+    const newItem = await Item.create({
+      name,
+      description,
+      price,
+      category,
+      image,
+    });
+    res.status(201).json(newItem);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to create item" });
+  }
+});
 //Update route
 router.put("/:itemId", async (req, res, next) => {
   try {
