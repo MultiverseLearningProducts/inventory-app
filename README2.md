@@ -68,6 +68,7 @@ github repo:
 4. In a seperate terminal, `npm run client-dev`
 
 ### URL Link for app
+https://jbls-inventory-app.onrender.com
 
 ### Main page image
 
