@@ -4,39 +4,92 @@
   background-color: rgb(223, 223, 223);
 }
 
+body {
+  background-color: rgb(223, 223, 223);
+}
+
+/* Container for all items */
 .items-container {
   padding: 20px;
 }
 
+/* Grid layout for items */
 .items-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 
+/* Styles for each item card */
 .item-card {
   border: 1px solid #ddd;
   padding: 10px;
-  width: 200px;
+  width: 220px;  /* Uniform width */
+  height: 350px; /* Uniform height */
   text-align: center;
+  background-color: #fff;
+  border-radius: 8px;  /* Rounded corners */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
 }
 
+/* Hover effect for item cards */
+.item-card:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Slight hover effect */
+}
+
+/* Image styling inside the item card */
 .item-image {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 150px;  /* Fixed image height for consistency */
+  object-fit: cover;  /* Ensures images scale properly */
+  border-radius: 4px;
 }
 
+/* Item name styling */
+.item-name {
+  font-size: 1rem;  /* Adjusted font size for better fit */
+  margin: 10px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;  /* Truncate long text */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;  /* Limit to 2 lines */
+  white-space: normal;
+  color: #333;
+}
+
+/* Item description styling */
+.item-description {
+  font-size: 0.9rem;  /* Adjusted font size for better fit */
+  color: #555;
+  margin-bottom: 10px;
+  height: 40px;  /* Fixed height to prevent overflow */
+  overflow: hidden;
+  text-overflow: ellipsis;  /* Truncate long text */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;  /* Limit to 2 lines */
+  white-space: normal;
+}
+
+/* Button styling for all actions */
 button {
   margin-top: 10px;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #28a745;  /* Uniform green color */
   color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+/* Hover effect for buttons */
 button:hover {
-  background-color: #0056b3;
+  background-color: #218838;
 }
 
 /* Styles for the single item page */
@@ -83,18 +136,11 @@ button:hover {
 }
 
 .item-details button {
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  background-color: #28a745;
 }
 
 .item-details button:hover {
-  background-color: #2980b9;
+  background-color: #218838;
 }
 
 /* Container Styles */
@@ -188,4 +234,3 @@ button:hover {
 .back-button:hover {
   color: #0056b3;
 }
-
