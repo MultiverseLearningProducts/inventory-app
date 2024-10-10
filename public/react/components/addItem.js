@@ -52,8 +52,10 @@ const AddItem = ({ addOnItem }) => {
   return (
     <div className="add-item-container">
       <form onSubmit={handleSubmit} className="add-item-form">
-        <h2>Add Your Item</h2>
-        <label>
+        <h2 className="form-title">Add Your Item</h2>
+        <p className="form-subtitle">Please fill out to add your item!</p>
+        <label className="form-label">
+          Name:
           <input
             type="text"
             name="name"
@@ -61,9 +63,10 @@ const AddItem = ({ addOnItem }) => {
             onChange={handleChange}
             placeholder="Item Name"
             required
+            className="form-input"
           />
         </label>
-        <label>
+        <label className="form-label">
           Description:
           <input
             type="text"
@@ -72,9 +75,10 @@ const AddItem = ({ addOnItem }) => {
             onChange={handleChange}
             placeholder="Description"
             required
+            className="form-input"
           />
         </label>
-        <label>
+        <label className="form-label">
           Price:
           <input
             type="number"
@@ -83,9 +87,10 @@ const AddItem = ({ addOnItem }) => {
             onChange={handleChange}
             placeholder="Price"
             required
+            className="form-input"
           />
         </label>
-        <label>
+        <label className="form-label">
           Category:
           <input
             type="text"
@@ -94,9 +99,10 @@ const AddItem = ({ addOnItem }) => {
             onChange={handleChange}
             placeholder="Category"
             required
+            className="form-input"
           />
         </label>
-        <label>
+        <label className="form-label">
           Image
           <input
             type="text"
@@ -105,11 +111,12 @@ const AddItem = ({ addOnItem }) => {
             onChange={handleChange}
             placeholder="Image URL"
             required
+             className="form-input"
           />
         </label>
-        <button type="submit">Submit Your Item</button>
+        <button type="submit" className="form-button">Submit Your Item</button>
       </form>
-      <Link to="/"><button>Back to Item List</button></Link>
+      <Link to="/"><button className="back-button">Back to Item List</button></Link>
     </div>
   );
 };
