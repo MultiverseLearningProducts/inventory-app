@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import apiURL from "../api";
 // import addItem from './addItem'; // was going to try to refactor this component to be reusable but decided against it
 
@@ -72,6 +72,7 @@ const Items = ({ item }) => {
         <p>Category: {formInput.category}</p>
         <button onClick={handleUpdate}>Edit</button>
         <button onClick={deleteItem}>Delete</button>
+        <Link to="/"><button>Back to Item List</button></Link>
       </div>
     );
   } else if (update) {
