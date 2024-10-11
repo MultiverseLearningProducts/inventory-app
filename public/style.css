@@ -1,11 +1,11 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  background-color: rgb(223, 223, 223);
 }
 
-body {
-  background-color: rgb(223, 223, 223);
+.App {
+  background-color: rgb(233, 192, 250);
+  background-image: url('assets/pexels-codioful-7130472.jpg')
 }
 
 /*removing Link styling*/
@@ -47,6 +47,7 @@ a:active {
 
 /* Hover effect for item cards */
 .item-card:hover {
+  background-color: #b1dbf9;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -140,7 +141,7 @@ a:active {
 button {
   margin-top: 10px;
   padding: 12px;
-  background-color: #28a745;
+  background-color: #77219e;
   color: white;
   border: none;
   border-radius: 5px;
@@ -149,7 +150,8 @@ button {
 }
 
 button:hover {
-  background-color: #218838;
+  background-color: #b1dbf9;
+  color: black;
 }
 
 /* Styles for the single item page */
