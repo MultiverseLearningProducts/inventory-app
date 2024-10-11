@@ -50,9 +50,7 @@ const App = () => {
     <main className="App">
       <Router>
         <header>
-          {" "}
           <Link to="/add-item">
-            {" "}
             <button> Add New Item </button>
           </Link>
         </header>
