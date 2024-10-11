@@ -68,8 +68,8 @@ const Items = ({ item }) => {
         <h2>{formInput.name}</h2>
         <img src={formInput.image} alt={formInput.name} />
         <p>{formInput.description}</p>
-        <p>Price: ${formInput.price}</p>
-        <p>Category: {formInput.category}</p>
+        <p className="price">Price: ${formInput.price}</p>
+        <p className="category">Category: {formInput.category}</p>
         <button onClick={handleUpdate}>Edit</button>
         <button onClick={deleteItem}>Delete</button>
         <Link to="/"><button>Back to Item List</button></Link>

@@ -5,6 +5,7 @@ import {
   Routes,
   useParams,
   Link,
+  useLocation
 } from "react-router-dom";
 import Items from "./Items";
 import ItemsList from "./ItemsList";
@@ -12,7 +13,6 @@ import apiURL from "../api";
 import AddItem from "./AddItem";
 
 const App = () => {
-  const [singleItem, setSingleItem] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [itemList, setItemList] = useState([]);
@@ -44,6 +44,8 @@ const App = () => {
 
   if (loading) return <div>Loading items...</div>;
   if (error) return <div>Error: {error}</div>;
+
+  console.log(pathname)
 
   return (
     <>
