@@ -78,39 +78,54 @@ const Items = ({ item }) => {
   } else if (update) {
     return (
       <>
-        <form onSubmit={updateItem}>
+        <form onSubmit={updateItem} className="update-form">
           <div>Edit Item</div>
+          <label className="form-label">
+            Name:
           <input
             name="name"
             type="text"
             value={formInput.name}
             placeholder={formInput.name}
             onChange={handleChange}
-          />
+            className="form-input"
+          /></label>
+          <label className="form-label">
+            Description:
           <input
             name="description"
             type="text"
             value={formInput.description}
             onChange={handleChange}
-          />
+            className="form-input"
+          /></label>
+          <label className="form-label">
+            Price:
           <input
             name="price"
             type="text"
             value={formInput.price}
             onChange={handleChange}
-          />
+            className="form-input"
+          /></label>
+          <label className="form-label">
+            Category:
           <input
             name="category"
             type="text"
             value={formInput.category}
             onChange={handleChange}
-          />
+            className="form-input"
+          /></label>
+          <label className="form-label">
+            Image Url:
           <input
             name="image"
             type="url"
             value={formInput.image}
             onChange={handleChange}
-          />
+            className="form-input"
+          /></label>
           <button type="submit">Submit Changes</button>
         </form>
       </>
