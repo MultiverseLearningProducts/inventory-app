@@ -144,7 +144,7 @@ button:hover {
 }
 
 /* Container Styles */
-.add-item-container {
+.add-item-container, .update-item-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,7 +154,7 @@ button:hover {
 }
 
 /* Form Styles */
-.add-item-form {
+.add-item-form, .update-form {
   width: 100%;
   max-width: 600px;
   background-color: #ffffff;

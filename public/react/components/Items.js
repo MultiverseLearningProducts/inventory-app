@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import apiURL from "../api";
 // import addItem from './addItem'; // was going to try to refactor this component to be reusable but decided against it
 
@@ -77,7 +77,7 @@ const Items = ({ item }) => {
     );
   } else if (update) {
     return (
-      <>
+      <div className="update-item-container">
         <form onSubmit={updateItem} className="update-form">
           <div>Edit Item</div>
           <label className="form-label">
@@ -126,9 +126,10 @@ const Items = ({ item }) => {
             onChange={handleChange}
             className="form-input"
           /></label>
-          <button type="submit">Submit Changes</button>
+          <button type="submit" className="form-button">Submit Changes</button>
         </form>
-      </>
+        <Link to="/"><button className="back-button">Back to Item List</button></Link>
+      </div>
     );
   }
 };
