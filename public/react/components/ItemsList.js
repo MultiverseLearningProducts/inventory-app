@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const ItemsList = ({ items }) => {
   if (!items || items.length === 0) return <div>No items available</div>;
@@ -11,14 +11,22 @@ const ItemsList = ({ items }) => {
         {items.map((item) => (
           <div key={item.id} className="item-card">
             <Link to={`/items/${item.id}`} className="item-link">
-              <div className='front-flip'>
-                <img src={item.image} alt={item.name} className="item-image" />
-                <h2 className="item-name">{item.name}</h2>
-                <p className="item-price">Price: ${item.price.toFixed(2)}</p>
-                <p className="item-category">Category: {item.category}</p>
-              </div>
-              <div className='back-flip'>
-                <p className="item-description">{item.description}</p>
+              <div className="item-content">
+                <div className="front-flip">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="item-image"
+                  />
+                  <h2 className="item-name">{item.name}</h2>
+                  <p className="item-price">Price: ${item.price.toFixed(2)}</p>
+                  <p className="item-category">Category: {item.category}</p>
+                </div>
+                <div className="back-flip">
+                  <p className="item-description">
+                    {item.description}
+                  </p>
+                </div>
               </div>
             </Link>
             <div className="button-container">
