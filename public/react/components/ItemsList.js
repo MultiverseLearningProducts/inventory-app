@@ -19,7 +19,7 @@ const ItemsList = ({ items }) => {
                     className="item-image"
                   />
                   <h2 className="item-name">{item.name}</h2>
-                  <p className="item-price">Price: ${item.price.toFixed(2)}</p>
+                  <p className="item-price">Price: ${Math.round(item.price *100)/100}</p>
                   <p className="item-category">Category: {item.category}</p>
                 </div>
                 <div className="back-flip">

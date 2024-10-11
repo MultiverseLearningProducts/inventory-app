@@ -35,7 +35,7 @@ const App = () => {
     };
 
     fetchItems();
-  }, []);
+  }, [itemList]);
 
   const handleAddItem = async (newItem) => {
     setItemList([newItem, ...itemList]);
