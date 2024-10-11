@@ -45,8 +45,7 @@ const App = () => {
   if (loading) return <div>Loading items...</div>;
   if (error) return <div>Error: {error}</div>;
 
-  console.log(pathname)
-
+  
   return (
     <>
       <Router>
