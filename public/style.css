@@ -8,6 +8,15 @@ body {
   background-color: rgb(223, 223, 223);
 }
 
+/*removing Link styling*/
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Container for all items */
 .items-container {
   padding: 20px;
@@ -40,6 +49,8 @@ body {
 .item-card:hover {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
+
+/* Flip card effect for item details*/
 .item-card:hover .item-content{
   transform: rotateY( 180deg );
   transition: transform 0.5s;
@@ -67,6 +78,7 @@ body {
 
 .back-flip {
   transform: rotateY( 180deg );
+  justify-content: center;
   position: absolute;
   top: 0;
   overflow: hidden;
