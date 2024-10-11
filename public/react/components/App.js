@@ -15,7 +15,6 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [itemList, setItemList] = useState([]);
-  const [path, setPath] = useState(window.location.pathname);
 
   // Fetch all items from the backend
   useEffect(() => {
@@ -38,11 +37,6 @@ const App = () => {
     fetchItems();
   }, []);
 
-  useEffect(()=>{
-    console.log(path)
-    setPath(window.location.pathname)
-  },[window.location.pathname])
-
   const handleAddItem = async (newItem) => {
     setItemList([newItem, ...itemList]);
   };
@@ -58,7 +52,6 @@ const App = () => {
           <Link to="/add-item">
             <button> Add New Item </button>
           </Link>
-          {path !== '/' && <Link to="/"><button className="back-button">Back to Item List</button></Link>}
         </header>
         {/* <header> <button onClick={() => navigate('add-item')}>Add New Item</button> </header> */}
         <Routes>
