@@ -51,7 +51,7 @@ const Items = ({ item }) => {
     try {
       const response = await fetch(`${apiURL}/items/${item.id}`, {
         method: "DELETE",
-      })
+      }).then(window.location.href = '/')
 
     } catch (e) {
       console.log("unable to delete item", e);
