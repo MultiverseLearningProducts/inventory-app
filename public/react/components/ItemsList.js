@@ -10,13 +10,17 @@ const ItemsList = ({ items }) => {
       <div className="items-grid">
         {items.map((item) => (
           <div key={item.id} className="item-card">
-            <img src={item.image} alt={item.name} className="item-image" />
-            <h2>{item.name}</h2>
-            <p>Price: ${item.price.toFixed(2)}</p>
-            <p>Category: {item.category}</p>
-            <Link to={`/items/${item.id}`}>
-              <button>View Details</button>
+            <Link to={`/items/${item.id}`} className="item-link">
+              <img src={item.image} alt={item.name} className="item-image" />
+              <h2 className="item-name">{item.name}</h2>
+              <p className="item-price">Price: ${item.price.toFixed(2)}</p>
+              <p className="item-category">Category: {item.category}</p>
             </Link>
+            <div className="button-container">
+              <Link to={`/items/${item.id}`}>
+                <button className="view-details-button">View Details</button>
+              </Link>
+            </div>
           </div>
         ))}
       </div>
